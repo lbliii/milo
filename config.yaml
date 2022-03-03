@@ -1,0 +1,10 @@
+baseURL: /
+title: Milo Theme
+
+params:
+  AuthorName: Lawrence Lane
+  GitHubUser: lbliii
+
+enableGitInfo: true 
+enableEmoji: true 
+enableRobotsTXT: true 
