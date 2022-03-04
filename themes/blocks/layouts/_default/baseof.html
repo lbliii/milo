@@ -1,11 +1,37 @@
 <!DOCTYPE html>
 <html>
-    {{- partial "head.html" . -}}
-    <body>
-        {{- partial "header.html" . -}}
-        <div id="content">
-        {{- block "main" . }}{{- end }}
+    {{ partial "head.html" . }}
+    <body> 
+                {{ partial "header.html" . }}
+        <div class="columns">
+            <div class="column is-one-fifth">
+                {{ partial "menu.html" .}}     
+            </div>
+            <div class="column">
+              {{ block "main" . }}
+              {{end}}
+              <section>
+                  <div class="column is-pulled-left"> 
+                    {{ if .Params.tags }}
+                    {{range .Params.tags }}
+                    <a class="button is-small is-dark" href="/tags/{{ . | urlize }}"> {{.}} </a>
+                    {{end}}
+                {{end}}
+                  </div>
+            </section>
+            </div>
         </div>
-        {{- partial "footer.html" . -}}
+                {{ partial "footer.html" . }}
     </body>
+    
 </html>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,7 @@
+{{ $bulma := resources.Get "css/bulma.css" | resources.Minify }}
+{{ $text := resources.Get "css/text.css" | resources.Minify }}
+{{ $brand := resources.Get "css/brand.css" | resources.Minify }}
+
+<link rel="stylesheet" href="{{ $bulma.Permalink }}" media="screen" />
+<link rel="stylesheet" href="{{ $text.Permalink }}" media="screen" />
+<link rel="stylesheet" href="{{ $brand.Permalink }}" media="screen" />

@@ -1,0 +1,20 @@
+:root{
+    --is-primary-font: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --is-secondary-font: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --is-header-color: #06182B;
+    --header-size: 2rem;
+    --is-accent-color: #006bff;
+    --is-accent-opaque: rgba(0, 107, 255, 0.2);
+    --is-background-color: #fff;
+    --is-code-color: #9060F4;
+}
+
+
+.brand {
+    background-color: var(--is-header-color);
+}
+
+.gradient { 
+    background: linear-gradient(90deg, #133EE3 0%, #7532E1 100%), #006CFF;
+}
+

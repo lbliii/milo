@@ -1,10 +1,35 @@
 baseURL: /
 title: Milo Theme
 
-params:
-  AuthorName: Lawrence Lane
-  GitHubUser: lbliii
-
 enableGitInfo: true 
 enableEmoji: true 
 enableRobotsTXT: true 
+theme: blocks 
+
+outputs: 
+  home: [ "HTML", "RSS", "JSON"]
+  page: [ "HTML", "RSS", "JSON"]
+  section: [ "HTML", "JSON"]
+  list: [ "HTML", "JSON"]
+  taxonomies: [ "HTML", "JSON"]
+
+params:
+  author: Lawrence Lane
+  githubUser: lbliii
+
+
+sitemap:
+  changeFreq: monthly 
+  fileName: sitemap.xml 
+  priority: 0.8 
+
+taxonomies:
+  tag: tags 
+  category: categories 
+  solution: solutions 
+  product: products 
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true

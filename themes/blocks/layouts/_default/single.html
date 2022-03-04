@@ -1,0 +1,29 @@
+{{ define "main" }}
+
+    <section class="hero is-primary">
+        <div class="hero-body">
+        <p class="title">
+            : {{.Title}}
+        </p>
+        <p class="subtitle">
+            <hr>
+            {{.Description}}
+            <div class="is-size-7">{{ .Date | time.Format ":date_long" }}</div>
+        </p>
+        </div>
+    </section>
+    <div class="column is-pulled-right">
+            {{ if .Params.categories }}
+            {{range .Params.categories }}
+            <a class="button is-small is-light" href="/categories/{{ . | urlize }}"> {{.}} </a>
+            {{end}}
+            {{end}}
+        </div>
+    <section class="section">
+        {{ partial "beta.html" . }}
+        {{ .Content }}
+      </section>
+    
+{{end}}
+
+
