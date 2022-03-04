@@ -2,6 +2,7 @@
 title: test
 summary: a milo does something
 weight: 0
+series: ["story-1"]
 ---
 
 # Ignes sequor me insignia madentes victa

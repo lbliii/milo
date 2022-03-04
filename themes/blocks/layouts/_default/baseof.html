@@ -4,7 +4,7 @@
     <body> 
                 {{ partial "header.html" . }}
         <div class="columns">
-            <div class="column is-one-fifth">
+            <div class="column is-one-fifth is-hidden-touch">
                 {{ partial "menu.html" .}}     
             </div>
             <div class="column">
@@ -21,8 +21,8 @@
             </section>
             </div>
         </div>
-                {{ partial "footer.html" . }}
     </body>
+    {{ partial "footer.html" . }}
     
 </html>
 

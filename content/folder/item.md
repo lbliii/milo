@@ -6,6 +6,7 @@ beta: true
 date: "2022-03-01" 
 tags: ["one", "two", "three"]
 categories: ["yellow", "blue", "gold"]
+series: ["story-1"]
 ---
 # Ignes sequor me insignia madentes victa
 

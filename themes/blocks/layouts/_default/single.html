@@ -22,6 +22,10 @@
     <section class="section">
         {{ partial "beta.html" . }}
         {{ .Content }}
+        {{if .Params.series}} 
+        {{range .Params.series }} <a class="button is-primary" href="/series/{{ . | urlize }}"> Read Series</a> 
+        {{end}}
+        {{end}}
       </section>
     
 {{end}}

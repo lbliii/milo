@@ -13,5 +13,17 @@
 <section class="section is-medium">
     {{ partial "beta.html" . }}
     {{ .Content }}
+    {{if .Pages }}
+    <hr>
+    <h3 class="button">Articles in This Series</h3>
+        {{ range sort .Pages "Weight" "$order"}}
+            <div class="p-1"> 
+                <a href="{{ .Permalink }}" class="container"> 
+                    <h3>{{if .Pages}}>{{else}}:{{end}} {{ .Title}}</h3>
+                    <p> {{.Summary}} </p>
+                </a>
+            </div>
+            {{ end }}
+        {{ end }}
   </section>
 {{end}}
