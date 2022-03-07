@@ -23,7 +23,7 @@
         {{ partial "beta.html" . }}
         {{ .Content }}
         {{if .Params.series}} 
-        {{range .Params.series }} <a class="button is-primary" href="/series/{{ . | urlize }}"> Read Series</a> 
+        {{range .Params.series }} <div class="column has-text-centered"><a class="button is-primary" href="/series/{{ . | urlize }}"> Read Series</a> </div>
         {{end}}
         {{end}}
       </section>

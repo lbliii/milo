@@ -12,7 +12,6 @@ outputs:
   section: [ "HTML", "JSON"]
   list: [ "HTML", "JSON"]
   taxonomies: [ "HTML", "JSON"]
-  series: ["HTML"]
 
 params:
   author: Lawrence Lane

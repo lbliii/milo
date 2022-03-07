@@ -1,19 +1,26 @@
 {{ $order := "desc" }}
-    <section class="section"> 
+    <section class="section pt-0"> 
+        <div class="pb-2"> 
+            <a href="/" class="is-size-3">
+                <b>M I L O</b>
+              </a>
+        </div>
+          
+        
         {{with .Parent}}
         <div class="p-1"> 
-            <a href="{{ .Permalink }}" class="button is-primary"> < {{ .Title}}</a>
+            <a href="{{ .RelPermalink }}" class="button is-primary"> < {{ .Title}}</a>
         </div>
         {{end}}
         {{if .Pages}}
         {{ range sort .Pages "Weight" "$order"}}
         <div class="p-1"> 
-            <a href="{{ .Permalink }}" class="button "> {{if .Pages}}>{{end}} {{ .Title}}</a>
+            <a href="{{ .RelPermalink }}" class="button "> {{if .Pages}}>{{end}} {{ .Title}}</a>
         </div>
         {{if .Pages }}
         {{ range sort .Pages "Weight" "$order"}}
             <div class="p-1"> 
-                <a href="{{ .Permalink }}" class="button is-small has-background-primary-light"> {{if .Pages}}>{{end}} {{ .Title}}</a>
+                <a href="{{ .RelPermalink }}" class="button is-small has-background-primary-light"> {{if .Pages}}>{{end}} {{ .Title}}</a>
             </div>
             {{ end }}
         {{ end }}
