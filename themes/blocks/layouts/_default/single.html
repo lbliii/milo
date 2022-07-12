@@ -7,8 +7,12 @@
         </p>
         <p class="subtitle">
             <hr>
-            {{.Description}}
-            <div class="is-size-7">{{ .Date | time.Format ":date_long" }}</div>
+            {{ if .Description}}
+                {{ .Description}}
+            {{end}}
+            {{ if .Date }}
+                <div class="is-size-7">{{ .Date | time.Format ":date_long" }}</div>
+            {{ end }}
         </p>
         </div>
     </section>

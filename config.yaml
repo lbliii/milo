@@ -1,5 +1,5 @@
 baseURL: /
-title: Milo Theme
+title: PachDocs
 
 enableGitInfo: true 
 enableEmoji: true 
@@ -16,6 +16,7 @@ outputs:
 params:
   author: Lawrence Lane
   githubUser: lbliii
+  navLevel: false 
 
 
 sitemap:
@@ -34,3 +35,4 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+

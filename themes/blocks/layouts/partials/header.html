@@ -6,11 +6,12 @@
       <div class="navbar-end">
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" href="https://bulma.io/documentation/overview/start/">
-            Docs
+            Version
           </a>
           <div class="navbar-dropdown is-boxed">
             {{ range .Site.Sections }} 
-            <a class="navbar-item" href="{{.RelPermalink}}">
+            <!--TODO: splice link and add the version number-->
+            <a class="navbar-item" href="{{.Page.RelPermalink}}">
               {{.Title}}
             </a>
             {{end }}
