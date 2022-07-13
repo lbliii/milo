@@ -9,8 +9,12 @@
     --is-accent-opaque: rgb(88, 47, 107, 0.2);
     --is-background-color: #fff;
     --is-info-color: #3e8ed0;
-    --is-link-color: #A2D0D0;
+    --is-link-color: #5ba3b1;
     --is-code-color: #9060F4;
+    --is-notice-tip: #9060F4;
+    --is-notice-warning:#DF6064 ;
+    --is-notice-info: #5ba3b1;
+    --is-notice-success: #B05380;
 }
 
 /* Animations */

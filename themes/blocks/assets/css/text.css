@@ -126,3 +126,57 @@ background-color:var(--is-accent-opaque);
   background: var(--is-accent-color);
   color: #fff;
 }
+
+
+/* Notices */
+
+.tip {
+  background-color: var(--is-notice-tip);
+  color: white
+}
+.tip::before{
+  content: "💡";
+  font-size: 1.5rem;
+  margin-right: 10px;
+  margin-top: 10px;
+  float: left;
+
+  
+}
+
+.warning {
+  background-color: var(--is-notice-warning);
+  color: white
+}
+.warning::before{
+  content: "☠️";
+  font-size: 1.5rem;
+  margin-right: 10px;
+  margin-top: 10px;
+  float: left;
+  
+}
+.info {
+  background-color: var(--is-notice-info);
+  color: white
+}
+.info::before{
+  content: "📖";
+  font-size: 1.5rem;
+  margin-right: 10px;
+  margin-top: 10px;
+  float: left;
+  
+}
+.success {
+  background-color: var(--is-notice-success);
+  color: white
+}
+.success::before{
+  content: "🎉";
+  font-size: 1.5rem;
+  margin-right: 10px;
+  margin-top: 10px;
+  float: left;
+  
+}

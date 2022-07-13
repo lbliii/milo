@@ -351,6 +351,7 @@ pre {
   -moz-osx-font-smoothing: auto;
   -webkit-font-smoothing: auto;
   font-family: monospace;
+  
 }
 
 body {
@@ -426,7 +427,8 @@ pre {
   overflow-x: auto;
   padding: 1.25rem 1.5rem;
   white-space: pre;
-  word-wrap: normal;
+  word-wrap: normal; 
+  white-space: normal;
 }
 
 pre code {
