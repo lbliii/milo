@@ -2,8 +2,9 @@
 title: Service Pipelines
 description:
 author:
-tags:
+tags: ["pipelines", "service"]
 categories:
+series: ["learn pipelines"]
 products:
 date:
 ---

@@ -1,9 +1,10 @@
 ---
-title: Pipelines
+title: Pipeline Types
 description:
 author:
-tags:
+tags: ["pipelines", "cron", "service", "spout"]
 categories:
+series: ["learn pipelines"]
 products:
 date:
 ---

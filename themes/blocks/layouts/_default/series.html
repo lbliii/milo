@@ -1,5 +1,9 @@
+{{/* Series is a special taxonomy feature with its own page layout (instead of list.html); think of it like an endless newsfeed
+    read all the docs together without having to open them. layout-series is an empty class for easier location; do not style against it.  */}}
+
+
 {{ define "main" }}
-<section class="hero is-medium is-primary">
+<section class="layout-series hero is-medium is-primary">
     <div class="hero-body">
     <p class="title">
         > {{.Title}}
@@ -10,7 +14,7 @@
     </p>
     </div>
 </section>
-<section class="section is-medium">
+<section class="layout-series section is-medium">
     {{if .Pages }}
         {{ range sort .Pages "Weight" "$order"}}
         <h3 class="button">{{.Title}}</h3>

@@ -2,8 +2,9 @@
 title: Cron Pipelines
 description:
 author:
-tags:
+tags: ["pipelines", "cron"]
 categories:
+series: ["learn pipelines"]
 products:
 date:
 ---

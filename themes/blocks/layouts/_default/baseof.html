@@ -1,16 +1,20 @@
+{{/* All pages first use the baseof template to begin building. See: https://gohugo.io/templates/base/ 
+    blocks provide a placeholder for inserting other content/templates that are generated later (e.g., a single.html template)
+    layout-baseof is an empty class for easier location; do not style against it.*/}}
+
 <!DOCTYPE html>
 <html>
     {{ partial "head.html" . }}
-    <body> 
+    <body class="layout-baseof"> 
                 {{ partial "header.html" . }}
-        <div class="columns">
+        <div class="columns fade-in">
             <div class="column is-one-fifth is-hidden-touch">
                 {{ partial "menu.html" .}}     
             </div>
             <div class="column">
               {{ block "main" . }}
               {{end}}
-              <section>
+              <section class="layout-baseof">
                   <div class="column is-pulled-left"> 
                     {{ if .Params.tags }}
                     {{range .Params.tags }}

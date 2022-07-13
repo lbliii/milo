@@ -1,3 +1,9 @@
+
+<!-- Used for Multi-Versioned Docs -->
+ {{ $removeVersion := print "/" .Section "/"}}
+ {{ $versionlessLink := strings.TrimPrefix $removeVersion .RelPermalink }}
+ <!-- End -->
+
 <nav class="navbar is-transparent">
     <div id="navbarExampleTransparentExample" class="navbar-menu">
       <div class="navbar-start">
@@ -10,9 +16,11 @@
           </a>
           <div class="navbar-dropdown is-boxed">
             {{ range .Site.Sections }} 
-            <!--TODO: splice link and add the version number-->
-            <a class="navbar-item" href="{{.Page.RelPermalink}}">
-              {{.Title}}
+              {{$currentVersionOption := print "/" .Section "/"}}
+              {{$alternativeVersionPath := print $currentVersionOption $versionlessLink }}
+            <!--TODO: IF alternative version does not exist, set link to home page of other version-->
+            <a class="navbar-item" href="{{$alternativeVersionPath}}">
+              {{.Title}} 
             </a>
             {{end }}
             <hr class="navbar-divider">
@@ -21,6 +29,10 @@
               {{.Page.Title}}
             </a>
             {{end}}
+            <a class="navbar-item" href="{{.}}/">
+
+
+              
           </div>
         </div>
         <div class="navbar-item">
@@ -31,4 +43,3 @@
     </div>
   </nav>
 
- 

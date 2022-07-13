@@ -2,7 +2,8 @@
 title: Deferred Processing of Data
 description: 
 author:
-tags:
+tags: ["data processing"]
+series: ["advanced"]
 categories:
 products:
 # date: 

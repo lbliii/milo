@@ -1,5 +1,8 @@
+{{/* All auto-generated list files are considered lists (e.g., taxonomy pages like tags). See: https://gohugo.io/content-management/page-bundles/ 
+    layout-list is an empty class for easier location; do not style against it.*/}}
+
 {{ define "main" }}
-<section class="hero is-medium is-primary">
+<section class="layout-list hero is-medium is-primary">
     <div class="hero-body">
     <p class="title">
         > {{.Title}}
@@ -10,7 +13,7 @@
     </p>
     </div>
 </section>
-<section class="section is-medium">
+<section class="layout-list section is-medium">
     {{if .Pages }}
         {{ range sort .Pages "Weight" "$order"}}
             <div class="p-1"> 

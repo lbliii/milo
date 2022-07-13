@@ -119,3 +119,10 @@ tbody tr:hover {
 background-color:var(--is-accent-opaque);
 }
 
+
+/* Text Highlight Color */
+
+::selection {
+  background: var(--is-accent-color);
+  color: #fff;
+}

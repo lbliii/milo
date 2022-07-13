@@ -2,10 +2,11 @@
 title: Pipeline Concepts
 description:
 author:
-tags:
+tags: ["pipeline"]
 categories:
 products:
 date:
+series: 
 ---
 
 Pachyderm Pipeline System (PPS) is the computational

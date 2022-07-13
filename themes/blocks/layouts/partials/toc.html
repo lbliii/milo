@@ -1,0 +1,10 @@
+{{if ne .Params.toc false}}
+<aside id="toc">
+	<header class="toc-header">
+		<a href="#{{.Title | urlize}}">
+		<h3 class="{{.Section}}">{{.Title}}</h3>
+		</a>
+	</header>
+	{{.TableOfContents}}
+</aside>
+{{end}}

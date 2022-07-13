@@ -1,6 +1,10 @@
+{{/* All child pages without their own children are considered single pages. See: https://gohugo.io/content-management/page-bundles/ 
+    layout-single is an empty class for easier location; do not style against it.*/}}
+
+
 {{ define "main" }}
 
-    <section class="hero is-primary">
+    <section class="layout-single hero is-primary">
         <div class="hero-body">
         <p class="title">
             : {{.Title}}
@@ -23,11 +27,11 @@
             {{end}}
             {{end}}
         </div>
-    <section class="section">
+    <section class="layout-single section">
         {{ partial "beta.html" . }}
         {{ .Content }}
-        {{if .Params.series}} 
-        {{range .Params.series }} <div class="column has-text-centered"><a class="button is-primary" href="/series/{{ . | urlize }}"> Read Series</a> </div>
+        {{if and (.Params.series) (.Site.Params.seriesButton) }} 
+        {{range .Params.series }} <div class="column has-text-centered"><a class="button is-primary" href="/series/{{ . | urlize }}"> Read the {{.}} series</a> </div>
         {{end}}
         {{end}}
       </section>
