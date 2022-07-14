@@ -9,14 +9,14 @@
         
         {{with .Parent}}
         <div class="p-1"> 
-            <a href="{{ .RelPermalink }}" class="tag is-medium is-primary"> < {{ .Title}}</a>
+            <a href="{{ .RelPermalink }}" class="tag is-small is-primary"> < {{ .Title}}</a>
         </div>
         {{end}}
         
         {{if .Pages}}
         {{ range sort .Pages "Weight" "$order"}}
         <div class="p-1"> 
-            <a href="{{ .RelPermalink }}" class="tag is-medium"> {{if .Pages}}┣ {{else}} ┃ {{end}} {{ .Title}}</a>
+            <a href="{{ .RelPermalink }}" class="tag is-small is-clipped"> {{if .Pages}}┣ {{else}} ┃ {{end}} {{ .Title}}</a>
         </div>
         {{ if .Site.Params.navLevel }}
             {{if .Pages }}

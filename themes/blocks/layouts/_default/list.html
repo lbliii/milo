@@ -13,7 +13,8 @@
     </p>
     </div>
 </section>
-<section class="layout-list section is-medium">
+<section class="layout-list section is-medium"> 
+    {{/* start child articles. */}}
     {{if .Pages }}
         {{ range sort .Pages "Weight" "$order"}}
             <div class="p-1"> 
@@ -24,5 +25,6 @@
             </div>
             {{ end }}
         {{ end }}
+    {{/* end child articles. */}}
   </section>
 {{end}}

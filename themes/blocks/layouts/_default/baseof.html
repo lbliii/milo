@@ -12,6 +12,11 @@
                 {{ partial "menu.html" .}}     
             </div>
             <div class="column">
+                {{/* start editLink feature  */}}
+                {{ if .Site.Params.editLink }}
+                    <a class="tag" href="{{ print .Site.Params.githubUrl .RelPermalink }} "> Edit this page</a>
+                {{end}}
+                {{/* end editLink feature  */}}
               {{ block "main" . }}
               {{end}}
               <section class="layout-baseof">

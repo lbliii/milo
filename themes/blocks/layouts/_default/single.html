@@ -20,20 +20,32 @@
         </p>
         </div>
     </section>
+
     <div class="column is-pulled-right">
             {{ if .Params.categories }}
             {{range .Params.categories }}
             <a class="button is-small is-light" href="/categories/{{ . | urlize }}"> {{.}} </a>
             {{end}}
             {{end}}
-        </div>
+    </div>
+
     <section class="layout-single section">
         {{ partial "beta.html" . }}
         {{ .Content }}
+        <div class="columns">
+        {{/* start nextPrev feature */}}
+        {{ if .Site.Params.nextPrev }}
+            {{if .PrevInSection}}<a class="column"  href="{{.PrevInSection.Permalink}}">👈 {{.PrevInSection.Title}}</a>{{end}} 
+            {{if .NextInSection}}<a class="column has-text-right" href="{{.NextInSection.Permalink}}"> {{.NextInSection.Title}} 👉</a>{{end}}
+        {{end}}
+        {{/* end nextPrev feature */}}
+        </div>
+        {{/* start seriesButton feature */}}
         {{if and (.Params.series) (.Site.Params.seriesButton) }} 
-        {{range .Params.series }} <div class="column has-text-centered"><a class="button is-primary" href="/series/{{ . | urlize }}"> Read the {{.}} series</a> </div>
+            {{range .Params.series }} <div class="column has-text-centered"><a class="button is-primary" href="/series/{{ . | urlize }}"> Read the {{.}} series</a> </div>
+            {{end}}
         {{end}}
-        {{end}}
+        {{/* end seriesButton feature */}}
       </section>
     
 {{end}}
