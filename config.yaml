@@ -6,6 +6,8 @@ enableEmoji: true
 enableRobotsTXT: true 
 theme: blocks 
 
+staticDir: "/themes/blocks/static"
+
 outputs: 
   home: [ "HTML", "RSS", "JSON"]
   page: [ "HTML", "RSS", "JSON"]
