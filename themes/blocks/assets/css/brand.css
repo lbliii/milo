@@ -5,6 +5,7 @@
     --header-size: 2rem;
     --is-primary-color: #f2e9e9;
     --is-primary-hover-color: #b0a8b3;
+    --is-cta-color: #582f6b;
     --is-accent-color: #5ba3b1;
     --is-accent-opaque: #ecf5f7;
     --is-background-color: #fff;
@@ -17,6 +18,17 @@
     --is-notice-warning:#ce6767;
     --is-notice-info: #fe9b7c;
     --is-notice-success: #5ba3b1;
+}
+
+
+/* Non-Bulma classes */
+
+.pach-cta {
+    background-color: var(--is-cta-color);
+    color: #fff; 
+}
+.pach-cta:hover {
+    color: #fff;
 }
 
 /* Animations */

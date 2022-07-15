@@ -6,10 +6,10 @@
 <html>
     {{ partial "head.html" . }}
     <body class="layout-baseof"> 
-                {{ partial "header.html" . }}
+                {{ partial "nav.html" . }}
         <div class="columns fade-in mx-5">
             <div class="column is-one-fifth is-hidden-touch mx-0">
-                {{ partial "menu.html" .}}     
+                {{ partial "directory.html" .}}     
             </div>
             <div class="column mx-0">
                 {{/* start editLink feature; TODO: get filename instead (for _index.md)  */}}

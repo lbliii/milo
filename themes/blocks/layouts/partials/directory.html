@@ -3,9 +3,8 @@
         <div class="column">
             {{/* Displays current page's parent to return. */}}  
             {{with .Parent}}
-                <div class="p-1"> 
-                    <a href="{{ .RelPermalink }}" class="tag is-small is-primary"> < {{ .Title}}</a>
-                </div>
+           
+                    <a href="{{ .RelPermalink }}" class="tag p-1 is-black"> < {{ .Title}}</a>
             {{end}}
             {{/* Displays current page's children. */}}
             {{if .Pages}}
