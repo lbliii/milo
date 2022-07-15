@@ -4,10 +4,11 @@
  {{ $versionlessLink := strings.TrimPrefix $removeVersion .RelPermalink }}
  <!-- End -->
 
-<nav class="navbar is-transparent">
+<nav class="navbar is-transparent mx-5">
     <div id="navbarExampleTransparentExample" class="navbar-menu">
-      <div class="navbar-start">
-      </div>
+      <a class="navbar-start" href="/">
+        <img src="{{.Site.Params.logo}}" class="navbar-item" width="170">
+      </a>
   
       <div class="navbar-end">
         <div class="navbar-item has-dropdown is-hoverable">
@@ -35,6 +36,16 @@
         <div class="navbar-item">
           <input class="input" type="text" placeholder="Text input">
 
+        </div>
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-primary">
+              <strong>Request a Demo</strong>
+            </a>
+            <a class="button is-light">
+              Sandbox
+            </a>
+          </div>
         </div>
       </div>
     </div>

@@ -3,18 +3,20 @@
     --is-secondary-font: "Montserrat";
     --is-header-color: #000;
     --header-size: 2rem;
-    --is-primary-color: #5ba3b1;
-    --is-primary-hover-color: #D3D7DB;
-    --is-accent-color: rgb(88, 47, 107);
-    --is-accent-opaque: rgb(88, 47, 107, 0.2);
+    --is-primary-color: #f2e9e9;
+    --is-primary-hover-color: #b0a8b3;
+    --is-accent-color: #5ba3b1;
+    --is-accent-opaque: #ecf5f7;
     --is-background-color: #fff;
+
     --is-info-color: #3e8ed0;
     --is-link-color: #5ba3b1;
     --is-code-color: #9060F4;
+
     --is-notice-tip: #9060F4;
-    --is-notice-warning:#DF6064 ;
-    --is-notice-info: #5ba3b1;
-    --is-notice-success: #B05380;
+    --is-notice-warning:#ce6767;
+    --is-notice-info: #fe9b7c;
+    --is-notice-success: #5ba3b1;
 }
 
 /* Animations */

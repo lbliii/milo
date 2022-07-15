@@ -7,12 +7,13 @@
     {{ partial "head.html" . }}
     <body class="layout-baseof"> 
                 {{ partial "header.html" . }}
-        <div class="columns fade-in">
-            <div class="column is-one-fifth is-hidden-touch">
+        <div class="columns fade-in mx-5">
+            <div class="column is-one-fifth is-hidden-touch mx-0">
                 {{ partial "menu.html" .}}     
             </div>
-            <div class="column">
-                {{/* start editLink feature  */}}
+            <div class="column mx-0">
+                {{/* start editLink feature; TODO: get filename instead (for _index.md)  */}}
+
                 {{ if .Site.Params.editLink }}
                     <a class="tag" href="{{ print .Site.Params.githubUrl .RelPermalink }} "> Edit this page</a>
                 {{end}}
