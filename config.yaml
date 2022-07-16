@@ -17,6 +17,7 @@ outputs:
 
 params:
   # Feature Switches #
+  childPages: true # displays child pages of a section.
   editLink: 
     display: true #  displays a link to the corresponding github file for a given page; githubUrl must be set.
     githubUrl: https://github.com/lbliii/milo/tree/pachyderm-explorations/content/  # should end with content/

@@ -6,6 +6,7 @@ tags:
 categories:
 products:
 date:
+series: ["pipelines"]
 ---
 
 

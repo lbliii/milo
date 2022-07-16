@@ -1,0 +1,17 @@
+{{ if .Site.Params.childPages}}
+    {{if .Pages }}
+    <hr>
+    <h2 class="button">Articles in This Series</h2>
+        {{ range sort .Pages "Weight" "$order"}}
+            <div class="p-1">
+                <a href="{{ .Permalink }}" class="container">
+                    <div class="is-flex is-align-items-center">
+                        <h4> {{ .Title}}</h4>
+                        {{if .Pages}} <div class="tag is-light mt-5 ml-2 "> {{ len (.Pages) }} articles</div> {{end}}
+                    </div>
+                    <p class="is-size-7 has-text-dark"> {{.Summary}} </p>
+                </a>
+            </div>
+        {{ end }}
+    {{ end }}
+{{end}}

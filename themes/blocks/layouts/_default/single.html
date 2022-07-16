@@ -1,55 +1,33 @@
-{{/* All child pages without their own children are considered single pages. See: https://gohugo.io/content-management/page-bundles/ 
-    layout-single is an empty class for easier location; do not style against it.*/}}
+{{/* 
+    - All child pages without children are considered single pages. See: https://gohugo.io/content-management/page-bundles/ 
+    - layout-single is an empty class for easier location; do not style against it.
+*/}}
 
 
 {{ define "main" }}
-
-        <section class="layout-single hero is-primary">
-            <div class="hero-body">
-                <h1>{{.Title}}</h1>
-                {{/* Displays page description & date */}}
-                <p class="subtitle">
-                    <hr>
-                    {{ if .Description}}
-                        {{ .Description}}
-                    {{end}}
-                    {{ if .Date }}
-                        <div class="is-size-7">{{ .Date | time.Format ":date_long" }}</div>
-                    {{ end }}
-                </p>
-                {{/* End page description & date */}}
-            </div>
-        </section>
-        {{/* Displays the Category taxonomy */}}
-        {{ if .Params.categories }}
-            <div class="column is-pulled-right">
-                    
-                {{range .Params.categories }}
-                    <a class="button is-small is-light" href="/categories/{{ . | urlize }}"> {{.}} </a>
-                {{end}}
-            </div>
+    <section class="layout-single hero is-medium is-primary">
+        <div class="hero-body">
+            <h1>{{.Title}}</h1>
+            <hr>
+            {{ if .Description}}
+                <div class="has-text-black">
+                    {{ .Description}}
+                </div>
             {{end}}
-        {{/* End Category taxonomy */}}
-
-        <section class="layout-single section">
-            {{ partial "beta.html" . }}
-            {{ .Content }}
-            <div class="columns">
-            {{/* start nextPrev feature */}}
-            {{ if .Site.Params.nextPrev }}
-                {{if .PrevInSection}}<a class="column"  href="{{.PrevInSection.Permalink}}">👈 {{.PrevInSection.Title}}</a>{{end}} 
-                {{if .NextInSection}}<a class="column has-text-right" href="{{.NextInSection.Permalink}}"> {{.NextInSection.Title}} 👉</a>{{end}}
-            {{end}}
-            {{/* end nextPrev feature */}}
-            </div>
-            {{/* start seriesButton feature */}}
-            {{if and (.Params.series) (.Site.Params.seriesButton) }} 
-                {{range .Params.series }} <div class="column has-text-centered"><a class="button is-primary" href="/series/{{ . | urlize }}"> Read the {{.}} series</a> </div>
-                {{end}}
-            {{end}}
-            {{/* end seriesButton feature */}}
-        </section>
-
+            {{ if .Date }}
+                <div class="is-size-7 has-text-black">
+                    {{ .Date | time.Format ":date_long" }}
+                </div>
+            {{ end }}
+        </div>
+    </section>
+    {{ partial "taxonomyCategory.html" . }}
+    <section class="layout-single section">
+        {{ partial "featureBetaNotice.html" . }}
+        {{ .Content }}
+        {{ partial "featureNextPrev.html" . }}
+        {{ partial "featureSeriesButton.html" . }} 
+    </section>
 {{end}}
 
 

@@ -1,0 +1,8 @@
+{{ if .Params.categories }}
+    <div class="column is-pulled-right">
+
+        {{range .Params.categories }}
+            <a class="button is-small is-light" href="/categories/{{ . | urlize }}"> {{.}} </a>
+        {{end}}
+    </div>
+{{end}}

@@ -1,11 +1,11 @@
 ---
 title: Pachyderm Versioned Data Concepts
-description:
+description: This is a description about the data concepts page for testing purposes.
 author:
 tags:
 categories:
 products:
-date:
+date: 2002-08-01
 ---
 
 # Pachyderm Versioned Data Concepts

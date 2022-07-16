@@ -2,36 +2,25 @@
     layout-section is an empty class for easier location; do not style against it.*/}}
 
 {{ define "main" }}
-<section class="layout-section hero is-medium is-primary">
-    <div class="hero-body">
-        <p class="title">
-            {{.Title}}
-        </p>
-        <p class="subtitle">
+    <section class="layout-section hero is-medium is-primary">
+        <div class="hero-body">
+            <h1>{{.Title}}</h1>
             <hr>
-            {{.Description}}
-        </p>
-    </div>
-</section>
-<section class="layout-section section">
-    {{ partial "beta.html" . }}
-    {{ .Content }}
-    {{/* start child articles. */}}
-    {{if .Pages }}
-        <hr>
-        <h2 class="button">Articles in This Series</h2>
-        {{ range sort .Pages "Weight" "$order"}}
-        <div class="p-1">
-            <a href="{{ .Permalink }}" class="container">
-                <div class="is-flex is-align-items-center" > 
-                <h4> {{ .Title}}</h4> 
-                {{if .Pages}} <div class="tag is-light mt-5 ml-2 ">  {{ len (.Pages) }} articles</div> {{end}} 
-                </div>
-                <p class="is-size-7 has-text-dark"> {{.Summary}} </p>
-            </a>
+                {{ if .Description}}
+                    <div class="has-text-black">
+                        {{ .Description}}
+                    </div>
+                {{end}}
+                {{ if .Date }}
+                    <div class="is-size-7 has-text-black">
+                        {{ .Date | time.Format ":date_long" }}
+                    </div>
+                {{ end }}
         </div>
-        {{ end }}
-    {{ end }}
-    {{/* end child articles. */}}
-</section>
+    </section>
+    <section class="layout-section section">
+        {{ partial "featureBetaNotice.html" . }}
+        {{ .Content }}
+        {{ partial "featureChildPages.html" . }}
+    </section>
 {{end}}

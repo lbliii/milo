@@ -1,0 +1,10 @@
+{{ if .Site.Params.nextPrev }}
+    <div class="columns">
+        {{if .PrevInSection}}
+            <a class="column" href="{{.PrevInSection.Permalink}}">👈 {{.PrevInSection.Title}}</a>
+        {{end}}
+        {{if .NextInSection}}
+            <a class="column has-text-right" href="{{.NextInSection.Permalink}}">{{.NextInSection.Title}} 👉</a>
+        {{end}}
+    </div>
+{{end}}
