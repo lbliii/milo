@@ -2,6 +2,7 @@
     --is-primary-font: "Montserrat"; /* Chaning fonts? Also update head.html */
     --is-secondary-font: "Montserrat";
     --is-header-color: #000;
+    --is-content-color: #000;
     --header-size: 2rem;
     --is-primary-color: #f2e9e9;
     --is-primary-hover-color: #b0a8b3;

@@ -7,30 +7,33 @@
     {{ partial "head.html" . }}
     <body class="layout-baseof"> 
                 {{ partial "nav.html" . }}
-        <div class="columns fade-in mx-5">
-            <div class="column is-one-fifth is-hidden-touch mx-0">
+        <main class="columns fade-in mx-5">
+            <nav class="column is-one-fifth is-hidden-touch mx-0">
                 {{ partial "directory.html" .}}     
-            </div>
-            <div class="column mx-0">
+            </nav>
+            <article class="column mx-0 content">
                 {{/* start editLink feature; TODO: get filename instead (for _index.md)  */}}
 
-                {{ if .Site.Params.editLink }}
-                    <a class="tag" href="{{ print .Site.Params.githubUrl .RelPermalink }} "> Edit this page</a>
+                {{ if .Site.Params.editLink.display }}
+                    <a class="tag" href="{{ print .Site.Params.editLink.githubUrl .File.Path }} "> Edit this page</a>
                 {{end}}
                 {{/* end editLink feature  */}}
               {{ block "main" . }}
               {{end}}
-              <section class="layout-baseof">
+              {{/* start tag display*/}}
+              {{ if .Params.tags }}
+                <aside class="layout-baseof">
                   <div class="column is-pulled-left"> 
-                    {{ if .Params.tags }}
+                    
                     {{range .Params.tags }}
-                    <a class="button is-small is-dark" href="/tags/{{ . | urlize }}"> {{.}} </a>
+                    <a class="button is-small pach-cta" href="/tags/{{ . | urlize }}"> {{.}} </a>
                     {{end}}
-                {{end}}
                   </div>
-            </section>
-            </div>
-        </div>
+                </aside>
+              {{end}}
+              {{/* end tag display */}}
+            </article>
+        </main>
     </body>
     {{ partial "footer.html" . }}
     

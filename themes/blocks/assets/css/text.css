@@ -1,6 +1,6 @@
 /* Text */
 
-h1, h2, h3, h4, h5, h6 {
+/* h1, h2, h3, h4, h5, h6 {
 
     margin-top: 20px;
 
@@ -31,12 +31,12 @@ h5 {
 
 h6 {
     font-size: calc(var(--header-size) - 1.4rem);
-}
+} */
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--is-primary-font); 
-    color: var(--is-header-color);
-    font-weight: 800;
+    /* color: var(--is-header-color);
+    font-weight: 900; */
 }
 
 
@@ -44,12 +44,12 @@ body {
     font-family: var(--is-secondary-font);
     background-color: var(--is-background-color);
     overflow: hidden;
-    color: var(--is-header-color);
+    color: var(--is-content-color);
 }
 
 
-a { 
-    font-weight: 500;
+a {
+  font-weight: 900;
 }
 
 

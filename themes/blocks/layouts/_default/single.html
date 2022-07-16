@@ -4,50 +4,52 @@
 
 {{ define "main" }}
 
-    <section class="layout-single hero is-primary">
-        <div class="hero-body">
-        <p class="title">
-            {{.Title}}
-        </p>
-        <p class="subtitle">
-            <hr>
-            {{ if .Description}}
-                {{ .Description}}
+        <section class="layout-single hero is-primary">
+            <div class="hero-body">
+                <h1>{{.Title}}</h1>
+                {{/* Displays page description & date */}}
+                <p class="subtitle">
+                    <hr>
+                    {{ if .Description}}
+                        {{ .Description}}
+                    {{end}}
+                    {{ if .Date }}
+                        <div class="is-size-7">{{ .Date | time.Format ":date_long" }}</div>
+                    {{ end }}
+                </p>
+                {{/* End page description & date */}}
+            </div>
+        </section>
+        {{/* Displays the Category taxonomy */}}
+        {{ if .Params.categories }}
+            <div class="column is-pulled-right">
+                    
+                {{range .Params.categories }}
+                    <a class="button is-small is-light" href="/categories/{{ . | urlize }}"> {{.}} </a>
+                {{end}}
+            </div>
             {{end}}
-            {{ if .Date }}
-                <div class="is-size-7">{{ .Date | time.Format ":date_long" }}</div>
-            {{ end }}
-        </p>
-        </div>
-    </section>
+        {{/* End Category taxonomy */}}
 
-    <div class="column is-pulled-right">
-            {{ if .Params.categories }}
-            {{range .Params.categories }}
-            <a class="button is-small is-light" href="/categories/{{ . | urlize }}"> {{.}} </a>
+        <section class="layout-single section">
+            {{ partial "beta.html" . }}
+            {{ .Content }}
+            <div class="columns">
+            {{/* start nextPrev feature */}}
+            {{ if .Site.Params.nextPrev }}
+                {{if .PrevInSection}}<a class="column"  href="{{.PrevInSection.Permalink}}">👈 {{.PrevInSection.Title}}</a>{{end}} 
+                {{if .NextInSection}}<a class="column has-text-right" href="{{.NextInSection.Permalink}}"> {{.NextInSection.Title}} 👉</a>{{end}}
             {{end}}
+            {{/* end nextPrev feature */}}
+            </div>
+            {{/* start seriesButton feature */}}
+            {{if and (.Params.series) (.Site.Params.seriesButton) }} 
+                {{range .Params.series }} <div class="column has-text-centered"><a class="button is-primary" href="/series/{{ . | urlize }}"> Read the {{.}} series</a> </div>
+                {{end}}
             {{end}}
-    </div>
+            {{/* end seriesButton feature */}}
+        </section>
 
-    <section class="layout-single section">
-        {{ partial "beta.html" . }}
-        {{ .Content }}
-        <div class="columns">
-        {{/* start nextPrev feature */}}
-        {{ if .Site.Params.nextPrev }}
-            {{if .PrevInSection}}<a class="column"  href="{{.PrevInSection.Permalink}}">👈 {{.PrevInSection.Title}}</a>{{end}} 
-            {{if .NextInSection}}<a class="column has-text-right" href="{{.NextInSection.Permalink}}"> {{.NextInSection.Title}} 👉</a>{{end}}
-        {{end}}
-        {{/* end nextPrev feature */}}
-        </div>
-        {{/* start seriesButton feature */}}
-        {{if and (.Params.series) (.Site.Params.seriesButton) }} 
-            {{range .Params.series }} <div class="column has-text-centered"><a class="button is-primary" href="/series/{{ . | urlize }}"> Read the {{.}} series</a> </div>
-            {{end}}
-        {{end}}
-        {{/* end seriesButton feature */}}
-      </section>
-    
 {{end}}
 
 

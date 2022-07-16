@@ -1,8 +1,8 @@
 
-<!-- Used for Multi-Versioned Docs -->
+{{/* Used for versionDropdown feature  */}}
  {{ $removeVersion := print "/" .Section "/"}}
  {{ $versionlessLink := strings.TrimPrefix $removeVersion .RelPermalink }}
- <!-- End -->
+{{/* End for versionDropdown feature */}}
 
 <nav class="navbar is-transparent mx-5">
     <div id="navbarExampleTransparentExample" class="navbar-menu">
@@ -11,30 +11,34 @@
       </a>
   
       <div class="navbar-end">
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link" href="https://bulma.io/documentation/overview/start/">
-            Version
-          </a>
-          <div class="navbar-dropdown is-boxed">
-            {{ range .Site.Sections }} 
-              {{$currentVersionOption := print "/" .Section "/"}}
-              {{$alternativeVersionPath := print $currentVersionOption $versionlessLink }}
-            <!--TODO: IF alternative version does not exist, set link to home page of other version-->
-            <a class="navbar-item" href="{{$alternativeVersionPath}}">
-              {{.Title}} 
+        {{/* Displays versionDropdown feature */}}
+        {{ if .Site.Params.versionDropdown }}
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link" href="">
+              Version   {{ .Section }}
             </a>
-            {{end }}
-            <hr class="navbar-divider">
-            {{ range .Site.Taxonomies.series}}
-            <a class="navbar-item" href="{{.Page.RelPermalink}}">
-              {{.Page.Title}}
-            </a>
-            {{end}}
-           
+            <div class="navbar-dropdown is-boxed">
+              {{ range .Site.Sections.ByTitle.Reverse }} {{/* Sort Options: https://gohugo.io/templates/lists/#order-content */}}
+                {{$currentVersionOption := print "/" .Section "/"}}
+                {{$alternativeVersionPath := print $currentVersionOption $versionlessLink }}
+              <!--TODO: IF alternative version does not exist, set link to home page of other version-->
+              <a class="navbar-item" href="{{$alternativeVersionPath}}">
+                {{.Title}} 
+              </a>
+              {{end }}
+              <hr class="navbar-divider">
+              {{ range .Site.Taxonomies.series}}
+                <a class="navbar-item" href="{{.Page.RelPermalink}}">
+                  {{.Page.Title}}
+                </a>
+              {{end}}
+            
+            </div>
           </div>
-        </div>
+        {{end}}
+        {{/* End versionDropdown feature */}}
         <div class="navbar-item">
-          <input class="input" type="text" placeholder="Text input">
+          <input class="input" type="text" placeholder="Search docs">
 
         </div>
         <div class="navbar-item">
