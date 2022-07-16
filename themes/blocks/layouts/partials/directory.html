@@ -10,7 +10,7 @@
             {{if .Pages}}
                 {{ range sort .Pages "Weight" "$order"}}
                     <div class="p-1"> 
-                        <a href="{{ .RelPermalink }}" class="tag is-small is-clipped"> {{if .Pages}}┣ {{else}} ┃ {{end}} {{ .Title}}</a>
+                        <a href="{{ .RelPermalink }}" class="tag is-small"> {{if .Pages}}┣ {{else}} ┃ {{end}} {{ .Title | truncate 35 }}</a>
                     </div>
                     {{/* Displays current page's grandchildren when navLevel feature is TRUE. */}}
                     {{ if .Site.Params.navLevel }}

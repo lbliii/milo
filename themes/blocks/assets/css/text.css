@@ -181,5 +181,11 @@ background-color:var(--is-accent-opaque);
   
 }
 
-/* font style */
+/* Code Blocks */
 
+pre {
+  white-space: normal;
+}
+code {
+  white-space: normal;
+}

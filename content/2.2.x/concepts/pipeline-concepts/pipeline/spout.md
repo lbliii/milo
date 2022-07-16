@@ -2,7 +2,7 @@
 title: Spout Pipelines
 description:
 author:
-tags: ["pipelines", "spout"]
+tags: ["pipeline", "spout"]
 categories:
 series: ["learn pipelines"]
 products:

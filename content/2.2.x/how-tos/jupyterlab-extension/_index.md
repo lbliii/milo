@@ -11,48 +11,48 @@ date:
 
 ![Mount extension in action](../images/mount-extension.gif)
 
- We implemented a [JupyterLab extension](https://pypi.org/project/jupyterlab-pachyderm/){target=_blank} that selectively **maps the contents of data repositories right into your Jupyter environment**. Any named branch in a repo can be “mounted” into your file system via the Jupyter environment, making it feel like the data in Pachyderm is on your computer. 
+We implemented a [JupyterLab extension](https://pypi.org/project/jupyterlab-pachyderm/){target=_blank} that selectively **maps the contents of data repositories right into your Jupyter environment**. Any named branch in a repo can be “mounted” into your file system via the Jupyter environment, making it feel like the data in Pachyderm is on your computer. 
 
- For Data Scientists whose data are stored in Pachyderm, the extension provides a seamless way to:
+For Data Scientists whose data are stored in Pachyderm, the extension provides a seamless way to:
 
 - Connect your Notebook to a Pachyderm cluster.
 - Browse, explore, analyze data stored in Pachyderm directly from your Notebook.
 - Run and test out your pipeline code before creating a Docker image. The extension provides a quick and reliable data **development environment** that can be shared. 
 
 !!! Important "TL;DR - Quick Start"
-    We will provide two sets of instructions, depending on whether you know the cluster address (`pachd_address`) you want to connect your JupyterHub to or don't.
+We will provide two sets of instructions, depending on whether you know the cluster address (`pachd_address`) you want to connect your JupyterHub to or don't.
 
-    - **You know the `pachd_address` of your cluster**:
+- **You know the `pachd_address` of your cluster**:
 
-        - Run:
-        ```shell
-        docker run -it -p 8888:8888 -e GRANT_SUDO=yes --user root --device /dev/fuse --privileged --entrypoint /opt/conda/bin/jupyter pachyderm/notebooks-user:{{ config.jupyterlab_extension_image_tag }}  lab --allow-root
-        ```
-        - Access your JupyterLab session through a local browser (check the link in the stdout).
-        - Then [connect your JupyterLab to your Pachyderm cluster](#connect-the-extension-to-your-pachyderm-cluster). 
-        You are ready to start experimenting.
+  - Run:
+  ```shell
+  docker run -it -p 8888:8888 -e GRANT_SUDO=yes --user root --device /dev/fuse --privileged --entrypoint /opt/conda/bin/jupyter pachyderm/notebooks-user:{{ config.jupyterlab_extension_image_tag }}  lab --allow-root
+  ```
+  - Access your JupyterLab session through a local browser (check the link in the stdout).
+  - Then [connect your JupyterLab to your Pachyderm cluster](#connect-the-extension-to-your-pachyderm-cluster). 
+  You are ready to start experimenting.
 
 
-    - **You do not know the `pachd_address` of your cluster**:
+- **You do not know the `pachd_address` of your cluster**:
 
-        - Install `pachctl` (Pachyderm command line tool) on your machine (see [`pachctl` installation instructions](../../getting-started/local-installation/#install-pachctl){target=_blank} ).
-        - Then, [connect that CLI to your cluster](../../getting-started/local-installation/#connect-pachctl-to-your-cluster){target=_blank}.
-        - And run:
-        ```shell
-        docker run -it -v ~/.pachyderm/config.json:/home/jovyan/.pachyderm/config.json -p 8888:8888 -e GRANT_SUDO=yes --user root --device /dev/fuse --privileged --entrypoint /opt/conda/bin/jupyter pachyderm/notebooks-user:{{ config.jupyterlab_extension_image_tag }} lab --allow-root
-        ```
-        - Access your JupyterLab session through a local browser (check the link in the stdout).
-        You are all logged in. Start experimenting.
+  - Install `pachctl` (Pachyderm command line tool) on your machine (see [`pachctl` installation instructions](../../getting-started/local-installation/#install-pachctl){target=_blank} ).
+  - Then, [connect that CLI to your cluster](../../getting-started/local-installation/#connect-pachctl-to-your-cluster){target=_blank}.
+  - And run:
+  ```shell
+  docker run -it -v ~/.pachyderm/config.json:/home/jovyan/.pachyderm/config.json -p 8888:8888 -e GRANT_SUDO=yes --user root --device /dev/fuse --privileged --entrypoint /opt/conda/bin/jupyter pachyderm/notebooks-user:{{ config.jupyterlab_extension_image_tag }} lab --allow-root
+  ```
+  - Access your JupyterLab session through a local browser (check the link in the stdout).
+  You are all logged in. Start experimenting.
 
 Note that we are assuming that you **already have a Pachyderm cluster running** to connect your JupyterHub/JupyterLab. Find Pachyderm installation instructions in the [Deploy/Manage](../../deploy-manage/deploy/) section of our documentation.
 ## Using The Extension
 
 !!! Warning "Troubleshooting - When in doubt, restart your mount server"
-        JupyterLab Mount Extension is an [experimental feature](https://docs.pachyderm.com/latest/reference/supported-releases/#experimental){target=_blank}. Many issues can be resolved by restarting the mount server, should you find yourself in an odd situation. To kill/restart your server, run the following command from the terminal window in jupyterlab:
-        ```shell
-        pkill -f "pachctl mount-server" 
-        ```
-        The server will restart by itself.
+JupyterLab Mount Extension is an [experimental feature](https://docs.pachyderm.com/latest/reference/supported-releases/#experimental){target=_blank}. Many issues can be resolved by restarting the mount server, should you find yourself in an odd situation. To kill/restart your server, run the following command from the terminal window in jupyterlab:
+```shell
+pkill -f "pachctl mount-server" 
+```
+The server will restart by itself.
 ### Connect The Extension To Your Pachyderm Cluster
 
 To connect the extension to your Pachyderm cluster, fill in the full `pachd_address` (i.e., Pachyderm cluster address) in the login form accessible by clicking on the mount extension icon in the far left tab bar. It should look like "grpc://`<external-IP-address-or-domain-name>`:`<port-number>`".
@@ -76,9 +76,9 @@ To make interacting with the mounted data easier, the extension also provides yo
 You should see the repositories ready to be mounted from your Pachyderm instance.
 
 !!! Info 
-    - All mounted repositories are **read-only**. 
-    - Under the hood, the extension requires FUSE. 
-    - We apply the `/` globbing pattern to all directories/files in mounted repo@branch. 
+- All mounted repositories are **read-only**. 
+- Under the hood, the extension requires FUSE. 
+- We apply the `/` globbing pattern to all directories/files in mounted repo@branch. 
 
 Make sure to check our [data science notebook examples](https://github.com/pachyderm/examples){target=_blank} running on Pachyderm, from a market sentiment NLP implementation using a FinBERT model to pipelines training a regression model on the Boston Housing Dataset. You will also find integration examples with open-source products, such as labeling or model serving applications. 
 

@@ -32,6 +32,25 @@
     color: #fff;
 }
 
+/* cp = childpages; used in list.html and featureChildPages */
+.pach-cp {
+    background-color: var(--is-accent-opaque);
+    height: 275px;
+    color: #000;
+    border-radius: 20%;
+}
+
+.pach-cp:hover {
+    color: #000;
+}
+
+/* np = nextprevious; used in featureNextPrev */
+
+.pach-np {
+    background-color: var(--is-accent-opaque);
+    color: #000;
+}
+
 /* Animations */
 
 .fade-in {

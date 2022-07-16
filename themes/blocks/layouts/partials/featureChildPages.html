@@ -1,17 +1,23 @@
 {{ if .Site.Params.childPages}}
     {{if .Pages }}
     <hr>
-    <h2 class="button">Articles in This Series</h2>
-        {{ range sort .Pages "Weight" "$order"}}
-            <div class="p-1">
-                <a href="{{ .Permalink }}" class="container">
-                    <div class="is-flex is-align-items-center">
-                        <h4> {{ .Title}}</h4>
-                        {{if .Pages}} <div class="tag is-light mt-5 ml-2 "> {{ len (.Pages) }} articles</div> {{end}}
-                    </div>
-                    <p class="is-size-7 has-text-dark"> {{.Summary}} </p>
-                </a>
+    <h2 class="tag is-black is-large" >More From This Section</h2>
+        <aside>
+            <div class="columns is-flex-wrap-wrap">
+                {{ range sort .Pages "Weight" "$order"}}
+                <div class="column is-half">
+                    <a class="card is-clipped	" href="{{ .Permalink }}">
+                        <div class="card-content pach-cp ">
+                            <div class="content">
+                                <h4 class="mr-3"> {{ .Title}}</h4>
+                                {{if .Pages}} <div class="tag is-white"> {{ len (.Pages) }} articles</div> {{end}}
+                                <p class="is-size-7 has-text-dark"> {{.Summary}} </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {{ end }}
             </div>
-        {{ end }}
+        </aside>
     {{ end }}
 {{end}}

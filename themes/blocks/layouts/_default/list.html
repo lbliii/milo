@@ -6,27 +6,25 @@
 {{ define "main" }}
 <section class="layout-list hero is-medium is-primary">
     <div class="hero-body">
-    <p class="title">
-        > {{.Title}}
-    </p>
-    <p class="subtitle">
-        <hr>
-        {{.Description}}
-    </p>
+        <h1>{{.Title}}</h1>
+        <div class="tag is-medium">tag</div>
     </div>
 </section>
 <section class="layout-list section is-medium"> 
-    {{/* start child articles. */}}
-    {{if .Pages }}
+    <div class="columns is-flex-wrap-wrap">
         {{ range sort .Pages "Weight" "$order"}}
-            <div class="p-1"> 
-                <a href="{{ .Permalink }}" class="container"> 
-                    <h3>{{if .Pages}}>{{else}}:{{end}} {{ .Title}}</h3>
-                    <p class="is-size-7 has-text-dark"> {{.Summary}} </p>
+            <div class="column is-half">
+                <a class="card is-clipped	" href="{{ .Permalink }}">
+                    <div class="card-content pach-cp ">
+                        <div class="content">
+                            <h4 class="mr-3"> {{ .Title}}</h4>
+                            {{if .Pages}} <div class="tag is-white"> {{ len (.Pages) }} articles</div> {{end}}
+                            <p class="is-size-7 has-text-dark"> {{.Summary}} </p>
+                        </div>
+                    </div>
                 </a>
             </div>
-            {{ end }}
         {{ end }}
-    {{/* end child articles. */}}
+    </div>
   </section>
 {{end}}

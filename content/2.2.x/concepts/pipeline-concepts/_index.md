@@ -7,6 +7,7 @@ categories:
 products:
 date:
 series: [ "pipelines" ]
+seriesPart: 1
 ---
 
 Pachyderm Pipeline System (PPS) is the computational
