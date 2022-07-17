@@ -5,7 +5,7 @@
 
 
 {{ define "main" }}
-    <section class="layout-single hero is-medium is-primary">
+    <section class="layout-single hero is-medium is-primary pach-pattern">
         <div class="hero-body">
             <h1>{{.Title}}</h1>
             <hr>
@@ -26,8 +26,9 @@
         {{ partial "featureBetaNotice.html" . }}
         {{ .Content | replaceRE "(<h[1-6] id=\"(.+)\".*>)(.*)(</h([1-6])>)" `${1}<a class="tag mr-3 is-large" href="#${2}">#</a>${3}${4}` | safeHTML}}
         {{ partial "featureNextPrev.html" . }}
-        {{ partial "featureSeriesButton.html" . }} 
+        
     </section>
+    {{ partial "featureSeriesButton.html" . }}
 {{end}}
 
 

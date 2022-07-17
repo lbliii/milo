@@ -1,42 +1,6 @@
-/* Text */
-
-/* h1, h2, h3, h4, h5, h6 {
-
-    margin-top: 20px;
-
-}
-
-h1 {
-    font-size: var(--header-size);
-}
-
-h2 {
-    font-size: calc(var(--header-size) - 0.3rem);
-
-}
-
-h3 {
-    font-size: calc(var(--header-size) - 0.6rem);
-
-}
-
-h4 {
-    font-size: calc(var(--header-size) - 0.9rem);
-
-}
-
-h5 {
-    font-size: calc(var(--header-size) - 1.2rem);
-}
-
-h6 {
-    font-size: calc(var(--header-size) - 1.4rem);
-} */
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--is-primary-font); 
-    /* color: var(--is-header-color);
-    font-weight: 900; */
 }
 
 
@@ -132,7 +96,6 @@ background-color:var(--is-accent-opaque);
 
 .tip {
   background-color: var(--is-notice-tip);
-  color: white
 }
 .tip::before{
   content: "💡";
@@ -158,7 +121,6 @@ background-color:var(--is-accent-opaque);
 }
 .info {
   background-color: var(--is-notice-info);
-  color: white
 }
 .info::before{
   content: "📖";
@@ -170,7 +132,6 @@ background-color:var(--is-accent-opaque);
 }
 .success {
   background-color: var(--is-notice-success);
-  color: white
 }
 .success::before{
   content: "🎉";
@@ -189,3 +150,6 @@ pre {
 code {
   white-space: normal;
 }
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');

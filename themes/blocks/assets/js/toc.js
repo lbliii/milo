@@ -1,11 +1,10 @@
 function styleTOC(){
-
-    // Get every header in the document
     var zzz = document.getElementById('zzz');
-
     var pageNodes = document.getElementsByTagName('*');
     var headings = [];
     var toc = []
+
+     // Get every header in the document
 
     for (var i = 0; i < pageNodes.length; i++) {
         var node = pageNodes[i];
@@ -13,12 +12,11 @@ function styleTOC(){
             var nodeName = node.nodeName.toLowerCase();
             if (nodeName == 'h2' || nodeName == 'h3') {
                 headings.push(node);
-            
             }
         }
     }
 
-    // Create a TOC from the headings array and add it to the page as a child of the zzz element
+    // Create a TOC from the headings, build links, and apprend to the TOC div found in featureTOC.html 
    
     for (var i = 0; i < headings.length; i++) {
         var heading = headings[i].nodeName
@@ -30,8 +28,8 @@ function styleTOC(){
         link.href = '#' + headings[i].id;
         link.role = headings[i].id;
 
-        if (headingText.length > 50) {
-            link.innerText = '# ' + headingText.substring(0, 30) + '...';
+        if (headingText.length > 25) {
+            link.innerText = '# ' + headingText.substring(0, 25) + '...';
         } else {
              link.innerText = '# ' + headingText;
         }
@@ -58,6 +56,7 @@ function styleTOC(){
                 activeHeader = headings[i];
                 if (activeHeader.id == toc[i].role) {
                     toc[i].classList.add('is-medium');
+                    toc[i].classList.add('has-background-primary');
                     console.log(toc[i].role)
                 } 
             } 
@@ -65,6 +64,7 @@ function styleTOC(){
         for (var i =0; i < toc.length; i++) {
             if (toc[i].classList.contains('is-medium') && toc[i].role != activeHeader.id) {
                 toc[i].classList.remove('is-medium');
+                toc[i].classList.remove('has-background-primary');
             }
         }
     });

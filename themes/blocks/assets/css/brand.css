@@ -1,9 +1,11 @@
 :root {
     --is-primary-font: "Montserrat"; /* Chaning fonts? Also update head.html */
     --is-secondary-font: "Montserrat";
+
     --is-header-color: #000;
     --is-content-color: #000;
-    --header-size: 2rem;
+
+
     --is-primary-color: #f2e9e9;
     --is-primary-hover-color: #b0a8b3;
     --is-cta-color: #582f6b;
@@ -17,8 +19,8 @@
 
     --is-notice-tip: #9060F4;
     --is-notice-warning:#ce6767;
-    --is-notice-info: #fe9b7c;
-    --is-notice-success: #5ba3b1;
+    --is-notice-info: #ede9ee;
+    --is-notice-success: #ecf5f7;
 }
 
 
@@ -53,7 +55,7 @@
 
 /* Animations */
 
-.fade-in {
+.pach-fade-in {
     animation: fadeIn .4s ease-in-out;
 }
 
@@ -62,15 +64,23 @@
     100% { opacity: 1; }
   }
 
-.fixed {
+/* fixed is used for floating directory/toc  */
+
+.pach-fixed {
     position: fixed;
     z-index: 100;
 }
 
-.tag a {
-    color: #000;
-}
+/* pattern is used for the hero image backgrounds on single pages; alt is for list pages */
 
-.tag a::before {
-    content: "# "; 
+.pach-pattern {
+    background-image: url(/images/pachContentBG.svg);
+    background-repeat: no-repeat;
+    background-size: auto;
+    
+}
+.pach-pattern-alt {
+    background-image: url(/images/pachContentBG2.svg);
+    background-repeat: no-repeat;
+    background-size: auto;
 }

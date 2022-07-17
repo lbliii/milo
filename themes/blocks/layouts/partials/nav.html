@@ -4,10 +4,10 @@
  {{ $versionlessLink := strings.TrimPrefix $removeVersion .RelPermalink }}
 {{/* End for versionDropdown feature */}}
 
-<nav class="navbar is-transparent mx-5">
+<nav class="navbar is-transparent mx-6">
     <div id="navbarExampleTransparentExample" class="navbar-menu">
-      <a class="navbar-start" href="/">
-        <img src="{{.Site.Params.logo}}" class="navbar-item" width="170">
+      <a class="navbar-start" href="https://pachyderm.com">
+        <img src="{{.Site.Params.logos.nav}}" class="navbar-item" width="170">
       </a>
   
       <div class="navbar-end">

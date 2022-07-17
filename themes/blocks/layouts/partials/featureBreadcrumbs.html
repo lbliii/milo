@@ -1,0 +1,23 @@
+{{ if .Site.Params.breadcrumbs}}
+
+{{ $bread :=  .RelPermalink}}
+{{ $crumbs := split $bread "/"}}
+{{$link := "" }}
+{{$base := .Site.BaseURL}}
+
+<nav class="breadcrumb" aria-label="breadcrumbs">
+    
+    <ul class="ml-0 p-0">
+        <a class="is-size-4" href="/">🐘</a>
+        {{range $i, $crumb := $crumbs}}
+        {{ $link = print $link "/" $crumb }}
+        {{ $url := print $base $link }} 
+        <li>
+            <a href="{{$url}}">{{.}} </a>
+        </li>
+        {{end}}
+        
+    </ul>
+</nav>
+{{end}}
+
