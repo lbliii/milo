@@ -24,8 +24,9 @@
                 {{ end }}
             {{end}}
         {{end}}
-
-        {{partial "featureTOC" . }}
+        {{if eq .Kind "page"}}                      
+            {{partial "featureTOC" . }}
+        {{end}}
     </div>
 
     </section>         
