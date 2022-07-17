@@ -1,10 +1,12 @@
 {{ if .Site.Params.nextPrev }}
     <div class="columns is-mobile mt-3">
         {{if .PrevInSection}}
-            <a class="column pach-np is-half m-1" href="{{.PrevInSection.Permalink}}">👈 {{.PrevInSection.Title}}</a>
+            <a class="column pach-np is-half m-1 p-4" href="{{.PrevInSection.Permalink}}">👈 {{.PrevInSection.Title | truncate 45}}</a>
+            {{else}}
+            <div class="column is-half"></div>
         {{end}}
         {{if .NextInSection}}
-            <a class="column has-text-right pach-np m-1" href="{{.NextInSection.Permalink}}">{{.NextInSection.Title}} 👉</a>
+            <a class="column has-text-right is-half pach-np m-1 p-4 " href="{{.NextInSection.Permalink}}">{{.NextInSection.Title | truncate 45}} 👉</a>
         {{end}}
     </div>
 {{end}}

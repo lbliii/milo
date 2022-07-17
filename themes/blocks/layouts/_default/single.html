@@ -24,7 +24,7 @@
     {{ partial "taxonomyCategory.html" . }}
     <section class="layout-single section">
         {{ partial "featureBetaNotice.html" . }}
-        {{ .Content }}
+        {{ .Content | replaceRE "(<h[1-6] id=\"(.+)\".*>)(.*)(</h([1-6])>)" `${1}<a class="tag mr-3 is-large" href="#${2}">#</a>${3}${4}` | safeHTML}}
         {{ partial "featureNextPrev.html" . }}
         {{ partial "featureSeriesButton.html" . }} 
     </section>

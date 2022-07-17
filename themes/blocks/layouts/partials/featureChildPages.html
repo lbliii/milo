@@ -11,7 +11,7 @@
                             <div class="content">
                                 <h4 class="mr-3"> {{ .Title}}</h4>
                                 {{if .Pages}} <div class="tag is-white"> {{ len (.Pages) }} articles</div> {{end}}
-                                <p class="is-size-7 has-text-dark"> {{.Summary}} </p>
+                                <p class="is-size-7 has-text-dark"> {{.Summary | truncate 300}} </p>
                             </div>
                         </div>
                     </a>

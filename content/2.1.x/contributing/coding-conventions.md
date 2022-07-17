@@ -8,7 +8,6 @@ products:
 date:
 ---
 
-
 # Coding Conventions
 
 All code in this repo should be written in Go, Shell or Make.  Exceptions are
