@@ -33,11 +33,9 @@ function styleTOC(){
         } else {
              link.innerText = '# ' + headingText;
         }
-        link.classList.add('tag');
-        link.classList.add('mt-3')
+        link.classList.add('tag', 'mt-3');
         if (heading == 'H3') {
-            link.classList.add('is-white');
-            link.classList.add('ml-1')
+            link.classList.add('is-white','ml-1');
         }
 
         li.appendChild(link);
@@ -55,16 +53,14 @@ function styleTOC(){
             if (window.scrollY > headings[i].offsetTop - 100) {
                 activeHeader = headings[i];
                 if (activeHeader.id == toc[i].role) {
-                    toc[i].classList.add('is-medium');
-                    toc[i].classList.add('has-background-primary');
-                    console.log(toc[i].role)
+                    toc[i].classList.add('is-medium', 'has-background-info');
+     
                 } 
             } 
         }
         for (var i =0; i < toc.length; i++) {
             if (toc[i].classList.contains('is-medium') && toc[i].role != activeHeader.id) {
-                toc[i].classList.remove('is-medium');
-                toc[i].classList.remove('has-background-primary');
+                toc[i].classList.remove('is-medium','has-background-info');
             }
         }
     });

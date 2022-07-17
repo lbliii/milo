@@ -1,57 +1,26 @@
 :root {
     --is-primary-font: "Montserrat"; /* Chaning fonts? Also update head.html */
     --is-secondary-font: "Montserrat";
-
-    --is-header-color: #000;
-    --is-content-color: #000;
-
-
-    --is-primary-color: #f2e9e9;
-    --is-primary-hover-color: #b0a8b3;
-    --is-cta-color: #582f6b;
-    --is-accent-color: #5ba3b1;
-    --is-accent-opaque: #ecf5f7;
     --is-background-color: #fff;
+    --is-content-color: #000;
+    --is-content-color-inverted: #fff;
 
-    --is-info-color: #3e8ed0;
-    --is-link-color: #5ba3b1;
+
+    --is-primary-color: #582f6b;
+    --is-primary-hover-color: #ce6767;
+
+    --is-accent-color: #fe9b7c;
+
+
     --is-code-color: #9060F4;
-
-    --is-notice-tip: #9060F4;
-    --is-notice-warning:#ce6767;
+    --is-notice-tip: #c6b7e5;
+    --is-notice-warning:#c49191;
     --is-notice-info: #ede9ee;
     --is-notice-success: #ecf5f7;
 }
 
 
 /* Non-Bulma classes */
-
-.pach-cta {
-    background-color: var(--is-cta-color);
-    color: #fff; 
-}
-.pach-cta:hover {
-    color: #fff;
-}
-
-/* cp = childpages; used in list.html and featureChildPages */
-.pach-cp {
-    background-color: var(--is-accent-opaque);
-    height: 225px;
-    color: #000;
-    border-radius: 20%;
-}
-
-.pach-cp:hover {
-    color: #000;
-}
-
-/* np = nextprevious; used in featureNextPrev */
-
-.pach-np {
-    background-color: var(--is-accent-opaque);
-    color: #000;
-}
 
 /* Animations */
 
@@ -76,11 +45,79 @@
 .pach-pattern {
     background-image: url(/images/pachContentBG.svg);
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: cover;
     
 }
 .pach-pattern-alt {
     background-image: url(/images/pachContentBG2.svg);
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: cover;
+}
+
+.pach-tile {
+    height: 100%;
+}
+
+/* Text Highlight Color */
+
+::selection {
+    background: var(--is-accent-color);
+    color: #fff;
+}
+
+
+/* Notices */
+
+.tip {
+    background-color: var(--is-notice-tip);
+}
+
+.tip::before {
+    content: "💡";
+    font-size: 1.5rem;
+    margin-right: 10px;
+    margin-top: 10px;
+    float: left;
+
+
+}
+
+.warning {
+    background-color: var(--is-notice-warning);
+    color: white
+}
+
+.warning::before {
+    content: "☠️";
+    font-size: 1.5rem;
+    margin-right: 10px;
+    margin-top: 10px;
+    float: left;
+
+}
+
+.info {
+    background-color: var(--is-notice-info);
+}
+
+.info::before {
+    content: "📖";
+    font-size: 1.5rem;
+    margin-right: 10px;
+    margin-top: 10px;
+    float: left;
+
+}
+
+.success {
+    background-color: var(--is-notice-success);
+}
+
+.success::before {
+    content: "🎉";
+    font-size: 1.5rem;
+    margin-right: 10px;
+    margin-top: 10px;
+    float: left;
+
 }

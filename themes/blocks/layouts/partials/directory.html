@@ -4,13 +4,13 @@
             {{/* Displays current page's parent to return. */}}  
             {{with .Parent}}
            
-                    <a href="{{ .RelPermalink }}" class="tag p-1 is-black"> < {{ .Title}}</a>
+                    <a href="{{ .RelPermalink }}" class="tag  is-primary is-medium"> < {{ .Title}}</a>
             {{end}}
             {{/* Displays current page's children. */}}
             {{if .Pages}}
                 {{ range sort .Pages "Weight" "$order"}}
                     <div class="p-1"> 
-                        <a href="{{ .RelPermalink }}" class="tag is-small"> {{if .Pages}}┣ {{else}} ┃ {{end}} {{ .Title | truncate 35 }}</a>
+                        <a href="{{ .RelPermalink }}" class="tag"> {{if .Pages}}┣ {{else}} ┃ {{end}} {{ .Title | truncate 35 }}</a>
                     </div>
                     {{/* Displays current page's grandchildren when navLevel feature is TRUE. */}}
                     {{ if .Site.Params.navLevel }}

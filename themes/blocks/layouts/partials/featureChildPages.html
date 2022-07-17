@@ -6,8 +6,8 @@
             <div class="columns is-flex-wrap-wrap">
                 {{ range sort .Pages "Weight" "$order"}}
                 <div class="column is-half">
-                    <a class="card is-clipped	" href="{{ .Permalink }}">
-                        <div class="card-content pach-cp ">
+                    <a class="card is-clipped" href="{{ .Permalink }}">
+                        <div class="card-content has-background-success pach-tile">
                             <div class="content">
                                 <h4 class="mr-3"> {{ .Title}}</h4>
                                 {{if .Pages}} <div class="tag is-white"> {{ len (.Pages) }} articles</div> {{end}}
