@@ -15,12 +15,16 @@ function addCopyButton() {
                 navigator.clipboard.writeText(code.innerText)
                 // update the button text
                 this.getElementsByClassName('clippy')[0].innerHTML = 'Copied!';
-            })
+                // reset the button text after a few seconds
+                setTimeout(function() {
+                    this.getElementsByClassName('clippy')[0].innerHTML = 'Copy';
+                }.bind(this), 2000);
+            }.bind(element));
         }
-
     }
 }
-  
+
+   
 
 addCopyButton()
 
