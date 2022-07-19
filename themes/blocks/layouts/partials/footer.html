@@ -1,10 +1,12 @@
 
   {{$toc := resources.Get "js/toc.js" | resources.Minify}}
   {{ $clippy := resources.Get "js/clipboard.js" | resources.Minify }}
+  {{ $keyInputNav := resources.Get "js/keyInputNav.js" | resources.Minify }}
 
 <footer class="footer has-background-white">
   <script src="{{ $toc.Permalink }}"></script>
   <script src="{{ $clippy.Permalink }}"></script>
+  <script src="{{ $keyInputNav.Permalink }}"></script>
     <div class="content has-text-centered">
       <a href="https://pachyderm.com">
         <img src="{{ .Site.Params.logos.footer }}" alt="{{ .Site.Params.title }}" />

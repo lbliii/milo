@@ -23,7 +23,7 @@ params:
     display: true #  displays a link to the corresponding github file for a given page; githubUrl must be set.
     githubUrl: https://github.com/lbliii/milo/tree/pachyderm-explorations/content/  # should end with content/
   versionDropdown: true #  displays a top-nav dropdown with top-level sections served as versioned documentation. 
-  navLevel: false  #  displays level-2 directory items in the file tree.
+  navLevel: true  #  displays level-2 directory items in the file tree.
   logos:
     nav:  "/../images/pachLogo.svg"
     footer: "/../images/footerLogo.svg"

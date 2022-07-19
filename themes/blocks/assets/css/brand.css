@@ -58,6 +58,12 @@
     height: 100%;
 }
 
+.pach-directory {
+    position: relative;
+    overflow-y: auto;
+    height: 725px;
+}
+
 /* Text Highlight Color */
 
 ::selection {
