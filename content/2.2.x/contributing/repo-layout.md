@@ -2,9 +2,10 @@
 title: Repo layout
 description:
 author:
-tags:
+tags: ["developer","feedback","testing","repo"]
 series: ["contributors"]
 seriesPart: 3
+weight: 3
 date:
 ---
 

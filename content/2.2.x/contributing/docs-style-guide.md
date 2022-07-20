@@ -1,13 +1,13 @@
 ---
-title: Pachyderm Technical Documentation 
+title: Documentation Style Guide 
 description:
 author:
-tags:
+tags: ["developer","feedback","testing","style guide"]
 series: ["contributors"]
-seriesPart: 2
+seriesPart: 4
+weight: 4
 date:
 ---
-# Documentation Style Guide
 
 Thank you for taking an interest in contributing to Pachyderm's docs! 🐘 📖
 

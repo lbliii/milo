@@ -6,6 +6,9 @@ tags:
 categories:
 products:
 date:
+weight: 5
+series: ["contributors"]
+seriesPart: 5
 ---
 
 

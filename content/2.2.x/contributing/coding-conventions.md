@@ -5,7 +5,8 @@ author:
 tags: ["developer","feedback","testing","style guide"]
 categories:
 series: ["contributors"]
-seriesPart: 1
+seriesPart: 2
+weight: 2
 date: 2022-07-16
 ---
 {{% notice tip %}}
