@@ -1,33 +1,34 @@
-{{ define "main" }}
+{{/* 
+    - All child pages without children are considered single pages. See: https://gohugo.io/content-management/page-bundles/ 
+    - layout-single is an empty class for easier location; do not style against it.
+*/}}
 
-    <section class="hero is-primary">
+
+{{ define "main" }}
+    <section class="layout-single hero is-medium is-primary pach-pattern">
         <div class="hero-body">
-        <p class="title">
-            : {{.Title}}
-        </p>
-        <p class="subtitle">
+            <h1>{{.Title}}</h1>
             <hr>
-            {{.Description}}
-            <div class="is-size-7">{{ .Date | time.Format ":date_long" }}</div>
-        </p>
+            {{ if .Description}}
+                <div class="has-text-black">
+                    {{ .Description}}
+                </div>
+            {{end}}
+            {{ if .Date }}
+                <div class="is-size-7 has-text-black">
+                    {{ .Date | time.Format ":date_long" }}
+                </div>
+            {{ end }}
         </div>
     </section>
-    <div class="column is-pulled-right">
-            {{ if .Params.categories }}
-            {{range .Params.categories }}
-            <a class="button is-small is-light" href="/categories/{{ . | urlize }}"> {{.}} </a>
-            {{end}}
-            {{end}}
-        </div>
-    <section class="section">
-        {{ partial "beta.html" . }}
-        {{ .Content }}
-        {{if .Params.series}} 
-        {{range .Params.series }} <div class="column has-text-centered"><a class="button is-primary" href="/series/{{ . | urlize }}"> Read Series</a> </div>
-        {{end}}
-        {{end}}
-      </section>
-    
+    {{ partial "taxonomyCategory.html" . }}
+    <section class="layout-single section">
+        {{ partial "featureBetaNotice.html" . }}
+        {{ .Content | replaceRE "(<h[1-6] id=\"(.+)\".*>)(.*)(</h([1-6])>)" `${1}<a class="tag mr-3 is-large" href="#${2}">#</a>${3}${4}` | safeHTML}}
+        {{ partial "featureNextPrev.html" . }}
+        
+    </section>
+    {{ partial "featureSeriesButton.html" . }}
 {{end}}
 
 

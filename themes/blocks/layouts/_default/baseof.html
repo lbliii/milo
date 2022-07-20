@@ -1,26 +1,43 @@
+{{/* All pages first use the baseof template to begin building. See: https://gohugo.io/templates/base/ 
+    blocks provide a placeholder for inserting other content/templates that are generated later (e.g., a single.html template)
+    layout-baseof is an empty class for easier location; do not style against it.*/}}
+
 <!DOCTYPE html>
 <html>
     {{ partial "head.html" . }}
-    <body> 
-                {{ partial "header.html" . }}
-        <div class="columns">
-            <div class="column is-one-fifth is-hidden-touch">
-                {{ partial "menu.html" .}}     
-            </div>
-            <div class="column">
+    <body class="layout-baseof"> 
+                {{ partial "nav.html" . }}
+        <main class="columns pach-fade-in mx-6">
+            <nav class="column is-one-fifth is-hidden-touch mx-0">
+                {{ partial "directory.html" .}}     
+            </nav>
+            <article class="column content">
+
+                <section class="is-flex is-align-items-end	">
+                  <div class="column is-four-fifths m-0 p-0">
+                  {{ partial "featureBreadcrumbs.html" . }} 
+                  </div>
+                  <div class="column ml-0 pl-0">
+                    {{ partial "featureEditLink.html" . }}
+                  </div>
+                </section>
+        
               {{ block "main" . }}
               {{end}}
-              <section>
+              {{/* start tag display*/}}
+              {{ if .Params.tags }}
+                <aside class="layout-baseof">
                   <div class="column is-pulled-left"> 
-                    {{ if .Params.tags }}
+                    
                     {{range .Params.tags }}
-                    <a class="button is-small is-dark" href="/tags/{{ . | urlize }}"> {{.}} </a>
+                    <a class="button is-small is-primary" href="/tags/{{ . | urlize }}"> {{.}} </a>
                     {{end}}
-                {{end}}
                   </div>
-            </section>
-            </div>
-        </div>
+                </aside>
+              {{end}}
+              {{/* end tag display */}}
+            </article>
+        </main>
     </body>
     {{ partial "footer.html" . }}
     

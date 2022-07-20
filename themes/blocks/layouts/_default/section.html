@@ -1,29 +1,26 @@
+{{/* All parent pages (_index.md) are considered sections. See: https://gohugo.io/content-management/sections/ 
+    layout-section is an empty class for easier location; do not style against it.*/}}
+
 {{ define "main" }}
-<section class="hero is-medium is-primary">
-    <div class="hero-body">
-    <p class="title">
-        > {{.Title}}
-    </p>
-    <p class="subtitle">
-        <hr>
-        {{.Description}}
-    </p>
-    </div>
-</section>
-<section class="section is-medium">
-    {{ partial "beta.html" . }}
-    {{ .Content }}
-    {{if .Pages }}
-    <hr>
-    <h3 class="button">Articles in This Series</h3>
-        {{ range sort .Pages "Weight" "$order"}}
-            <div class="p-1"> 
-                <a href="{{ .Permalink }}" class="container"> 
-                    <h3>{{if .Pages}}>{{else}}:{{end}} {{ .Title}}</h3>
-                    <p class="is-size-7 has-text-dark"> {{.Summary}} </p>
-                </a>
-            </div>
-            {{ end }}
-        {{ end }}
-  </section>
+    <section class="layout-section hero is-medium is-primary pach-pattern-alt">
+        <div class="hero-body">
+            <h1>{{.Title}}</h1>
+            <hr>
+                {{ if .Description}}
+                    <div class="has-text-black">
+                        {{ .Description}}
+                    </div>
+                {{end}}
+                {{ if .Date }}
+                    <div class="is-size-7 has-text-black">
+                        {{ .Date | time.Format ":date_long" }}
+                    </div>
+                {{ end }}
+        </div>
+    </section>
+    <section class="layout-section section">
+        {{ partial "featureBetaNotice.html" . }}
+        {{ .Content }}
+        {{ partial "featureChildPages.html" . }}
+    </section>
 {{end}}

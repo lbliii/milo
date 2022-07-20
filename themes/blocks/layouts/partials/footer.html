@@ -1,9 +1,15 @@
-<footer class="footer">
+
+  {{$toc := resources.Get "js/toc.js" | resources.Minify}}
+  {{ $clippy := resources.Get "js/clipboard.js" | resources.Minify }}
+  {{ $keyInputNav := resources.Get "js/keyInputNav.js" | resources.Minify }}
+
+<footer class="footer has-background-white">
+  <script src="{{ $toc.Permalink }}"></script>
+  <script src="{{ $clippy.Permalink }}"></script>
+  <script src="{{ $keyInputNav.Permalink }}"></script>
     <div class="content has-text-centered">
-      <p>
-        <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-      </p>
+      <a href="https://pachyderm.com">
+        <img src="{{ .Site.Params.logos.footer }}" alt="{{ .Site.Params.title }}" />
+      </a>
     </div>
   </footer>

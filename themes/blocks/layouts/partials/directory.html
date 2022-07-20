@@ -1,0 +1,35 @@
+{{ $order := "desc" }}
+    <section class="columns pt-0 mt-6"> 
+        <div class="column pach-fixed is-one-fifth is-clipped">
+            {{/* Displays current page's parent to return. */}}  
+            {{with .Parent}}
+           
+                    <a href="{{ .RelPermalink }}" class="tag is-primary is-medium" id="back-arrow-left"> < {{ .Title}}</a>
+            {{end}}
+            {{/* Displays current page's children. */}}
+            <section id="directory" class="pach-directory"> 
+            {{if .Pages}}
+                {{ range sort .Pages "Weight" "$order"}}
+                    <div class="p-1"> 
+                        <a href="{{ .RelPermalink }}" class="tag"> {{if .Pages}}├ {{else}} {{if .PrevInSection }} │ {{else}} └ {{end}}{{end}} {{ .Title | truncate 30 }}</a>
+                    </div>
+                    {{/* Displays current page's grandchildren when navLevel feature is TRUE. */}}
+                    {{ if .Site.Params.navLevel }}
+                        {{if .Pages }}
+                            {{ range sort .Pages "Weight" "$order"}}
+                                <div class="p-1"> 
+                                    <a href="{{ .RelPermalink }}" class="tag is-small is-white ml-3"> {{if .Pages}}
+                                        ├{{else}} {{if .PrevInSection }} │ {{else}} └ {{end}} {{end}} {{ .Title | truncate 30}} </a>
+                                </div>
+                            {{ end }}
+                    {{ end }}
+                {{ end }}
+            {{end}}
+        {{end}}
+        {{if eq .Kind "page"}}                      
+            {{partial "featureTOC" . }}
+        {{end}}
+        </section>
+    </div>
+
+    </section>         
