@@ -1,9 +1,9 @@
 {{ if .Site.Params.seriesButton }}
     {{if and (.Params.series) (.Site.Params.seriesButton) }}
         {{range .Params.series }}
-        <div class="column has-text-centered">
-            <a class="button is-primary" href="/series/{{ . | urlize }}"> Read the {{.}} series</a> 
-        </div>
+ 
+            <a class="button is-primary is-outlined is-small" href="/series/{{ . | urlize }}"> Read the  {{.}}  series</a> 
+
         {{end}}
     {{end}}
 {{end}}

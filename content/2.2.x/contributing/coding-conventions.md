@@ -2,13 +2,15 @@
 title: Coding Conventions
 description: Learn the best practices for getting your pachyderm code contributions accepted into the official repository.
 author:
-tags:
+tags: ["developer","feedback","testing","style guide"]
 categories:
-products:
+series: ["contributors"]
+seriesPart: 1
 date: 2022-07-16
 ---
-
-> Interested in contributing to Pachyderm's code? Learn the conventions here! For setup instructions, see [Setup for Contributors](./setup.md).
+{{% notice tip %}}
+Interested in contributing to Pachyderm's code? Learn the conventions here! For setup instructions, see [Setup for Contributors](./setup.md).
+{{% /notice%}}
 
 ## Languages 
 

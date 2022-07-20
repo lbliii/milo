@@ -3,8 +3,8 @@ title: Repo layout
 description:
 author:
 tags:
-categories:
-products:
+series: ["contributors"]
+seriesPart: 3
 date:
 ---
 
