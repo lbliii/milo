@@ -3,17 +3,17 @@
 {{ $bread :=  .RelPermalink}}
 {{ $crumbs := split $bread "/"}}
 {{$link := "" }}
-{{$base := .Site.BaseURL}}
 
 <nav class="breadcrumb" aria-label="breadcrumbs">
     
     <ul class="ml-0 p-0">
         <a class="is-size-4" href="/">🐘</a>
-        {{range $i, $crumb := $crumbs}}
-        {{ $link = print $link "/" $crumb }}
-        {{ $url := print $base $link }} 
+        {{range after 1 $crumbs}}
+        {{$linkbuild := print $link "/" . }}
+        {{$link = $linkbuild }}
+
         <li>
-            <a href="{{$url}}">{{.}} </a>
+          <a href=" {{ $link }} ">{{ . }}</a>
         </li>
         {{end}}
         

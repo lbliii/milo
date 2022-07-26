@@ -13,19 +13,23 @@
       <div class="navbar-end">
         {{/* Displays versionDropdown feature */}}
         {{ if .Site.Params.versionDropdown }}
+          {{/* Displays current version as dropdown title  */}}
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link" href="">
               Version   {{ .Section }}
             </a>
             <div class="navbar-dropdown is-boxed">
-              {{ range .Site.Sections.ByTitle.Reverse }} {{/* Sort Options: https://gohugo.io/templates/lists/#order-content */}}
-                {{$currentVersionOption := print "/" .Section "/"}}
-                {{$alternativeVersionPath := print $currentVersionOption $versionlessLink }}
-              <!--TODO: IF alternative version does not exist, set link to home page of other version-->
-              <a class="navbar-item" href="{{$alternativeVersionPath}}">
-                {{.Title}} 
-              </a>
-              {{end }}
+              {{ range .Site.Sections.ByTitle.Reverse }} 
+                {{ if not .Params.hidden }}
+                {{/* Sort Options: https://gohugo.io/templates/lists/#order-content */}}
+                  {{$currentVersionOption := print "/" .Section "/"}}
+                  {{$alternativeVersionPath := print $currentVersionOption $versionlessLink }}
+                <!--TODO: IF alternative version does not exist, set link to home page of other version-->
+                <a class="navbar-item" href="{{$alternativeVersionPath}}">
+                  {{.Title}}
+                </a>
+                {{ end }}
+              {{ end }}
               <hr class="navbar-divider">
               {{ range .Site.Taxonomies.series}}
                 <a class="navbar-item" href="{{.Page.RelPermalink}}">

@@ -9,7 +9,7 @@
     --is-primary-color: #582f6b;
     --is-primary-hover-color: #ce6767;
 
-    --is-accent-color: #fe9b7c;
+    --is-accent-color: #582f6b;
 
 
     --is-code-color: #9060F4;
@@ -126,4 +126,12 @@
     margin-top: 10px;
     float: left;
 
+}
+
+nav  a, article a {
+    font-weight: 700;
+}
+
+article aside a {
+    font-weight: 400;
 }

@@ -53,14 +53,14 @@ function styleTOC(){
             if (window.scrollY > headings[i].offsetTop - 100) {
                 activeHeader = headings[i];
                 if (activeHeader.id == toc[i].role) {
-                    toc[i].classList.add('is-medium', 'has-background-info');
+                    toc[i].classList.add('is-large');
      
                 } 
             } 
         }
         for (var i =0; i < toc.length; i++) {
-            if (toc[i].classList.contains('is-medium') && toc[i].role != activeHeader.id) {
-                toc[i].classList.remove('is-medium','has-background-info');
+            if (toc[i].classList.contains('is-large') && toc[i].role != activeHeader.id) {
+                toc[i].classList.remove('is-large');
             }
         }
     });

@@ -8,19 +8,22 @@
             {{end}}
             {{/* Displays current page's children. */}}
             <section id="directory" class="pach-directory"> 
-            {{if .Pages}}
+            {{if .Pages }}
                 {{ range sort .Pages "Weight" "$order"}}
-                    <div class="p-1"> 
-                        <a href="{{ .RelPermalink }}" class="tag"> {{if .Pages}}├ {{else}} {{if .PrevInSection }} │ {{else}} └ {{end}}{{end}} {{ .Title | truncate 30 }}</a>
-                    </div>
-                    {{/* Displays current page's grandchildren when navLevel feature is TRUE. */}}
-                    {{ if .Site.Params.navLevel }}
-                        {{if .Pages }}
-                            {{ range sort .Pages "Weight" "$order"}}
-                                <div class="p-1"> 
-                                    <a href="{{ .RelPermalink }}" class="tag is-small is-white ml-3"> {{if .Pages}}
-                                        ├{{else}} {{if .PrevInSection }} │ {{else}} └ {{end}} {{end}} {{ .Title | truncate 30}} </a>
-                                </div>
+                    {{ if .Params.hidden }}
+                    {{ else }}
+                        <div class="p-1"> 
+                            <a href="{{ .RelPermalink }}" class="tag"> {{if .Pages}}├ {{else}} {{if .PrevInSection }} │ {{else}} └ {{end}}{{end}} {{ .Title | truncate 30 }}</a>
+                        </div>
+                        {{/* Displays current page's grandchildren when navLevel feature is TRUE. */}}
+                        {{ if .Site.Params.navLevel }}
+                            {{if .Pages }}
+                                {{ range sort .Pages "Weight" "$order"}}
+                                    <div class="p-1"> 
+                                        <a href="{{ .RelPermalink }}" class="tag is-small is-white ml-3"> {{if .Pages}}
+                                            ├{{else}} {{if .PrevInSection }} │ {{else}} └ {{end}} {{end}} {{ .Title | truncate 30}} </a>
+                                    </div>
+                                    {{end}}
                             {{ end }}
                     {{ end }}
                 {{ end }}
