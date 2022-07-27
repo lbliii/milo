@@ -4,4 +4,6 @@ title: PachDocs
 
 ## Welcome to Pachyderm's Documentation
 
-![Home](/images/pachIndex.png)
+
+
+{{< figure src="/images/pachdocs-home.png" alt="Home Page" height="400px" >}}

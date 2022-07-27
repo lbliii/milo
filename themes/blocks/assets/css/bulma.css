@@ -288,7 +288,6 @@ html {
   box-sizing: inherit;
 }
 
-img,
 video {
   height: auto;
   max-width: 100%;
@@ -390,11 +389,6 @@ hr {
   display: block;
   height: 2px;
   margin: 1.5rem 0;
-}
-
-img {
-  height: auto;
-  max-width: 100%;
 }
 
 input[type="checkbox"],
@@ -2210,8 +2204,6 @@ div.icon-text {
 
 .image img {
   display: block;
-  height: auto;
-  width: 100%;
 }
 
 .image img.is-rounded {

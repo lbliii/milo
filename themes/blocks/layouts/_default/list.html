@@ -23,17 +23,21 @@
 <section class="layout-list section is-medium pt-0 mt-0"> 
     <div class="columns is-flex-wrap-wrap">
         {{ range sort .Pages "Weight" "$order"}}
-            <div class="column is-half">
-                <a class="card is-clipped	" href="{{ .Permalink }}">
-                    <div class="card-content has-background-success pach-tile ">
-                        <div class="content">
-                            <h4 class="mr-3"> {{ .Title}}</h4>
-                            {{if .Pages}} <div class="tag is-white"> {{ len (.Pages) }} articles</div> {{end}}
-                            <p class="is-size-7 has-text-dark"> {{.Summary | truncate 300 }} </p>
+            {{ if  .Params.hidden }}
+                {{/* Do not show the hidden child page or its descendants */}}
+            {{else}}
+                <div class="column is-half">
+                    <a class="card is-clipped	" href="{{ .Permalink }}">
+                        <div class="card-content has-background-success pach-tile ">
+                            <div class="content">
+                                <h4 class="mr-3"> {{ .Title}}</h4>
+                                {{if .Pages}} <div class="tag is-white"> {{ len (.Pages) }} articles</div> {{end}}
+                                <p class="is-size-7 has-text-dark"> {{.Summary | truncate 300 }} </p>
+                            </div>
                         </div>
-                    </div>
-                </a>
-            </div>
+                    </a>
+                </div>
+            {{end}}
         {{ end }}
     </div>
   </section>
