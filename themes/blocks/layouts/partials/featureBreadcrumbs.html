@@ -1,23 +1,22 @@
 {{ if .Site.Params.breadcrumbs}}
 
-{{ $bread :=  .RelPermalink}}
-{{ $crumbs := split $bread "/"}}
-{{$link := "" }}
 
 <nav class="breadcrumb" aria-label="breadcrumbs">
-    
-    <ul class="ml-0 p-0">
-        <a class="is-size-4" href="/">🐘</a>
-        {{range after 1 $crumbs}}
-        {{$linkbuild := print $link "/" . }}
-        {{$link = $linkbuild }}
-
-        <li>
-          <a href=" {{ $link }} ">{{ . }}</a>
-        </li>
-        {{end}}
-        
-    </ul>
+  <ul class="ml-0 mb-2 is-size-7">
+  {{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
+  </ul>
 </nav>
 {{end}}
 
+
+
+{{ define "breadcrumbnav" }}
+{{ if .p1.Parent }}
+{{ template "breadcrumbnav" (dict "p1" .p1.Parent "p2" .p2 )  }}
+{{ else if not .p1.IsHome }}
+{{ template "breadcrumbnav" (dict "p1" .p1.Site.Home "p2" .p2 )  }}
+{{ end }}
+  <li {{ if eq .p1 .p2 }} class="is-active"{{ end }}>
+    <a href="{{ .p1.Permalink }}">{{ .p1.Title }}</a>
+  </li>
+{{ end }}

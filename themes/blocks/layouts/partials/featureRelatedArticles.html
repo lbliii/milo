@@ -1,3 +1,4 @@
+
 {{ if .Site.Params.relatedArticles }}
 
     <section id="related-articles" class="is-hidden"> 
@@ -5,16 +6,20 @@
         {{/*Show nothing*/}}
         {{else}}
 
-            {{ $related := .Site.RegularPages.Related . | first 5 }}
+            {{ $related := site.RegularPages.RelatedIndices . "tags"   }}
             {{ with $related }}
-                <div class="py-2"> Related Articles</div>
+                <div class="my-2"> Related Articles</div>
                 <ul>
                     {{ range . }}
-                        <li class="tag is-light"><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                        <li class="tag is-light my-1"><a href="{{ .RelPermalink }}" class=" has-text-black">{{ .Title | truncate 30 }}</a></li>
                     {{ end }}
                 </ul>
+                {{else}}
+                <div class="my-2"> No Related Articles</div>
             {{ end }}
          {{end}}
      </section>
 
 {{end}}
+
+

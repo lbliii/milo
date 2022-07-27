@@ -1,12 +1,20 @@
 {{ $order := "desc" }}
     <section class="columns pt-0 mt-6"> 
         <div id="directory_container" class="column pach-fixed is-one-fifth is-clipped">
-            {{/* Displays current page's parent to return. */}}  
-            {{with .Parent}}
-           
+            <div id="controls" class="mb-2"> 
+                {{with .Parent}}
+                    {{/* Displays current page's parent to return. */}}  
                     <a href="{{ .RelPermalink }}" class="button is-primary" id="back-arrow-left"> < {{ .Title | truncate 20}}</a>
-                   <button id="see-related"class="button is-light">📌 </button> 
-            {{end}}
+                {{end}}
+                {{ if eq .BundleType "branch"}}
+                    {{/*Do not show the relatedArticle button (id related-articles) on list pages*/}}
+                {{else}}
+                    {{ with site.RegularPages.RelatedIndices . "tags" }}
+                        {{/* Only show relatedArticle button if related articles exist. See https://gohugo.io/content-management/related/#readout */}}
+                        <button id="see-related"class="button is-light">📌 </button> 
+                    {{end}}
+                {{end}}
+             </div>
             {{/* Displays current page's children. */}}
             <section id="directory" class="pach-directory"> 
                 {{if .Pages }}

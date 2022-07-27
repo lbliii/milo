@@ -4,6 +4,7 @@ function styleTOC(){
     var headings = [];
     var toc = []
 
+
      // Get every header in the document
 
     for (var i = 0; i < pageNodes.length; i++) {
