@@ -18,7 +18,7 @@ function styleTOC(){
     }
 
     // If there are headers, add a "Contents" header for the TOC
-    if (headings){
+    if (headings && headings.length > 0) {
             var contents = document.createElement('div');
             contents.classList.add('py-2');
             contents.innerText = "Contents";

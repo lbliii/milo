@@ -15,12 +15,12 @@
 </section>
 
 {{if .Content}}
-    <section class="layout-single section"> 
+    <section class="layout-single section mb-0 pb-0"> 
         {{.Content}}
     </section>
 {{end}}
 
-<section class="layout-list section is-medium"> 
+<section class="layout-list section is-medium pt-0 mt-0"> 
     <div class="columns is-flex-wrap-wrap">
         {{ range sort .Pages "Weight" "$order"}}
             <div class="column is-half">
