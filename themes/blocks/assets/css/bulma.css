@@ -5374,7 +5374,7 @@ button.dropdown-item.is-active {
 }
 
 .navbar {
-  background-color: var(--is-background-color);
+  background-color: transparent;
   min-height: 3.25rem;
   position: relative;
   z-index: 30;
@@ -6297,11 +6297,11 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
     background-color: transparent !important;
   }
   .navbar.is-transparent .navbar-dropdown a.navbar-item:focus, .navbar.is-transparent .navbar-dropdown a.navbar-item:hover {
-    background-color: whitesmoke;
+    background-color: transparent !important;
     color: var(--is-content-color);
   }
   .navbar.is-transparent .navbar-dropdown a.navbar-item.is-active {
-    background-color: whitesmoke;
+    background-color: transparent !important;
     color: var(--is-link-color);
   }
   .navbar-burger {
@@ -11806,7 +11806,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 }
 
 .footer {
-  background-color: #fafafa;
+  background-color: transparent;
   padding: 3rem 1.5rem 6rem;
 }
 /*# sourceMappingURL=bulma.css.map */

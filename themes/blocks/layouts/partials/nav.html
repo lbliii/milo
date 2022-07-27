@@ -4,8 +4,8 @@
  {{ $versionlessLink := strings.TrimPrefix $removeVersion .RelPermalink }}
 {{/* End for versionDropdown feature */}}
 
-<nav class="navbar is-transparent mx-6">
-    <div id="navbarExampleTransparentExample" class="navbar-menu">
+<nav id="top-nav-container" class="navbar mx-6">
+    <div id="top-nav" class="navbar-menu is-transparent">
       <a class="navbar-start" href="https://pachyderm.com">
         <img src="{{.Site.Params.logos.nav}}" class="navbar-item" width="170">
       </a>
@@ -47,8 +47,9 @@
         </div>
         <div class="navbar-item">
           <div class="buttons">
+            <button class="button" onclick="darkMode()">🌙</button>
             <a class="button is-primary">
-              <strong>Request a Demo</strong>
+              <strong>Demo</strong>
             </a>
             <a class="button is-primary is-outlined">
               <strong>Sandbox</strong>

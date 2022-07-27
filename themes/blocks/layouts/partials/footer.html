@@ -3,14 +3,16 @@
   {{ $clippy := resources.Get "js/clipboard.js" | resources.Minify }}
   {{ $keyInputNav := resources.Get "js/keyInputNav.js" | resources.Minify }}
   {{ $relatedArticles := resources.Get "js/relatedArticles.js" | resources.Minify }}
+   {{ $darkMode := resources.Get "js/darkMode.js" | resources.Minify }}
 
-<footer class="footer has-background-white">
+<footer class="footer">
   {{ if and (.Site.Params.toc) (ne .Params.toc false)}}
       <script src="{{ $toc.Permalink }}"></script>
     {{end}}
     <script src="{{ $clippy.Permalink }}"></script>
     <script src="{{ $keyInputNav.Permalink }}"></script>
     <script src="{{ $relatedArticles.Permalink }}"></script>
+    <script src="{{ $darkMode.Permalink }}"></script>
 
     <section class="columns"> 
     <div class="column is-one-fifth is-hidden-mobile"> </div>

@@ -137,3 +137,52 @@ nav  a, article a {
 article aside a {
     font-weight: 400;
 }
+
+
+
+
+.pach-dark-mode {
+    background-color: #000;
+    color: var(--is-content-color-inverted);
+}
+
+.pach-dark-mode strong {
+    color: var(--is-content-color-inverted);
+}
+
+.pach-dark-mode a {
+    color: var(--is-notice-danger);
+}
+
+.pach-dark-mode h1,
+.pach-dark-mode h2,
+.pach-dark-mode h3,
+.pach-dark-mode h4,
+.pach-dark-mode h5, 
+.pach-dark-mode h6,
+.pach-dark-mode p {
+    color: var(--is-content-color-inverted) !important;
+}
+
+.pach-dark-mode code,
+.pach-dark-mode .card-content {
+    background-color: #454545 !important;
+}
+
+
+.pach-dark-mode .tag {
+    background-color: #454545;
+    color: var(--is-content-color-inverted);
+}
+.pach-dark-mode .tag.is-small.is-white {
+    background-color: #000;
+    color: var(--is-content-color-inverted);
+}
+
+.pach-dark-mode .pach-pattern-alt {
+    background-image: url(/images/pachContentBG2-D.svg) !important;
+}
+.pach-dark-mode .pach-pattern {
+    background-image: url(/images/pachContentBG-D.svg) !important;
+}
+

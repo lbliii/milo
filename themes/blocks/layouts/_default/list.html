@@ -20,7 +20,7 @@
     </section>
 {{end}}
 
-<section class="layout-list section is-medium pt-0 mt-0"> 
+<section class="layout-list section is-medium pt-0 mt-3"> 
     <div class="columns is-flex-wrap-wrap">
         {{ range sort .Pages "Weight" "$order"}}
             {{ if  .Params.hidden }}
