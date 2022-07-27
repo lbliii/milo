@@ -11,3 +11,23 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<meta name="title" content="{{ .Title }}" />
+
+{{ if .Params.description }}
+    <meta name="description" content="{{ .Params.description }}" />
+{{end }}
+{{ if .Params.keywords }}
+    <meta name="keywords" content="{{ .Params.keywords }}" />
+{{ end }}
+{{ if .Params.author }}
+    <meta name="author" content="{{ .Params.author }}" />
+{{ end }}
+
+<meta name=”robots” content=”index, follow”> 
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@pachyderm" />
+<meta name="twitter:title" content="{{ .Title }}" />
+<meta name="twitter:description" content="{{ .Params.description }}" />
+
