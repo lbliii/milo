@@ -16,6 +16,14 @@ function styleTOC(){
         }
     }
 
+    // If there are headers, add a "Contents" header for the TOC
+    if (headings){
+            var contents = document.createElement('div');
+            contents.classList.add('py-2');
+            contents.innerText = "Contents";
+            zzz.appendChild(contents)
+        }
+
     // Create a TOC from the headings, build links, and apprend to the TOC div found in featureTOC.html 
    
     for (var i = 0; i < headings.length; i++) {
@@ -25,15 +33,17 @@ function styleTOC(){
         var li = document.createElement('li');
         var link = document.createElement('a');
 
+        li.classList.add('p-0');
+
         link.href = '#' + headings[i].id;
         link.role = headings[i].id;
 
         if (headingText.length > 25) {
-            link.innerText = '# ' + headingText.substring(0, 25) + '...';
+            link.innerText = ' ' + headingText.substring(0, 25) + '...';
         } else {
-             link.innerText = '# ' + headingText;
+             link.innerText = ' ' + headingText;
         }
-        link.classList.add('tag', 'mt-3');
+        link.classList.add('tag', 'mt-1');
         if (heading == 'H3') {
             link.classList.add('is-white','ml-1');
         }
@@ -53,14 +63,14 @@ function styleTOC(){
             if (window.scrollY > headings[i].offsetTop - 100) {
                 activeHeader = headings[i];
                 if (activeHeader.id == toc[i].role) {
-                    toc[i].classList.add('is-large');
+                    toc[i].classList.add('is-medium');
      
                 } 
             } 
         }
         for (var i =0; i < toc.length; i++) {
-            if (toc[i].classList.contains('is-large') && toc[i].role != activeHeader.id) {
-                toc[i].classList.remove('is-large');
+            if (toc[i].classList.contains('is-medium') && toc[i].role != activeHeader.id) {
+                toc[i].classList.remove('is-medium');
             }
         }
     });

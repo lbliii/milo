@@ -22,13 +22,19 @@
             {{ end }}
         </div>
     </section>
-    {{ partial "taxonomyCategory.html" . }}
     <section class="layout-single section">
         {{ partial "featureBetaNotice.html" . }}
         {{ .Content | replaceRE "(<h[1-6] id=\"(.+)\".*>)(.*)(</h([1-6])>)" `${1}<a class="tag mr-3 is-large" href="#${2}">#</a>${3}${4}` | safeHTML}}
         {{ partial "featureNextPrev.html" . }}
         
     </section>
+    <section>
+        {{ partial "featureRelatedArticles.html" . }}
+    </section>
+
+    {{/* Use for testing css brand styling 
+    {{ partial "tests/buttons.html" . }}
+    */}}
 {{end}}
 
 
