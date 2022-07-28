@@ -3,9 +3,8 @@
   {{ $clippy := resources.Get "js/clipboard.js"  | resources.Minify }}
   {{ $relatedArticles := resources.Get "js/relatedArticles.js"  | resources.Minify }}
   {{ $darkMode := resources.Get "js/darkMode.js" | resources.Minify   }}
-  {{$mobileMargins := resources.Get "js/mobileMargins.js"  | resources.Minify }}
   {{ $notices := resources.Get "js/notices.js"  | resources.Minify  }}
-  {{ $js := slice  $darkMode $mobileMargins $toc $clippy $relatedArticles $notices | resources.Concat "js/bundle.js"}}
+  {{ $js := slice  $darkMode $toc $clippy $relatedArticles $notices | resources.Concat "js/bundle.js"}}
 
 
 

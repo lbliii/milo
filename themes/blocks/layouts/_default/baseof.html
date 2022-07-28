@@ -7,8 +7,9 @@
     {{ partial "head.html" . }}
     <body class="layout-baseof"> 
                 {{ partial "nav.html" . }}
-        <main class="columns pach-fade-in mx-6">
-            <nav class="column is-one-fifth is-hidden-touch mx-0">
+        <main class="columns pach-fade-in">
+            <div class="m-6 is-hidden-mobile"></div>
+            <nav class="column is-one-fifth is-hidden-mobile is-centered">
                 {{ partial "directory.html" .}}     
             </nav>
             <article class="column content">
@@ -40,6 +41,7 @@
               {{end}}
               {{/* end tag display */}}
             </article>
+            <div class="m-6 is-hidden-mobile"></div>
         </main>
     </body>
 {{ partial "footer.html" . }}
