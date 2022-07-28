@@ -26,12 +26,16 @@
         {{ partial "featureBetaNotice.html" . }}
         {{ .Content }}
         {{ partial "featureNextPrev.html" . }}
+
+
         
     </section>
     <section>
         {{ partial "featureRelatedArticles.html" . }}
     </section>
-
+    <section>
+         {{ partial "featureGiscus.html" . }}
+    </section>
     {{/* Use for testing css brand styling 
     {{ partial "tests/buttons.html" . }}
     */}}

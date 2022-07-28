@@ -31,6 +31,7 @@ params:
   nextPrev: true #  displays the next and previous article available on single page.
   toc: true #  displays a table of contents in a page; can be overridden by individual page settings. (WIP)
   relatedArticles: true # displays related content on page.
+  giscus: true # displays giscus commenting on single pages. 
   releaseInfo:
     latest: 3.0.0 
 
