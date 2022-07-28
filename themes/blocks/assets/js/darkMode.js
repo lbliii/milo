@@ -1,5 +1,5 @@
 function darkMode() {
-
+   var html = document.querySelector('html');
    var element = document.body;
    var nav = document.getElementById("top-nav-container");
    var footer = document.getElementById("footer");
@@ -8,6 +8,7 @@ function darkMode() {
    var button = document.getElementById("dark-mode-button");
 
    // Toggle Darkmode for the body element 
+   html.classList.toggle("pach-dark-mode");
    element.classList.toggle("pach-dark-mode");
 
    // Toggle Darkmode for NextPrev Feature

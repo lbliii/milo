@@ -8,13 +8,13 @@
 
 
 <footer class="footer">
+  <script src="{{ $mobileMargins.Permalink }}"></script>
+  <script src="{{ $darkMode.Permalink }}" ></script>
   {{ if and (.Site.Params.toc) (ne .Params.toc false)}}
       <script src="{{ $toc.Permalink }}" defer></script>
     {{end}}
     <script src="{{ $clippy.Permalink }}" defer></script>
     <script src="{{ $relatedArticles.Permalink }}" defer></script>
-    <script src="{{ $darkMode.Permalink }}" defer></script>
-    <script src="{{ $mobileMargins.Permalink }}" defer></script>
 
     <section class="columns"> 
     <div class="column is-one-fifth is-hidden-mobile"> </div>
