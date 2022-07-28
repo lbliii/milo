@@ -1,10 +1,10 @@
 
-  {{$toc := resources.Get "js/toc.js"   }}
-  {{ $clippy := resources.Get "js/clipboard.js"  }}
-  {{ $relatedArticles := resources.Get "js/relatedArticles.js"   }}
-  {{ $darkMode := resources.Get "js/darkMode.js"   }}
-  {{$mobileMargins := resources.Get "js/mobileMargins.js"   }}
-  {{ $notices := resources.Get "js/notices.js"  }}
+  {{$toc := resources.Get "js/toc.js"  | resources.Minify  }}
+  {{ $clippy := resources.Get "js/clipboard.js"  | resources.Minify }}
+  {{ $relatedArticles := resources.Get "js/relatedArticles.js"  | resources.Minify }}
+  {{ $darkMode := resources.Get "js/darkMode.js" | resources.Minify   }}
+  {{$mobileMargins := resources.Get "js/mobileMargins.js"  | resources.Minify }}
+  {{ $notices := resources.Get "js/notices.js"  | resources.Minify  }}
   {{ $js := slice  $darkMode $mobileMargins $toc $clippy $relatedArticles $notices | resources.Concat "js/bundle.js"}}
 
 
