@@ -1,6 +1,6 @@
 {{ $bulma := resources.Get "css/bulma.css" | resources.Minify }}
 {{ $brand := resources.Get "css/brand.css" | resources.Minify }}
-{{ $css := slice  $brand $bulma | resources.Concat "css/bundle.css"}}
+{{ $css := slice $bulma $brand | resources.Concat "css/bundle.css"}}
 
 <link rel="stylesheet" href="{{ $css.Permalink }}" media="screen" />
 
