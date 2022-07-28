@@ -1,27 +1,24 @@
 
-  {{$toc := resources.Get "js/toc.js" | resources.Minify}}
-  {{ $clippy := resources.Get "js/clipboard.js" | resources.Minify }}
-  {{ $relatedArticles := resources.Get "js/relatedArticles.js" | resources.Minify }}
-  {{ $darkMode := resources.Get "js/darkMode.js" | resources.Minify }}
-  {{$mobileMargins := resources.Get "js/mobileMargins.js" | resources.Minify}}
+  {{$toc := resources.Get "js/toc.js" }}
+  {{ $clippy := resources.Get "js/clipboard.js"}}
+  {{ $relatedArticles := resources.Get "js/relatedArticles.js" }}
+  {{ $darkMode := resources.Get "js/darkMode.js"  }}
+  {{$mobileMargins := resources.Get "js/mobileMargins.js"}}
+  {{ $notices := resources.Get "js/notices.js" }}
+  {{ $js := slice  $darkMode $mobileMargins $toc $clippy $relatedArticles $notices | resources.Concat "js/bundle.js" | resources.Minify }}
+
 
 
 
 <footer class="footer">
-  <script src="{{ $mobileMargins.Permalink }}"></script>
-  <script src="{{ $darkMode.Permalink }}" ></script>
-  {{ if and (.Site.Params.toc) (ne .Params.toc false)}}
-      <script src="{{ $toc.Permalink }}" defer></script>
-    {{end}}
-    <script src="{{ $clippy.Permalink }}" defer></script>
-    <script src="{{ $relatedArticles.Permalink }}" defer></script>
+    <script src="{{ $js.Permalink }}" ></script>
 
     <section class="columns"> 
     <div class="column is-one-fifth is-hidden-mobile"> </div>
     <div class="column"> 
         <div class="content has-text-centered">
           <a href="https://pachyderm.com">
-            <img src="{{ .Site.Params.logos.footer }}" alt="{{ .Site.Params.title }}" />
+            <img src="{{ .Site.Params.logos.footer }}" alt="{{ .Site.Params.title }}" width="100px" />
           </a>
         </div>
     </div>

@@ -1,11 +1,9 @@
 {{ $bulma := resources.Get "css/bulma.css" | resources.Minify }}
 {{ $brand := resources.Get "css/brand.css" | resources.Minify }}
-{{ $notices := resources.Get "js/notices.js" | resources.Minify }}
 
 
 <link rel="stylesheet" href="{{ $bulma.Permalink }}" media="screen" />
 <link rel="stylesheet" href="{{ $brand.Permalink }}" media="screen" />
-<script src="{{ $notices.Permalink }}"></script>
 
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
