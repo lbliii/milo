@@ -4,15 +4,9 @@
     --is-background-color: #fff;
     --is-content-color: #000;
     --is-content-color-inverted: #fff;
-
-
     --is-primary-color: #582f6b;
-
     --is-link-color: #ce6767;
-
     --is-accent-color: #5ba3b1;
-
-
     --is-code-color: #ce6767;
     --is-notice-tip: #c6b7e5;
     --is-notice-warning:#c49191;
@@ -35,14 +29,14 @@
     100% { opacity: 1; }
   }
 
-/* fixed is used for floating directory/toc  */
+/* pach-fixed is used for floating directory/toc  */
 
 .pach-fixed {
     position: fixed;
     z-index: 100;
 }
 
-/* pattern is used for the hero image backgrounds on single pages; alt is for list pages */
+/* pach-pattern is used for the hero image backgrounds on single pages; alt is for list pages */
 
 .pach-pattern {
     background-image: url(/images/pachContentBG.svg);
@@ -56,9 +50,12 @@
     background-size: cover;
 }
 
+/* pach-tile is used for standardizing the size of child article tiles in list pages */
+
 .pach-tile {
     height: 100%;
 }
+/* pach-directory is used to make the left navigation/folder-tree follow the reader */
 
 .pach-directory {
     position: relative;
@@ -74,7 +71,7 @@
 }
 
 
-/* Notices */
+/* The following are notice types used in documentation for tip, info, success, warning, danger content.  */
 
 .tip {
     background-color: var(--is-notice-tip);
@@ -129,16 +126,6 @@
     float: left;
 
 }
-
-nav  a, article a {
-    font-weight: 700;
-}
-
-article aside a {
-    font-weight: 400;
-}
-
-
 
 
 .pach-dark-mode {
@@ -198,6 +185,18 @@ article aside a {
 
 
 
+/* Link weights */
+
+nav  a, article a {
+    font-weight: 700;
+}
+
+article aside a {
+    font-weight: 400;
+}
+
+/* H1-H3 Anchors show on hover; see /layouts/_default/_markup.html to customize.  */
+
 .anchor {
     display: none;
 }
@@ -205,3 +204,13 @@ article aside a {
 h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, h5:hover .anchor, h6:hover .anchor {
     display: inline-block;
 }
+
+/* Google Variable Fonts */
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('/fonts//Montserrat-VariableFont_wght.ttf') format('truetype'),
+        url('/fonts//Montserra-Italic-VariableFont_wght.ttf') format('truetype');
+	font-weight: 100 1000;
+	font-stretch: 25% 151%;
+} 
