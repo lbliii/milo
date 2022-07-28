@@ -3,6 +3,7 @@
   {{ $clippy := resources.Get "js/clipboard.js" | resources.Minify }}
   {{ $relatedArticles := resources.Get "js/relatedArticles.js" | resources.Minify }}
   {{ $darkMode := resources.Get "js/darkMode.js" | resources.Minify }}
+  {{$mobileMargins := resources.Get "js/mobileMargins.js" | resources.Minify}}
 
 
 
@@ -12,7 +13,8 @@
     {{end}}
     <script src="{{ $clippy.Permalink }}" defer></script>
     <script src="{{ $relatedArticles.Permalink }}" defer></script>
-    <script src="{{ $darkMode.Permalink }}" defer></script>}
+    <script src="{{ $darkMode.Permalink }}" defer></script>
+    <script src="{{ $mobileMargins.Permalink }}" defer></script>
 
     <section class="columns"> 
     <div class="column is-one-fifth is-hidden-mobile"> </div>
