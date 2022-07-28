@@ -29,7 +29,7 @@ function styleTOC(){
    
     for (var i = 0; i < headings.length; i++) {
         var heading = headings[i].nodeName
-        var headingText = headings[i].innerText.substring(1);
+        var headingText = headings[i].innerText;
 
         var li = document.createElement('li');
         var link = document.createElement('a');
@@ -40,13 +40,13 @@ function styleTOC(){
         link.role = headings[i].id;
 
         if (headingText.length > 25) {
-            link.innerText = ' ' + headingText.substring(0, 25) + '...';
+            link.innerText =  headingText.substring(0, 25) + '...';
         } else {
-             link.innerText = ' ' + headingText;
+             link.innerText = headingText;
         }
         link.classList.add('tag', 'mt-1');
         if (heading == 'H3') {
-            link.classList.add('is-white','ml-1');
+            link.classList.add('pach-is-transparent','ml-1');
         }
 
         li.appendChild(link);

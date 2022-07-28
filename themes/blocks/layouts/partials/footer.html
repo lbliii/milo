@@ -1,18 +1,18 @@
 
   {{$toc := resources.Get "js/toc.js" | resources.Minify}}
   {{ $clippy := resources.Get "js/clipboard.js" | resources.Minify }}
-  {{ $keyInputNav := resources.Get "js/keyInputNav.js" | resources.Minify }}
   {{ $relatedArticles := resources.Get "js/relatedArticles.js" | resources.Minify }}
-   {{ $darkMode := resources.Get "js/darkMode.js" | resources.Minify }}
+  {{ $darkMode := resources.Get "js/darkMode.js" | resources.Minify }}
+
+
 
 <footer class="footer">
   {{ if and (.Site.Params.toc) (ne .Params.toc false)}}
       <script src="{{ $toc.Permalink }}" defer></script>
     {{end}}
     <script src="{{ $clippy.Permalink }}" defer></script>
-    <script src="{{ $keyInputNav.Permalink }}" defer></script>
     <script src="{{ $relatedArticles.Permalink }}" defer></script>
-    <script src="{{ $darkMode.Permalink }}" defer></script>
+    <script src="{{ $darkMode.Permalink }}" defer></script>}
 
     <section class="columns"> 
     <div class="column is-one-fifth is-hidden-mobile"> </div>

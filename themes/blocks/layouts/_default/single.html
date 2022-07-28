@@ -11,7 +11,7 @@
             <h1>{{.Title}}</h1>
             <hr>
             {{ if .Description}}
-                <div class="has-text-black">
+                <div id="hero-description" class="has-text-black">
                     {{ .Description}}
                 </div>
             {{end}}
@@ -24,7 +24,7 @@
     </section>
     <section class="layout-single section">
         {{ partial "featureBetaNotice.html" . }}
-        {{ .Content | replaceRE "(<h[1-6] id=\"(.+)\".*>)(.*)(</h([1-6])>)" `${1}<a class="tag mr-3 is-large" href="#${2}">#</a>${3}${4}` | safeHTML}}
+        {{ .Content }}
         {{ partial "featureNextPrev.html" . }}
         
     </section>

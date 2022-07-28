@@ -164,9 +164,12 @@ article aside a {
     color: var(--is-content-color-inverted) !important;
 }
 
-.pach-dark-mode code,
+.pach-dark-mode pre,
 .pach-dark-mode .card-content {
     background-color: #454545 !important;
+}
+.pach-dark-mode code { 
+    background-color: transparent;
 }
 
 
@@ -185,4 +188,20 @@ article aside a {
 .pach-dark-mode .pach-pattern {
     background-image: url(/images/pachContentBG-D.svg) !important;
 }
+.pach-dark-mode .logo {
+    background-image: url(/images/pachLogoWhite.svg);
+}
 
+.pach-is-transparent {
+    background-color: transparent !important;
+}
+
+
+
+.anchor {
+    display: none;
+}
+
+h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, h5:hover .anchor, h6:hover .anchor {
+    display: inline-block;
+}
