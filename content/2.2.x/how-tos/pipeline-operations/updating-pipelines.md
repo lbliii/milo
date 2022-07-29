@@ -1,11 +1,14 @@
 ---
 title: Update a Pipeline
-description:
-author:
-tags:
-categories:
-products:
-date:
+description: null
+author: null
+tags: null
+categories: null
+products: null
+date: null
+keywords:
+  - testkeyword, another one
+lastmod: 2022-07-28T22:04:18.966Z
 ---
 
 While working with your data, you often need to modify an existing
