@@ -1,12 +1,15 @@
 ---
 title: Coding Conventions
-description:
-author:
-tags:
-categories:
-products:
-date:
+description: null
+author: null
+tags: null
+categories: null
+products: null
+date: null
+published: true
 ---
+
+This is an example change. 
 
 # Coding Conventions
 
