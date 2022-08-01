@@ -1,12 +1,12 @@
 ---
-title: 2.1.x
+title: Latest
 description:
 author:
 tags:
 categories:
-series:
+products:
 date:
-weight: 2
+weight: 0
 ---
 
 Welcome to the Pachyderm documentation portal!

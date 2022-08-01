@@ -15,7 +15,7 @@
         {{/* Displays versionDropdown feature */}}
         {{ if .Site.Params.versionDropdown }}
           {{/* Displays current version as dropdown title  */}}
-          <div class="navbar-item has-dropdown is-hoverable">
+          <div class="navbar-item has-dropdown is-hoverable is-size-7">
             <a class="navbar-link" href="">
               v. {{ .Section }}
             </a>
@@ -26,14 +26,14 @@
                   {{$currentVersionOption := print "/" .Section "/"}}
                   {{$alternativeVersionPath := print $currentVersionOption $versionlessLink }}
                 <!--TODO: IF alternative version does not exist, set link to home page of other version-->
-                <a class="navbar-item" href="{{$alternativeVersionPath}}">
+                <a class="navbar-item is-size-7" href="{{$alternativeVersionPath}}">
                   {{.Title}}
                 </a>
                 {{ end }}
               {{ end }}
               <hr class="navbar-divider">
               {{ range .Site.Taxonomies.series}}
-                <a class="navbar-item" href="{{.Page.RelPermalink}}">
+                <a class="navbar-item is-size-7" href="{{.Page.RelPermalink}}">
                   {{.Page.Title}}
                 </a>
               {{end}}
@@ -43,16 +43,16 @@
         {{end}}
         {{/* End versionDropdown feature */}}
         <div class="navbar-item">
-          <input class="input" type="text" placeholder="Search docs">
+          <input class="input " type="text" placeholder="Search docs">
 
         </div>
         <div class="navbar-item">
           <div class="buttons">
-            <button id="dark-mode-button" class="button is-black" onclick="darkMode()">🌙</button>
+            <button id="dark-mode-button" class="button is-black " onclick="darkMode()">🌙</button>
             <a class="button is-primary">
-              <strong>Demo</strong>
+              <strong >Demo</strong>
             </a>
-            <a class="button is-primary is-outlined">
+            <a class="button is-primary is-outlined ">
               <strong>Sandbox</strong>
             </a>
           </div>

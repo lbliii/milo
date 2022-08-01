@@ -29,10 +29,14 @@
                             {{ if .Site.Params.navLevel }}
                                 {{if .Pages }}
                                     {{ range sort .Pages "Weight" "$order"}}
-                                        <div class="p-0"> 
-                                            <a href="{{ .RelPermalink }}" class="tag is-small is-white ml-3"> {{if .Pages}}
-                                            ├{{else}} {{if .PrevInSection }} │ {{else}} └ {{end}} {{end}} {{ .Title | truncate 30}} </a>
-                                        </div>
+                                        {{ if .Params.glossary }}
+                                            {{/* don't show glossary entries */}}
+                                        {{ else }}
+                                            <div class="p-0"> 
+                                                <a href="{{ .RelPermalink }}" class="tag is-small is-white ml-3"> {{if .Pages}}
+                                                ├{{else}} {{if .PrevInSection }} │ {{else}} └ {{end}} {{end}} {{ .Title | truncate 30}} </a>
+                                            </div>
+                                        {{end}}
                                     {{end}}
                                 {{ end }}
                             {{ end }}
