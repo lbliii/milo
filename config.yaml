@@ -9,14 +9,15 @@ theme: blocks
 staticDir: "/themes/blocks/static"
 
 outputs: 
-  home: [ "HTML", "RSS", "JSON"]
-  page: [ "HTML", "RSS", "JSON"]
+  home: [ "HTML", "JSON"]
+  page: [ "HTML", "JSON"]
   section: [ "HTML", "JSON"]
   list: [ "HTML", "JSON"]
   taxonomies: [ "HTML", "JSON"]
 
 params:
   # Feature Switches #
+  defaultCss: false # displays default bulma css only without branding.
   breadcrumbs: true # displays a trail of breadcrumbs
   childPages: true # displays child pages of a section.
   editLink: 

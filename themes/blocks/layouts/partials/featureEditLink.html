@@ -1,5 +1,7 @@
 {{ if .Site.Params.editLink.display }} 
     {{$url := ""}}
     {{with .File}} {{$url = .File.Path}} {{end}}
-    <a class="tag is-pulled-right is-size-7 mb-2" href="{{ print .Site.Params.editLink.githubUrl $url }} "> Edit this page</a>
+    <div id="edit-github-container" class="column m-0 p-0 is-hidden-mobile">
+        <a class="tag is-pulled-right is-size-7 mb-2" href="{{ print .Site.Params.editLink.githubUrl $url }} "> Edit this page</a>
+    </div>
 {{end}}

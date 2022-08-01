@@ -8,40 +8,22 @@
     <body class="layout-baseof"> 
                 {{ partial "nav.html" . }}
         <main class="columns pach-fade-in">
-            <div class="m-6 is-hidden-mobile"></div>
-            <nav class="column is-one-fifth is-hidden-mobile is-centered">
+            <div id="guard-left" class="m-6 is-hidden-mobile"></div>
                 {{ partial "directory.html" .}}     
-            </nav>
             <article class="column content">
-
                 <section class="is-flex is-align-items-end	">
-                  <div id="breadcrumbs-container"class="column is-four-fifths m-0 p-0">
                   {{ partial "featureBreadcrumbs.html" . }} 
-                  </div>
-                  <div id="edit-github-container" class="column m-0 p-0 is-hidden-mobile">
-                    {{ partial "featureEditLink.html" . }}
-                  </div>
+                  {{ partial "featureEditLink.html" . }}
                 </section>
               {{ if .Params.hidden }}
-              This content is not ready for public viewing.
+                This content is not ready for public viewing.
               {{ else }}
                 {{ block "main" . }}
                 {{end}}
               {{end}}
-              {{/* start tag display*/}}
-              {{ if .Params.tags }}
-                <aside class="layout-baseof">
-                  <div class="column is-pulled-left"> 
-                    
-                    {{range .Params.tags }}
-                    <a class="button is-small is-primary" href="/tags/{{ . | urlize }}"> {{.}} </a>
-                    {{end}}
-                  </div>
-                </aside>
-              {{end}}
-              {{/* end tag display */}}
+              {{ partial "featureTags.html" . }}
             </article>
-            <div class="m-6 is-hidden-mobile"></div>
+            <div id="guard-right" class="m-6 is-hidden-mobile"></div>
         </main>
     </body>
 {{ partial "footer.html" . }}

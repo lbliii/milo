@@ -1,12 +1,12 @@
 {{ if .Site.Params.nextPrev }}
     <section id="next-previous" class="columns is-mobile pt-6">
         {{with .NextInSection }}
-            <a id="previous"class="column is-half has-background-success has-text-black  m-1 py-5" href="{{.Permalink}}">👈 {{.Title | truncate 45}}</a>
+            <a id="previous"class="column is-half has-background-info has-text-black  m-1 py-5" href="{{.Permalink}}">👈 {{.Title | truncate 45}}</a>
             {{else}}
             <div class="column is-half"></div>
         {{end}}
         {{with .PrevInSection}}
-            <a id="next" class="column is-half has-background-success has-text-black has-text-right m-1 py-5 page-next" href="{{.Permalink}}">{{.Title | truncate 45}} 👉</a>
+            <a id="next" class="column is-half has-background-info has-text-black has-text-right m-1 py-5 page-next" href="{{.Permalink}}">{{.Title | truncate 45}} 👉</a>
         {{end}}
     </section>
 {{end}}

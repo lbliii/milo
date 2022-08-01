@@ -2,8 +2,14 @@
 {{ $brand := resources.Get "css/brand.css" | resources.Minify }}
 {{ $css := slice $bulma $brand | resources.Concat "css/bundle.css"}}
 
-<link rel="stylesheet" href="{{ $css.Permalink }}" media="screen" />
 
+{{if .Site.Params.defaultCss}} 
+    {{$defaultBulma := resources.Get "css/defaultBulma.css" | resources.Minify}}
+    {{ $defaultCss := slice $defaultBulma | resources.Concat "css/defaultBundle.css"}}
+    <link rel="stylesheet" href="{{ $defaultCss.Permalink }}" media="screen" />
+{{else}}
+    <link rel="stylesheet" href="{{ $css.Permalink }}" media="screen" />
+{{end}}
 
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 <meta name="title" content="{{ .Title }}" />

@@ -1,10 +1,11 @@
 {{ if .Site.Params.breadcrumbs}}
 
-
-<nav class="breadcrumb" aria-label="breadcrumbs">
-  <ul class="ml-0 mb-2 is-size-7">
-  {{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
-  </ul>
+<nav id="breadcrumbs-container"class="column is-four-fifths m-0 p-0">
+  <div class="breadcrumb" aria-label="breadcrumbs">
+    <ul class="ml-0 mb-2 is-size-7">
+    {{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
+    </ul>
+  </div>
 </nav>
 {{end}}
 

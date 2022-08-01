@@ -1,6 +1,7 @@
 {{ $order := "desc" }}
+<nav class="column is-one-fifth is-hidden-mobile is-centered">
     <section class="columns pt-0 mt-6"> 
-        <div id="directory_container" class="column pach-fixed is-one-fifth is-clipped">
+        <div id="directory_container" class="column pach-fixed is-clipped">
             <div id="controls" class="mb-2"> 
                 {{with .Parent}}
                     {{/* Displays current page's parent to return. */}}  
@@ -45,3 +46,4 @@
             </section>
         </div>
     </section>         
+</nav>

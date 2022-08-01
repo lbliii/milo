@@ -1,0 +1,9 @@
+{{ if .Params.tags }}
+    <aside class="layout-baseof">
+        <div class="column is-pulled-left"> 
+        {{range .Params.tags }}
+            <a class="button is-small is-primary" href="/tags/{{ . | urlize }}"> {{.}} </a>
+        {{end}}
+        </div>
+    </aside>
+{{end}}
