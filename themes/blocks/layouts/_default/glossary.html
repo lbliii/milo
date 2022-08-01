@@ -26,12 +26,14 @@
             {{ if  .Params.hidden }}
                 {{/* Do not show the hidden child page or its descendants */}}
             {{else}}
-                <div class="column">
-                    <a class="" href="{{ .Permalink }}">
-                        <article class="card has-background-info p-4">
-                            <h4 class="mr-3"> {{ .Title}}</h4>
-                            <p class="card-content is-size-7"> {{.Summary}}</p>
-                        </article>
+                <div class="column card m-3">
+                    <a class="columns" href="{{ .Permalink }}">
+
+                    <h4 class="column is-one-fifth has-background-info has-text-centered m-0 pt-5"> {{ .Title}}</h4>
+                  
+                        <div class="column">
+                             <p class="has-text-weight-normal has-text-black is-size-7"> {{.Summary}}</p>
+                        </div>
                     </a>
                 </div>
             {{end}}

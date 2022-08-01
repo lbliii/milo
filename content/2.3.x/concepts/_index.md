@@ -7,5 +7,5 @@ categories:
 series:
 date:
 weight: 4
-layout: concepts
+layout: glossary
 ---
