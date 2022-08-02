@@ -8,7 +8,7 @@
             <div id="controls" class="mb-2"> 
                 {{with .Parent}}
                     {{/* Displays current page's parent to return. */}}  
-                    <a href="{{ .RelPermalink }}" class="button is-primary" id="back-arrow-left"> < {{ .Title | truncate 20}}</a>
+                    <a id="back-arrow-left" href="{{ .RelPermalink }}" class="button is-primary is-outlined"> < {{ .Title | truncate 20}}</a>
                 {{end}}
                 {{ if eq .BundleType "branch"}}
                     {{/*Do not show the relatedArticle button (id related-articles) on list pages*/}}
@@ -25,8 +25,8 @@
                     {{ range sort .Pages "Weight" "$order"}}
                         {{ if .Params.hidden }}
                         {{ else }}
-                            <div class="p-1"> 
-                                <a href="{{ .RelPermalink }}" class="tag"> {{if .Pages}}├ {{else}} {{if .PrevInSection }} │ {{else}} └ {{end}}{{end}}{{if .Title}}{{.Title | truncate 30}}{{else}}{{ path.BaseName . | humanize | truncate 30}}{{end}}</a>
+                            <div class="directory-lvl-1 p-1"> 
+                                <a href="{{ .RelPermalink }}" class="button is-small"> {{if .Pages}}├ {{else}} {{if .PrevInSection }} │ {{else}} └ {{end}}{{end}}{{if .Title}}{{.Title | truncate 30}}{{else}}{{ path.BaseName . | humanize | truncate 30}}{{end}}</a>
                             </div>
                             {{/* Displays current page's grandchildren when navLevel feature is TRUE. */}}
                             {{ if .Site.Params.navLevel }}
@@ -35,8 +35,8 @@
                                         {{ if .Params.glossary }}
                                             {{/* don't show glossary entries */}}
                                         {{ else }}
-                                            <div class="p-0"> 
-                                                <a href="{{ .RelPermalink }}" class="tag is-small is-white ml-3"> {{if .Pages}}
+                                            <div class=" directory-lvl-2 p-0"> 
+                                                <a href="{{ .RelPermalink }}" class="button is-small is-white ml-3"> {{if .Pages}}
                                                 ├{{else}} {{if .PrevInSection }} │ {{else}} └ {{end}} {{end}} {{if .Title}}{{.Title | truncate 30}}{{else}}{{ path.BaseName . | humanize | truncate 30}}{{end}} </a>
                                             </div>
                                         {{end}}

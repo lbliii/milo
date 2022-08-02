@@ -1,25 +1,27 @@
 function darkMode() {
-   var html = document.querySelector('html');
+
    var element = document.body;
-   var nav = document.getElementById("top-nav-container");
-   var footer = document.getElementById("footer");
-   var next = document.getElementById("next");
-   var prev = document.getElementById("previous");
+   var directory = document.getElementById('directory');
    var button = document.getElementById("dark-mode-button");
+   var backButton = document.getElementById("back-arrow-left");
+
+
+   // Toggle Darkmode for the directory 
+   if (directory){ 
+    for (var i = 0; i < directory.children.length; i++) {
+        for (var j = 0; j < directory.children[i].children.length; j++) {
+            directory.children[i].children[j].classList.toggle("is-black");
+        }
+    }
+   }
+
 
    // Toggle Darkmode for the body element 
-   html.classList.toggle("pach-dark-mode");
-   element.classList.toggle("pach-dark-mode");
 
-   // Toggle Darkmode for NextPrev Feature
-   if (prev != null) {
-    prev.classList.toggle("has-background-success");
-    prev.classList.toggle("has-text-black");
-   }
-   if (next != null) {
-    next.classList.toggle("has-background-success");
-    next.classList.toggle("has-text-black");
-   }
+   element.classList.toggle("pach-dark-mode");
+   backButton.classList.toggle("is-primary");
+   backButton.classList.toggle("is-white");
+
 
    // Toggle Darkmode for Darkmode Button
    if (button.classList.contains("is-black")) {

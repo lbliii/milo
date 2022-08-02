@@ -9,9 +9,9 @@
             {{ $related := site.RegularPages.RelatedIndices . "tags"   }}
             {{ with $related }}
                 <div class="my-2"> Related Articles</div>
-                <ul>
+                <ul class="buttons">
                     {{ range . }}
-                        <li class="tag is-light my-1"><a href="{{ .RelPermalink }}" class=" has-text-black">{{ .Title | truncate 30 }}</a></li>
+                        <li class="button my-1 is-small"><a href="{{ .RelPermalink }}" class=" has-text-black">{{ .Title | truncate 30 }}</a></li>
                     {{ end }}
                 </ul>
                 {{else}}
