@@ -11,10 +11,14 @@
             <div id="guard-left" class="m-6 is-hidden-mobile"></div>
                 {{ partial "directory.html" .}}     
             <article class="column content">
+              {{ if .IsHome}}
+                {{/* Don't show Breadcrumbs or EditLink*/}}
+              {{else}}
                 <section class="is-flex is-align-items-end	">
                   {{ partial "featureBreadcrumbs.html" . }} 
                   {{ partial "featureEditLink.html" . }}
                 </section>
+              {{end}}
               {{ if .Params.hidden }}
                 This content is not ready for public viewing.
               {{ else }}

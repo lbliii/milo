@@ -20,24 +20,31 @@
     </section>
 {{end}}
 
-<section class="layout-list section is-medium pt-0 mt-3"> 
-    <div class="columns is-flex-direction-column">
-        {{ range sort .Pages "Weight" "$order"}}
+<section class="layout-glossary section is-medium p-0 mt-6"> 
+    {{ range sort .Pages "Weight" "$order"}}
             {{ if  .Params.hidden }}
                 {{/* Do not show the hidden child page or its descendants */}}
             {{else}}
-                <div class="column card m-3">
-                    <a class="columns" href="{{ .Permalink }}">
-
-                    <h4 class="column is-one-fifth has-background-info has-text-centered m-0 pt-5"> {{ .Title}}</h4>
-                  
+                    <a class="columns card m-4" href="{{ .Permalink }}">
+                        <div class="column is-two-fifths is-flex has-background-info m-0 is-align-items-center"> 
+                            <h4 class="m-0"> 
+                                {{if .Title}}
+                                    {{.Title}}
+                                {{else}}
+                                    {{ path.BaseName . | humanize }}
+                                {{end}}
+                            </h4>
+                        </div>
                         <div class="column">
-                             <p class="has-text-weight-normal has-text-black is-size-7"> {{.Summary}}</p>
+                            <p class="has-text-weight-normal has-text-black is-size-7"> {{.Summary}}</p>
                         </div>
                     </a>
-                </div>
             {{end}}
         {{ end }}
-    </div>
   </section>
+
+
+
+
+
 {{end}}

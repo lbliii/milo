@@ -34,7 +34,7 @@ params:
   relatedArticles: true # displays related content on page.
   giscus: true # displays giscus commenting on single pages. 
   releaseInfo:
-    latest: "2.3.x"
+    latest: "2.2.x"
   download:
     latest: 
 

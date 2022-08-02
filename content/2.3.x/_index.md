@@ -1,5 +1,5 @@
 ---
-title: Latest
+title: 2.3.x
 description:
 author:
 tags:

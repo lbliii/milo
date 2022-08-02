@@ -1,4 +1,7 @@
 {{ $order := "desc" }}
+{{ if .IsHome}}
+{{else}}
+
 <nav class="column is-one-fifth is-hidden-mobile is-centered">
     <section class="columns pt-0 mt-6"> 
         <div id="directory_container" class="column pach-fixed is-clipped">
@@ -23,11 +26,11 @@
                         {{ if .Params.hidden }}
                         {{ else }}
                             <div class="p-1"> 
-                                <a href="{{ .RelPermalink }}" class="tag"> {{if .Pages}}├ {{else}} {{if .PrevInSection }} │ {{else}} └ {{end}}{{end}} {{ .Title | truncate 30 }}</a>
+                                <a href="{{ .RelPermalink }}" class="tag"> {{if .Pages}}├ {{else}} {{if .PrevInSection }} │ {{else}} └ {{end}}{{end}} {{if .Title}}{{.Title | truncate 30}}{{else}}{{ path.BaseName . | humanize | truncate 30}}{{end}} </a>
                             </div>
                             {{/* Displays current page's grandchildren when navLevel feature is TRUE. */}}
                             {{ if .Site.Params.navLevel }}
-                                {{if .Pages }}
+                                {{if .Pages  }}
                                     {{ range sort .Pages "Weight" "$order"}}
                                         {{ if .Params.glossary }}
                                             {{/* don't show glossary entries */}}
@@ -51,3 +54,4 @@
         </div>
     </section>         
 </nav>
+{{end}}

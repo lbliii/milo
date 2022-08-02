@@ -1,7 +1,6 @@
 {{ if .Site.Params.childPages}}
     {{if .Pages }}
     <hr>
-    <h2 class="tag is-black is-large" >More From This Section</h2>
         <aside>
             <div class="columns is-flex-wrap-wrap">
                 {{ range sort .Pages "Weight" "$order"}}

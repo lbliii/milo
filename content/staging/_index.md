@@ -1,5 +1,5 @@
 ---
-title: Staging Docs
+title: Staging
 description:
 author:
 tags:

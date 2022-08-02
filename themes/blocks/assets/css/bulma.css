@@ -350,7 +350,8 @@ pre {
   -moz-osx-font-smoothing: auto;
   -webkit-font-smoothing: auto;
   font-family: monospace;
-  white-space: normal;;
+  white-space: normal;
+  max-width: 800px;
   
 }
 
@@ -5150,7 +5151,7 @@ button.dropdown-item.is-active {
 }
 
 .message.is-primary {
-  background-color: #ebfffc;
+  background-color: var(--is-notice-success);
 }
 
 .message.is-primary .message-header {
@@ -5160,7 +5161,7 @@ button.dropdown-item.is-active {
 
 .message.is-primary .message-body {
   border-color: var(--is-primary-color);
-  color: #00947e;
+  color: var(--is-content-color);
 }
 
 .message.is-link {
