@@ -26,7 +26,7 @@
                         {{ if .Params.hidden }}
                         {{ else }}
                             <div class="p-1"> 
-                                <a href="{{ .RelPermalink }}" class="tag"> {{if .Pages}}├ {{else}} {{if .PrevInSection }} │ {{else}} └ {{end}}{{end}} {{if .Title}}{{.Title | truncate 30}}{{else}}{{ path.BaseName . | humanize | truncate 30}}{{end}} </a>
+                                <a href="{{ .RelPermalink }}" class="tag"> {{if .Pages}}├ {{else}} {{if .PrevInSection }} │ {{else}} └ {{end}}{{end}}{{if .Title}}{{.Title | truncate 30}}{{else}}{{ path.BaseName . | humanize | truncate 30}}{{end}}</a>
                             </div>
                             {{/* Displays current page's grandchildren when navLevel feature is TRUE. */}}
                             {{ if .Site.Params.navLevel }}
@@ -37,7 +37,7 @@
                                         {{ else }}
                                             <div class="p-0"> 
                                                 <a href="{{ .RelPermalink }}" class="tag is-small is-white ml-3"> {{if .Pages}}
-                                                ├{{else}} {{if .PrevInSection }} │ {{else}} └ {{end}} {{end}} {{ .Title | truncate 30}} </a>
+                                                ├{{else}} {{if .PrevInSection }} │ {{else}} └ {{end}} {{end}} {{if .Title}}{{.Title | truncate 30}}{{else}}{{ path.BaseName . | humanize | truncate 30}}{{end}} </a>
                                             </div>
                                         {{end}}
                                     {{end}}

@@ -17,7 +17,7 @@
                                     {{ if .Site.Params.childPages.grandchildren}}
                                     <div class="buttons">
                                         {{ range first 7 .Pages }}
-                                            <a class="button is-small is-white" href="{{ .Permalink }}">{{ .Title | truncate 40}}</a>
+                                            <a class="button is-small is-white" href="{{ .Permalink }}">{{if .Title}}{{.Title | truncate 30}}{{else}}{{ path.BaseName . | humanize | truncate 30}}{{end}}</a>
                                         {{ end }}
                                     </div>
                                     {{else}}
