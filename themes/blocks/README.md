@@ -18,6 +18,16 @@ The assets directory is for resources that you intend to transform (minify, opti
 <script src="{{ $js.Permalink }}" ></script> ## result 
 ```
 
+### CSS 
+
+The CSS used in this theme is powered by [Bulma](https://bulma.io/). Bulma is an easy and very lightweight framework that makes maintaining a high PageSpeed score a breeze. 
+
+The `brand.css` file is laid on top of `bulma.css` to flavor the framework with custom colors and add any project-specfic needs. As a best practice, use an obvious naming convention (e.g., `brand-fade-in`; `brand-fixed`) for CSS classes that are not Bulma. This will help you whenever you want to iterate or troubleshoot. 
+
+### JS 
+
+The JS in this theme is hand-rolled; the less dependencies there are, the faster your site will build, load (PageSpeed score), and the easier it will be to collaborate with people who have different machines. If you find this JS is not efficient, *please* say so and optimize it -- but try to avoid adding dependencies. 
+
 ---
 
 ## Layouts
@@ -30,7 +40,7 @@ Shortcodes are not used in layouts themselves; they are used in markdown files.
 
 Contains base layout templates that define the broader shape of the content. 
 
-These templates reference partial layouts and "blocks." Blocks are named placeholder-wrappers that allow higher-level layouts to be inserted into their lower-level layouts during site generation.  
+These templates reference partial layouts and "blocks." Blocks are named placeholder-wrappers that allow higher-level layouts to be inserted into their lower-level layout counterparts during site generation.  
 
 Blocks are placed in lower-level layouts with:
 
@@ -50,7 +60,7 @@ Contains the `render-heading.html` layout which is responsible for looping over 
 
 #### baseof 
 
-Contains the opening and closing HTML tags; wraps around the list, single, section, and series layouts (which are passed in through the `main` block). 
+Contains the opening and closing HTML tags; wraps around the `list`, `single`, `section`, and `series` layouts (which are passed in through the `main` block). 
 
 Partials included: 
 
@@ -68,7 +78,7 @@ A standalone default layout for showing child pages as a scrollable stack. To us
 
 #### list 
 
-Auto-generated pages like taxonomy pages and the default landing page (`/index.html`) are considered list pages. You can create a unique landing page by defining a `index.html` template in your `layouts` folder.
+Auto-generated pages like taxonomy pages and the default home  page (`/index.html`) are considered list pages. You can create a unique home page by defining a `index.html` template in your `layouts` folder.
 
 **note**: the child pages displayed on lists are defined directly on this layout and do not use the partial `featureChildPages`.
 
@@ -154,7 +164,7 @@ Shortcodes are powerful because of their flexibility and ease of use. Below is o
 </div>
 ```
 
-1. Define the html and css; in this case a div with the glass `notification`.
+1. Define the html and css; in this case a div with the Bulma class `notification`.
 2. Define the templating details:
    -  `{{ .Get 0 }}` passes in the first argument of the shortcode as a string
    -  `{{.Inner}}` passes the wrapped markdown content.
@@ -165,7 +175,7 @@ My inner text is here! Supports markdown formatting.
 {{% /notice %}}
 ```
 
-In this case, `tip` is a CSS class created to style the div beyond just the `notification` class styling. You can pass multiple arguments to a shortcode, and even use the page's frontmatter or site's global variables. 
+In this case, `tip` is the first argument; it is a CSS class created to style the div beyond Bulma's default `notification` class styling. You can pass multiple arguments to a shortcode, and even use the page's frontmatter or site's global variables. 
 
 --- 
 
