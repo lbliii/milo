@@ -1,4 +1,5 @@
-{{ if .Site.Params.childPages}}
+{{/* Displays cards with child page titles, their total count, a description or summary, and optionally quick buttons to the first 3 children. */}}
+{{ if .Site.Params.childPages.display}}
     {{if .Pages }}
     <hr>
         <aside>
@@ -9,8 +10,20 @@
                         <div class="card-content has-background-info pach-tile">
                             <div class="content">
                                 <h4 class="mr-3"> {{ .Title}}</h4>
-                                {{if .Pages}} <div class="tag is-white"> {{ len (.Pages) }} articles</div> {{end}}
-                                <p class="is-size-7 has-text-dark"> {{.Summary | truncate 300}} </p>
+                            
+                                <p class="is-size-7 has-text-dark"> {{if .Description}} {{.Description}} {{else}}{{.Summary | truncate 300}} {{end}}</p>
+                                 {{if .Pages}} 
+                                  
+                                    {{ if .Site.Params.childPages.grandchildren}}
+                                    <div class="buttons">
+                                        {{ range first 7 .Pages }}
+                                            <a class="button is-small is-white" href="{{ .Permalink }}">{{ .Title | truncate 40}}</a>
+                                        {{ end }}
+                                    </div>
+                                    {{else}}
+                                     <div class="tag is-white"> {{ len (.Pages) }} articles</div>  
+                                    {{end}}
+                                {{end}}
                             </div>
                         </div>
                     </a>

@@ -19,7 +19,9 @@ params:
   # Feature Switches #
   defaultCss: false # displays default bulma css only without branding.
   breadcrumbs: true # displays a trail of breadcrumbs
-  childPages: true # displays child pages of a section.
+  childPages: 
+    display: true # displays child pages of a section.
+    grandchildren: true # displays first 7 grandchildren as buttons in the card.
   editLink: 
     display: true #  displays a link to the corresponding github file for a given page; githubUrl must be set.
     githubUrl: https://github.com/lbliii/milo/tree/pachyderm-explorations/content/  # should end with content/
