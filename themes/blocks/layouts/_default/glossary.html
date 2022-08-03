@@ -24,7 +24,6 @@
             {{.Content}}
         </section>
     {{end}}
-
     <section id="glossary" class="layout-glossary section is-medium p-0 mt-6"> 
         {{ range sort .Pages "Weight" "$order"}}
                 {{ if  .Params.hidden }}

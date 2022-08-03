@@ -25,7 +25,9 @@
                 {{if .Pages }}
                 {{ if eq .Kind "term"}}
                     {{/* Don't display directory on taxonomy (.kind term) pages */}}
-                {{else}}
+                {{else if .Params.layout}}
+                    {{/* Don't display directory on glossary pages (layout:glossary) */}}
+                {{else }}
                     {{ range sort .Pages "Weight" "$order"}}
                         {{ if .Params.hidden }}
                             {{/* Do not shot page if frontmatter hidden is TRUE */}}
