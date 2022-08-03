@@ -5,34 +5,14 @@
             <section class="layout-list hero is-medium is-primary theme-pattern-alt">
                 <div class="hero-body">
                     <h1><strong>{{.Title}}</strong></h1>
-                    <p> Looks like that article doesn't exist. </p>
+                    <p class="has-text-black"> Looks like that article doesn't exist. </p>
                 </div>
             </section>
         {{else}}
           {{/* Don't show the hero section */}}
         {{end}}
 
-        <section class="layout-list section is-medium pt-0 mt-3"> 
-            <div class="columns is-flex-wrap-wrap">
-                {{ range sort .Pages "Weight" "$order"}}
-                    {{ if  .Params.hidden }}
-                        {{/* Do not show the hidden child page or its descendants */}}
-                    {{else}}
-                        <div class="column is-half">
-                            <a class="card is-clipped	" href="{{ .Permalink }}">
-                                <div class="card-content has-background-info theme-tile ">
-                                    <div class="content">
-                                        <h4 class="mr-3"> {{ .Title}}</h4>
-                                        {{if .Pages}} <div class="tag is-white"> {{ len (.Pages) }} articles</div> {{end}}
-                                        <p class="is-size-7 has-text-dark has-text-weight-normal"> {{.Summary | truncate 300 }} </p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    {{end}}
-                {{ end }}
-            </div>
-        </section>
+        {{ partial "featureChildPages.html" . }}
     </section>
     </main>
 {{ end }}
