@@ -4,7 +4,7 @@
 */}}
 
 {{ define "main" }}
-<section class="columns mx-6 is-align-items-center">
+<section class="columns mx-0 is-align-items-center">
     <div class="column is-half ">
        <h1> Create Pipelines,  <br> Transform Data, <br> & Build Models</h1>
     </div>
@@ -14,7 +14,7 @@
 </section>
 
     {{with  .Site.GetPage "section" .Site.Params.releaseInfo.latest  }}
-        <section class="mx-6">
+        <section class="mx-0">
             {{ partial "featureChildPages.html" . }}
         </section>
     {{end}}
