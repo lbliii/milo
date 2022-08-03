@@ -11,7 +11,7 @@
                     <a id="back-arrow-left" href="{{ .RelPermalink }}" class="button is-primary is-outlined"> < {{ .Title | truncate 20}}</a>
                 {{end}}
                 {{ if eq .BundleType "branch"}}
-                    {{/*Do not show the relatedArticle button (id related-articles) on list pages*/}}
+                    {{/* Do not show the relatedArticle button (id related-articles) on list pages */}}
                 {{else}}
                     {{ with site.RegularPages.RelatedIndices . "tags" }}
                         {{/* Only show relatedArticle button if related articles exist. See https://gohugo.io/content-management/related/#readout */}}
@@ -24,6 +24,7 @@
                 {{if .Pages }}
                     {{ range sort .Pages "Weight" "$order"}}
                         {{ if .Params.hidden }}
+                            {{/* Do not shot page if frontmatter hidden is TRUE */}}
                         {{ else }}
                             <div class="directory-lvl-1 p-1"> 
                                 <a href="{{ .RelPermalink }}" class="button is-small"> {{if .Pages}}├ {{else}} {{if .PrevInSection }} │ {{else}} └ {{end}}{{end}}{{if .Title}}{{.Title | truncate 30}}{{else}}{{ path.BaseName . | humanize | truncate 30}}{{end}}</a>
@@ -33,7 +34,7 @@
                                 {{if .Pages  }}
                                     {{ range sort .Pages "Weight" "$order"}}
                                         {{ if .Params.glossary }}
-                                            {{/* don't show glossary entries */}}
+                                            {{/* Do not show glossary entries in directory when layout: glosssary in frontmatter  */}}
                                         {{ else }}
                                             <div class=" directory-lvl-2 p-0"> 
                                                 <a href="{{ .RelPermalink }}" class="button is-small is-white ml-3"> {{if .Pages}}

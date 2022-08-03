@@ -3,7 +3,6 @@
     - layout-single is an empty class for easier location; do not style against it.
 */}}
 
-
 {{ define "main" }}
     <section id="single-hero" class="layout-single hero is-medium is-primary pach-pattern">
         <div class="hero-body">
@@ -26,9 +25,6 @@
         {{ partial "featureBetaNotice.html" . }}
         {{ .Content }}
         {{ partial "featureNextPrev.html" . }}
-
-
-        
     </section>
     <section>
         {{ partial "featureRelatedArticles.html" . }}
@@ -36,9 +32,6 @@
     <section>
          {{ partial "featureGiscus.html" . }}
     </section>
-    {{/* Use for testing css brand styling 
-    {{ partial "tests/buttons.html" . }}
-    */}}
 {{end}}
 
 

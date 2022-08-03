@@ -8,8 +8,9 @@
     <div class="hero-body">
         <h1>{{.Title}}</h1>
         {{ if .IsHome}}
+            {{/* Don't show tag if homepage */}}
         {{else}}
-        <div class="tag is-medium">tag</div>
+            <div class="tag is-medium">tag</div>
         {{end}}
     </div>
 </section>

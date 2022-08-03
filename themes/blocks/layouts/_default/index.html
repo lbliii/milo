@@ -4,15 +4,15 @@
 */}}
 
 {{ define "main" }}
-{{if .Content}}
-    <section class="layout-single section mb-0 pb-0"> 
-        {{.Content}}
-    </section>
-{{end}}
+    {{if .Content}}
+        <section class="layout-single section mb-0 pb-0"> 
+            {{.Content}}
+        </section>
+    {{end}}
 
     {{with  .Site.GetPage "section" .Site.Params.releaseInfo.latest  }}
         <section class="mx-6">
-        {{ partial "featureChildPages.html" . }}
+            {{ partial "featureChildPages.html" . }}
         </section>
     {{end}}
 {{end}}
