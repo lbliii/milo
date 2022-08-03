@@ -21,7 +21,11 @@
              </div>
             {{/* Displays current page's children. */}}
             <section id="directory" class="theme-directory"> 
+
                 {{if .Pages }}
+                {{ if eq .Kind "term"}}
+                    {{/* Don't display directory on taxonomy (.kind term) pages */}}
+                {{else}}
                     {{ range sort .Pages "Weight" "$order"}}
                         {{ if .Params.hidden }}
                             {{/* Do not shot page if frontmatter hidden is TRUE */}}
@@ -40,14 +44,16 @@
                                                 <a href="{{ .RelPermalink }}" class="button is-small is-white ml-3"> {{if .Pages}}
                                                 ├{{else}} {{if .PrevInSection }} │ {{else}} └ {{end}} {{end}} {{if .Title}}{{.Title | truncate 30}}{{else}}{{ path.BaseName . | humanize | truncate 30}}{{end}} </a>
                                             </div>
+                                            {{end}}
                                         {{end}}
-                                    {{end}}
+                                    {{ end }}
                                 {{ end }}
                             {{ end }}
-                        {{ end }}
+                        {{end}}
                     {{end}}
+
                 {{end}}
-                {{if eq .Kind "page"}}                      
+                 {{if ne .Kind "section"}}                      
                     {{partial "featureTOC" . }}
                 {{end}}               
                  {{ partial "featureRelatedArticles.html" . }}
