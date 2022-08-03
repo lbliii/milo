@@ -4,51 +4,48 @@
 */}}
 
 {{ define "main" }}
-{{ if .Site.Params.heroBanner.glossary}}
-    <section class="layout-list hero is-medium is-primary theme-pattern-alt">
-        <div class="hero-body">
-            <h1>{{.Title}}</h1>
-            {{ if .IsHome}}
-            {{else}}
-            <div class="tag is-medium">glossary</div>
-            {{end}}
-        </div>
+    <section class="container is-max-desktop"> 
+    {{ if .Site.Params.heroBanner.glossary}}
+        <section class="layout-list hero is-medium is-primary theme-pattern-alt">
+            <div class="hero-body">
+                <h1>{{.Title}}</h1>
+                {{ if .IsHome}}
+                {{else}}
+                <div class="tag is-medium">glossary</div>
+                {{end}}
+            </div>
+        </section>
+    {{else}}
+        {{/* Don't show the hero section */}}
+    {{end}}
+
+    {{if .Content}}
+        <section class="layout-single section mb-0 pb-0"> 
+            {{.Content}}
+        </section>
+    {{end}}
+
+    <section id="glossary" class="layout-glossary section is-medium p-0 mt-6"> 
+        {{ range sort .Pages "Weight" "$order"}}
+                {{ if  .Params.hidden }}
+                    {{/* Do not show the hidden child page or its descendants */}}
+                {{else}}
+                        <a class="columns card m-4" href="{{ .Permalink }}">
+                            <div class="glossary-term column is-two-fifths is-flex has-background-info m-0 is-align-items-center glossary-entry"> 
+                                <h4 class="m-0"> 
+                                    {{if .Title}}
+                                        {{.Title}}
+                                    {{else}}
+                                        {{ path.BaseName . | humanize }}
+                                    {{end}}
+                                </h4>
+                            </div>
+                            <div class="column">
+                                <p class="glossary-definition has-text-weight-normal has-text-black is-size-7"> {{.Summary}}</p>
+                            </div>
+                        </a>
+                {{end}}
+            {{ end }}
     </section>
-{{else}}
-    {{/* Don't show the hero section */}}
-{{end}}
-
-{{if .Content}}
-    <section class="layout-single section mb-0 pb-0"> 
-        {{.Content}}
     </section>
-{{end}}
-
-<section id="glossary" class="layout-glossary section is-medium p-0 mt-6"> 
-    {{ range sort .Pages "Weight" "$order"}}
-            {{ if  .Params.hidden }}
-                {{/* Do not show the hidden child page or its descendants */}}
-            {{else}}
-                    <a class="columns card m-4" href="{{ .Permalink }}">
-                        <div class="glossary-term column is-two-fifths is-flex has-background-info m-0 is-align-items-center glossary-entry"> 
-                            <h4 class="m-0"> 
-                                {{if .Title}}
-                                    {{.Title}}
-                                {{else}}
-                                    {{ path.BaseName . | humanize }}
-                                {{end}}
-                            </h4>
-                        </div>
-                        <div class="column">
-                            <p class="glossary-definition has-text-weight-normal has-text-black is-size-7"> {{.Summary}}</p>
-                        </div>
-                    </a>
-            {{end}}
-        {{ end }}
-  </section>
-
-
-
-
-
 {{end}}

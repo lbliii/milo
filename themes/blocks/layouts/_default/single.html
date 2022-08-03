@@ -4,6 +4,7 @@
 */}}
 
 {{ define "main" }}
+<section class="container is-max-desktop">
     {{ if .Site.Params.heroBanner.single}}
         <section id="single-hero" class="layout-single hero is-medium is-primary theme-pattern">
             <div class="hero-body">
@@ -36,6 +37,7 @@
     <section>
          {{ partial "featureGiscus.html" . }}
     </section>
+ </section>
 {{end}}
 
 

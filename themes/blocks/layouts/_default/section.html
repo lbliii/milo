@@ -2,29 +2,31 @@
     layout-section is an empty class for easier location; do not style against it.*/}}
 
 {{ define "main" }}
-    {{ if .Site.Params.heroBanner.section}}
-    <section id="section-hero" class="layout-section hero is-medium is-primary theme-pattern-alt">
-        <div class="hero-body">
-            <h1>{{.Title}}</h1>
-            <hr>
-                {{ if .Description}}
-                    <div id="hero-description" class="has-text-black">
-                        {{ .Description}}
-                    </div>
-                {{end}}
-                {{ if .Date }}
-                    <div class="is-size-7 has-text-black">
-                        {{ .Date | time.Format ":date_long" }}
-                    </div>
-                {{ end }}
-        </div>
-    </section>
-    {{else}}
-        {{/* Don't show the hero section */}}
-    {{end}}
-    <section class="layout-section section">
-        {{ partial "featureBetaNotice.html" . }}
-        {{ .Content }}
-        {{ partial "featureChildPages.html" . }}
+    <section class="container is-max-desktop"> 
+        {{ if .Site.Params.heroBanner.section}}
+        <section id="section-hero" class="layout-section hero is-medium is-primary theme-pattern-alt">
+            <div class="hero-body">
+                <h1>{{.Title}}</h1>
+                <hr>
+                    {{ if .Description}}
+                        <div id="hero-description" class="has-text-black">
+                            {{ .Description}}
+                        </div>
+                    {{end}}
+                    {{ if .Date }}
+                        <div class="is-size-7 has-text-black">
+                            {{ .Date | time.Format ":date_long" }}
+                        </div>
+                    {{ end }}
+            </div>
+        </section>
+        {{else}}
+            {{/* Don't show the hero section */}}
+        {{end}}
+        <section class="layout-section section">
+            {{ partial "featureBetaNotice.html" . }}
+            {{ .Content }}
+            {{ partial "featureChildPages.html" . }}
+        </section>
     </section>
 {{end}}
