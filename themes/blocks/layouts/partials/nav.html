@@ -41,7 +41,24 @@
             </div>
           </div>
         {{end}}
-        {{/* End versionDropdown feature */}}
+        {{if .Site.Params.downloads}}
+        <div class="navbar-item has-dropdown is-hoverable is-size-7">
+            <a class="navbar-link" href="">
+              Download {{.Site.Params.releaseInfo.patch}}
+            </a>
+            <div class="navbar-dropdown is-boxed">
+                <a class="navbar-item is-size-7" href="{{.Site.Params.downloads.amd64}}">
+                  amd64
+                </a>
+                <a class="navbar-item is-size-7" href="{{.Site.Params.downloads.darwin}}">
+                  darwin
+                </a>
+                <a class="navbar-item is-size-7" href="{{.Site.Params.downloads.linux}}">
+                  linux
+                </a>
+            </div>
+          </div>
+        {{end}}
         <div class="navbar-item">
           <input class="input " type="text" placeholder="Search docs">
 
