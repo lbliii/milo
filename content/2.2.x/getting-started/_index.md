@@ -2,6 +2,7 @@
 title: Getting Started
 description:
 tags:
+weight: 1
 ---
 
 Pachyderm is a **data-centric pipelining and versioning tool** that allows ML and Data-Science teams to automate and collaborate on their organization's data while maintaining full reproducibility.

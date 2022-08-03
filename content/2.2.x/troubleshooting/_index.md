@@ -6,6 +6,7 @@ tags:
 categories:
 products:
 date:
+weight: 8
 ---
 
 This section describe troubleshooting guidelines that should

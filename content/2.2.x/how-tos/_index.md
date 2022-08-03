@@ -4,4 +4,5 @@ description: How to do things
 tags:
 categories: ["example"]
 product: ["CE"]
+weight: 6
 ---

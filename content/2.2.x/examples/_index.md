@@ -1,6 +1,8 @@
 ---
+
 title: Examples
 description: examples of pachyderm in use. 
+weight: 9
 ---
 
 

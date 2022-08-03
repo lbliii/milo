@@ -184,7 +184,7 @@ In this case, `tip` is the first argument; it is a CSS class created to style th
 The static folder should contain only **theme** assets that you do not need or want to transform; default images/svgs, fonts, etc. These static assets are served directly from the `/images` path of your site.
 
 ```css
-.pach-pattern {
+.theme-pattern {
     background-image: url(/images/pachContentBG.svg);
     background-repeat: no-repeat;
     background-size: cover;

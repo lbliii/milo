@@ -13,6 +13,7 @@
     --is-notice-info:  #ecf5f7;
     --is-notice-success: #ede9ee;
     --is-notice-danger:  #c6b7e5;
+    --is-meow: {{ .Site.Params.font.size}}
 }
 
 
@@ -20,7 +21,7 @@
 
 /* Animations */
 
-.pach-fade-in {
+.theme-fade-in {
     animation: fadeIn .4s ease-in-out;
 }
 
@@ -29,35 +30,35 @@
     100% { opacity: 1; }
   }
 
-/* pach-fixed is used for floating directory/toc  */
+/* theme-fixed is used for floating directory/toc  */
 
-.pach-fixed {
+.theme-fixed {
     position: fixed;
     z-index: 100;
 }
 
-/* pach-pattern is used for the hero image backgrounds on single pages; alt is for list pages */
+/* theme-pattern is used for the hero image backgrounds on single pages; alt is for list pages */
 
-.pach-pattern {
+.theme-pattern {
     background-image: url(/images/pachContentBG.svg);
     background-repeat: no-repeat;
     background-size: cover;
     
 }
-.pach-pattern-alt {
+.theme-pattern-alt {
     background-image: url(/images/pachContentBG2.svg);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-/* pach-tile is used for standardizing the size of child article tiles in list pages */
+/* theme-tile is used for standardizing the size of child article tiles in list pages */
 
-.pach-tile {
+.theme-tile {
     height: 100%;
 }
-/* pach-directory is used to make the left navigation/folder-tree follow the reader */
+/* theme-directory is used to make the left navigation/folder-tree follow the reader */
 
-.pach-directory {
+.theme-directory {
     position: relative;
     overflow-y: auto;
     height: 600px;
@@ -128,58 +129,56 @@
 }
 
 
-.pach-dark-mode {
+.theme-dark-mode {
     background-color: #000;
     color: var(--is-content-color-inverted);
 }
 
-.pach-dark-mode strong {
+.theme-dark-mode strong {
     color: var(--is-content-color-inverted);
 }
 
-.pach-dark-mode a {
+.theme-dark-mode a {
     color: var(--is-notice-danger);
 }
 
-.pach-dark-mode h1,
-.pach-dark-mode h2,
-.pach-dark-mode h3,
-.pach-dark-mode h4,
-.pach-dark-mode h5, 
-.pach-dark-mode h6,
-.pach-dark-mode p {
+.theme-dark-mode h1,
+.theme-dark-mode h2,
+.theme-dark-mode h3,
+.theme-dark-mode h4,
+.theme-dark-mode h5, 
+.theme-dark-mode h6,
+.theme-dark-mode p {
     color: var(--is-content-color-inverted) !important;
 }
 
-.pach-dark-mode pre,
-.pach-dark-mode .card-content {
-    background-color: #454545 !important;
-}
-.pach-dark-mode code { 
+.theme-dark-mode pre,
+
+.theme-dark-mode code { 
     background-color: transparent;
 }
 
 
-.pach-dark-mode .tag {
+.theme-dark-mode .tag {
     background-color: #454545;
     color: var(--is-content-color-inverted);
 }
-.pach-dark-mode .tag.is-small.is-white {
+.theme-dark-mode .tag.is-small.is-white {
     background-color: #000;
     color: var(--is-content-color-inverted);
 }
 
-.pach-dark-mode .pach-pattern-alt {
+.theme-dark-mode .theme-pattern-alt {
     background-image: url(/images/pachContentBG2-D.svg) !important;
 }
-.pach-dark-mode .pach-pattern {
+.theme-dark-mode .theme-pattern {
     background-image: url(/images/pachContentBG-D.svg) !important;
 }
-.pach-dark-mode .logo {
+.theme-dark-mode .logo {
     background-image: url(/images/pachLogoWhite.svg);
 }
 
-.pach-is-transparent {
+.theme-is-transparent {
     background-color: transparent !important;
 }
 
@@ -214,3 +213,4 @@ h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, h5:hover .anchor, h6:hover
 	font-weight: 100 1000;
 	font-stretch: 25% 151%;
 } 
+

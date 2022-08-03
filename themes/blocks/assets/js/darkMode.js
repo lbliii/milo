@@ -5,10 +5,18 @@ function darkMode() {
    var button = document.getElementById("dark-mode-button");
    var backButton = document.getElementById("back-arrow-left");
    var glossary = document.getElementById("glossary");
+   var cards = document.getElementsByClassName("card-buttons");
 
 
 
+    // Toggle darkmode for each card 
 
+    if (cards){
+        for (var i = 0; i < cards.length; i++) {
+            cards[i].classList.toggle("is-black");
+            cards[i].classList.toggle("is-white");
+        }
+    }
 
    // Toggle Darkmode for the directory 
    if (directory){ 
@@ -43,7 +51,7 @@ function darkMode() {
 
    // Toggle Darkmode for the body element 
 
-   element.classList.toggle("pach-dark-mode");
+   element.classList.toggle("theme-dark-mode");
    backButton.classList.toggle("is-primary");
    backButton.classList.toggle("is-white");
 
@@ -59,16 +67,16 @@ function darkMode() {
     
 
    // Store the value in local storage
-    if (element.classList.contains("pach-dark-mode")) {
-        localStorage.setItem("pach-dark-mode", "true");
+    if (element.classList.contains("theme-dark-mode")) {
+        localStorage.setItem("theme-dark-mode", "true");
     }
     else {
-        localStorage.setItem("pach-dark-mode", "false");
+        localStorage.setItem("theme-dark-mode", "false");
     }
 
 }
 
 // Check if the user has previously selected dark mode
-if (localStorage.getItem("pach-dark-mode") == "true") {
+if (localStorage.getItem("theme-dark-mode") == "true") {
     darkMode();
 }

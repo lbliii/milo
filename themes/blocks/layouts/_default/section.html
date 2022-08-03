@@ -2,7 +2,8 @@
     layout-section is an empty class for easier location; do not style against it.*/}}
 
 {{ define "main" }}
-    <section id="section-hero" class="layout-section hero is-medium is-primary pach-pattern-alt">
+    {{ if .Site.Params.heroBanner.section}}
+    <section id="section-hero" class="layout-section hero is-medium is-primary theme-pattern-alt">
         <div class="hero-body">
             <h1>{{.Title}}</h1>
             <hr>
@@ -18,6 +19,9 @@
                 {{ end }}
         </div>
     </section>
+    {{else}}
+        {{/* Don't show the hero section */}}
+    {{end}}
     <section class="layout-section section">
         {{ partial "featureBetaNotice.html" . }}
         {{ .Content }}

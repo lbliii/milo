@@ -46,7 +46,7 @@ function styleTOC(){
         }
         link.classList.add('tag', 'mt-1');
         if (heading == 'H3') {
-            link.classList.add('pach-is-transparent','ml-1');
+            link.classList.add('theme-is-transparent','ml-1');
         }
 
         li.appendChild(link);

@@ -2,6 +2,7 @@
 title: Enterprise Docs
 description: The enterprise version of the product
 tags: ["one"]
+weight: 5
 ---
 
 # Enterprise Edition

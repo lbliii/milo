@@ -4,23 +4,27 @@
 */}}
 
 {{ define "main" }}
-    <section id="single-hero" class="layout-single hero is-medium is-primary pach-pattern">
-        <div class="hero-body">
-            {{ partial "featureSeriesButton.html" . }}
-            <h1>{{.Title}}</h1>
-            <hr>
-            {{ if .Description}}
-                <div id="hero-description" class="has-text-black">
-                    {{ .Description}}
-                </div>
-            {{end}}
-            {{ if .Date }}
-                <div class="is-size-7 has-text-black">
-                    {{ .Date | time.Format ":date_long" }}
-                </div>
-            {{ end }}
-        </div>
-    </section>
+    {{ if .Site.Params.heroBanner.single}}
+        <section id="single-hero" class="layout-single hero is-medium is-primary theme-pattern">
+            <div class="hero-body">
+                {{ partial "featureSeriesButton.html" . }}
+                <h1>{{.Title}}</h1>
+                <hr>
+                {{ if .Description}}
+                    <div id="hero-description" class="has-text-black">
+                        {{ .Description}}
+                    </div>
+                {{end}}
+                {{ if .Date }}
+                    <div class="is-size-7 has-text-black">
+                        {{ .Date | time.Format ":date_long" }}
+                    </div>
+                {{ end }}
+            </div>
+        </section>
+    {{else}}
+        {{/* Don't show the hero section */}}
+    {{end}}
     <section class="layout-single section">
         {{ partial "featureBetaNotice.html" . }}
         {{ .Content }}

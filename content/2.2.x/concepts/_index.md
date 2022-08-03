@@ -8,6 +8,7 @@ products:
 date:
 beta: true 
 series: apples
+weight: 2
 ---
 
 {{% notice tip  %}}

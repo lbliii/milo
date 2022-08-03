@@ -2,6 +2,7 @@
 title: Deploy Manage
 description: the deploy manage section
 tags: ["two"]
+weight: 4
 ---
 
 # Overview

@@ -4,7 +4,7 @@
 
 <nav class="column is-one-fifth is-hidden-mobile is-centered">
     <section class="columns pt-0 mt-6"> 
-        <div id="directory_container" class="column pach-fixed is-clipped">
+        <div id="directory_container" class="column theme-fixed is-clipped">
             <div id="controls" class="mb-2"> 
                 {{with .Parent}}
                     {{/* Displays current page's parent to return. */}}  
@@ -20,7 +20,7 @@
                 {{end}}
              </div>
             {{/* Displays current page's children. */}}
-            <section id="directory" class="pach-directory"> 
+            <section id="directory" class="theme-directory"> 
                 {{if .Pages }}
                     {{ range sort .Pages "Weight" "$order"}}
                         {{ if .Params.hidden }}

@@ -6,7 +6,7 @@ tags:
 categories:
 products:
 date:
-weight: 1
+weight: 8
 ---
 
 Welcome to the Pachyderm documentation portal!
