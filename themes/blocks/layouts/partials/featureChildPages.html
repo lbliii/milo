@@ -6,11 +6,11 @@
             <div class="columns is-flex-wrap-wrap">
                 {{ range sort .Pages "Weight" "$order"}}
                 <div class="column is-half">
-                   <a class="card is-clipped" href="{{ .Permalink }}"></a>
+                   <a class="card is-clipped" href="{{ .Permalink }}">
                         <div class="card-content theme-tile">
                             <div class="content">
                                 <h4 class="mr-3"> {{ .Title}}</h4>
-                            
+                
                                 <p class="is-size-7 has-text-dark"> {{if .Description}} {{.Description}} {{else}}{{.Summary | truncate 300}} {{end}}</p>
                                 {{if .Pages}} 
                                     {{ if .Site.Params.childPages.grandchildren}}
