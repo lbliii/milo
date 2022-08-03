@@ -4,11 +4,14 @@
 */}}
 
 {{ define "main" }}
-    {{if .Content}}
-        <section class="layout-single section mb-0 pb-0"> 
-            {{.Content}}
-        </section>
-    {{end}}
+<section class="columns mx-6 is-align-items-center">
+    <div class="column is-half ">
+       <h1> Create Pipelines,  <br> Transform Data, <br> & Build Models</h1>
+    </div>
+    <div class="column is-half">
+        {{ .Content }}
+    </div>
+</section>
 
     {{with  .Site.GetPage "section" .Site.Params.releaseInfo.latest  }}
         <section class="mx-6">
