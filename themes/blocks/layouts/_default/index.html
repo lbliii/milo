@@ -11,6 +11,8 @@
 {{end}}
 
     {{with  .Site.GetPage "section" .Site.Params.releaseInfo.latest  }}
+        <section class="mx-6">
         {{ partial "featureChildPages.html" . }}
+        </section>
     {{end}}
 {{end}}
