@@ -7,7 +7,7 @@ categories:
 products:
 date:
 beta: true 
-series: apples
+series: 
 weight: 2
 ---
 
