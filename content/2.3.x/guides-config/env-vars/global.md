@@ -33,7 +33,7 @@ weight:
 | POSTGRES_HOST | No | string |  | The Postres host name. |
 | POSTGRES_PORT | No | int  |  | The Postgres port number.  |
 | POSTGRES_DATABASE | Yes | string |  | The Postgres database name. |
-| POSTGRES_USER | Yes | string |  | The Postgres username. Any sort of install that needs to be secure must specify a secure password here, or provide the `postgresqlExistingSecretName` and `postgresqlExistingSecretKey` secret. |
+| POSTGRES_USER | Yes | string |  | The Postgres username. Any sort of install that needs to be secure must specify a secure password here, or provide the postgresqlExistingSecretName and postgresqlExistingSecretKey secret. |
 | POSTGRES_PASSWORD | No | string |  | The Postgres username's password. Pachyderm does not use this account; this password is only required so that administrators can manually perform administrative tasks. |
 | POSTGRES_MAX_OPEN_CONNS | No | int  | 10 | The maximum number of open Postgres connections. |
 | POSTGRES_MAX_IDLE_CONNS | No | int  | 10 | The maximum number of idle Postgres connections. |

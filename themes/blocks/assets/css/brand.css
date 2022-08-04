@@ -214,3 +214,6 @@ h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, h5:hover .anchor, h6:hover
 	font-stretch: 25% 151%;
 } 
 
+table {
+    font-size: .7rem;
+}
