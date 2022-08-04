@@ -4,13 +4,13 @@ description: This attribute...
 author:
 tags:
 categories:
-series: 
-seriesPart: 
+series: ["pipeline spec"]
+seriesPart: 5
 date:
-weight: 
+weight: 5
 ---
 
-## Spec
+## Resource Requests Spec
 
 ```json
   "resource_requests": {
@@ -25,7 +25,7 @@ weight:
 ```
 
 
-## About
+### About Resource Requests
 
 `resource_requests` describes the amount of resources that the pipeline workers will consume. Knowing this in advance enables Pachyderm to schedule big jobs on separate machines, so that they do not conflict, slow down, or terminate.
 
@@ -35,7 +35,7 @@ This parameter is optional, and if you do not explicitly add it in the pipeline 
 - The init container requests the same amount of CPU, memory, and disk space that is set for the user container.
 - The resource_requests parameter enables you to overwrite these default values.
 
-## Attributes 
+## Resource Requests Attributes 
 
 ### memory 
 
@@ -43,14 +43,14 @@ The `memory` field is a string that describes the amount of memory, in bytes, th
 
 For example, a worker that needs to read a 1GB file into memory might set `"memory": "1.2G"` with a little extra for the code to use in addition to the file. Workers for this pipeline will be placed on machines with at least 1.2GB of free memory, and other large workers will be prevented from using it, if they also set their resource_requests.
 
-## cpu 
+### cpu 
 
 The `cpu` field is a number that describes the amount of CPU time in cpu seconds/real seconds that each worker needs. 
 
 -  `"cpu": 0.5` indicates that the worker should get 500ms of CPU time per second. 
 -   `"cpu": 2` indicates that the worker gets 2000ms of CPU time per second. 
    
-## disk 
+### disk 
 
 The `disk` field is a string that describes the amount of ephemeral disk space, in bytes, that each worker needs. Allowed SI suffixes include `M`, `K`, `G`, `Mi`, `Ki`, `Gi`, and `other`.
 

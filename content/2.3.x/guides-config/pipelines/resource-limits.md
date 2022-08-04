@@ -10,7 +10,7 @@ date:
 weight: 
 ---
 
-## Spec 
+## Resource Limits Spec 
 
 ```json
  "resource_limits": {
@@ -24,7 +24,7 @@ weight:
   },
 ```
 
-## About 
+### About Resource Limits
 
 `resource_limits` describes the upper threshold of allowed resources a given worker can consume. If a worker exceeds this value, it will be evicted.
 

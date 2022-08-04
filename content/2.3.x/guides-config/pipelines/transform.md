@@ -4,14 +4,14 @@ description: Required attribute for building a pipeline spec.
 author:
 tags:
 categories:
-series: 
-seriesPart: 
+series: ["pipeline spec"]
+seriesPart: 3
 date:
-weight: 
+weight: 3
 ---
 
 
-## Spec
+## Transform Spec
 
 ```json
 "transform": {
@@ -43,9 +43,9 @@ weight:
   },
 ```
 
-## About 
+### About Transform
 
-## Attributes
+## Transform Attributes
 
 ### image 
 

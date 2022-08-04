@@ -4,13 +4,13 @@ description: Learn about pipeline specifications.
 author:
 tags:
 categories:
-series: 
-seriesPart: 
+series: ["pipeline spec"]
+seriesPart: 4
 date:
-weight: 
+weight: 4
 ---
 
-## Spec 
+## Parallelism Spec 
 
 ```json
   "parallelism_spec": {
@@ -18,7 +18,7 @@ weight:
   },
 ```
 
-## About
+### About Parallelism
 
 `parallelism_spec` describes how Pachyderm parallelizes your pipeline.
 

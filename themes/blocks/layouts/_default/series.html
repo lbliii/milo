@@ -6,24 +6,26 @@
 
 {{ define "main" }}
     {{ $order := "asc"}}
-    <section class="layout-series hero is-medium is-primary theme-pattern">
-        <div class="hero-body">
-            <h1><strong>{{.Title}} </strong></h1>
-            <div class="tag is-medium">series</div>
-        </div>
-    </section>
-    <section class="layout-series section">
-        {{ range .Pages.ByParam "seriesPart" }}
-            <article class="content"> 
-                <div class="is-flex is-align-items-center"> 
-                    <div class="tag is-large is-black mr-3">{{.Params.seriesPart}}</div>
-                    <h1>{{.Title}}</h1>
-                </div>
-                <br>
-                {{ partial "featureBetaNotice.html" . }}
-                {{.Content}}
-                <hr>
-            </article>
-        {{ end }}
+    <section class="container is-max-desktop">  
+        <section class="layout-series hero is-medium is-primary theme-pattern">
+            <div class="hero-body">
+                <h1><strong>{{.Title}} </strong></h1>
+                <div class="tag is-medium">series</div>
+            </div>
+        </section>
+        <section class="layout-series section">
+            {{ range .Pages.ByParam "seriesPart" }}
+                <article class="content"> 
+                    <div class="is-flex is-align-items-center"> 
+                        <div class="tag is-large is-black mr-3">{{.Params.seriesPart}}</div>
+                        <h1>{{.Title}}</h1>
+                    </div>
+                    <br>
+                    {{ partial "featureBetaNotice.html" . }}
+                    {{.Content}}
+                    <hr>
+                </article>
+            {{ end }}
+        </section>
     </section>
 {{end}}

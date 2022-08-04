@@ -4,13 +4,13 @@ description: Learn about pipeline specifications.
 author:
 tags:
 categories:
-series: 
-seriesPart: 
+series: ["pipeline spec"]
+seriesPart: 1
 date:
 weight: 2
 ---
 
-## Spec 
+## Pipeline Spec 
 
 Pipeline specs open with the following basic attributes:
 
@@ -28,6 +28,6 @@ Pipeline specs open with the following basic attributes:
   Looking for a functional pipeline spec to play with? Check our our [pipeline tutorials](../../tutorials/pipeline). 
 {{% /notice %}}
 
-## Attributes
+## Pipeline Attributes
 To complete building your pipeline spec, add the following additional attributes:
 

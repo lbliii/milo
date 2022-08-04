@@ -4,13 +4,13 @@ description: Learn about pipeline specifications.
 author:
 tags:
 categories:
-series: 
-seriesPart: 
+series: ["pipeline spec"]
+seriesPart: 2
 date:
-weight: 
+weight: 2
 ---
 
-## Spec
+## Metadata Spec
 
 ```json
 "metadata": {
@@ -23,11 +23,11 @@ weight:
 }
 ```
 
-## About 
+### About Metadata
 
 This parameter enables you to add metadata to your pipeline pods by using Kubernetes' **labels** and **annotations**. 
 
-## Attributes
+## Metadata Attributes
 
 ### labels
 `labels` help you to organize and keep track of your cluster objects by creating groups of pods based on the application they run, resources they use, or other parameters. Labels simplify the querying of Kubernetes objects and are handy in operations.
