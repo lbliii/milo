@@ -10,7 +10,7 @@ date:
 weight: 
 ---
 
-## General Variables  
+
 | Variable | Required | Type | Default Value | Description |
 |---|---|---|---|---|
 | ETCD_SERVICE_HOST | Yes | string |  | The etcd service host name. |

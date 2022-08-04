@@ -10,7 +10,6 @@ date:
 weight: 
 ---
 
-## Variables
 
 | Variable | Required | Type | Default Value | Description |
 |---|---|---|---|---|
