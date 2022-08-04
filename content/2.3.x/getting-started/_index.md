@@ -1,6 +1,6 @@
 ---
 title: Getting Started
-description: Learn the basic concepts of Pachyderm in this glossary.
+description: Start here if you are new to Pachyderm and data science.
 author:
 tags:
 categories:
