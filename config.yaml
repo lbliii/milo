@@ -43,12 +43,9 @@ params:
   ## Release Features
   versionDropdown: true # displays a top-nav dropdown with top-level sections served as versioned documentation. 
   releaseInfo:
-    latest: "2.2.x" # displays the matching content directory's sections on the home page; if blank, all directories are displayed.
-    patch: "2.2.6"
-  downloads:
-    amd64: https://github.com/pachyderm/pachyderm/releases/download/v2.2.6/pachctl_2.2.6_amd64.deb
-    darwin: https://github.com/pachyderm/pachyderm/releases/download/v2.2.6/pachctl_2.2.6_darwin_amd64.zip
-    linux: https://github.com/pachyderm/pachyderm/releases/download/v2.2.6/pachctl_2.2.6_linux_amd64.tar.gz
+    latest: "2.2.x" # displays matching directory's sections on home page; if blank, all directories are displayed.
+    patch: "2.2.6" # Used to generate download links
+
 
   ## Nav features 
   navLevel: true  #  displays level-2 directory items in the file tree.

@@ -4,7 +4,9 @@
   {{ $relatedArticles := resources.Get "js/relatedArticles.js"  | resources.Minify }}
   {{ $darkMode := resources.Get "js/darkMode.js" | resources.Minify   }}
   {{ $notices := resources.Get "js/notices.js"  | resources.Minify  }}
-  {{ $js := slice  $darkMode $toc $clippy $notices $relatedArticles | resources.Concat "js/bundle.js"}}
+  {{ $pagination := resources.Get "js/pagination.js"  | resources.Minify  }}
+
+  {{ $js := slice  $darkMode $toc $clippy $notices $relatedArticles $pagination | resources.Concat "js/bundle.js"}}
 
 
 
