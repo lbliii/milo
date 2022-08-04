@@ -6,6 +6,6 @@ tags:
 categories:
 series:
 date:
-weight: 2
+weight: 5
 layout: glossary
 ---

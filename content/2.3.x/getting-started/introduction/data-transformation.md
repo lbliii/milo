@@ -5,7 +5,7 @@ author:
 tags:
 categories:
 series: ["basic introduction"]
-seriesPart: 2
+seriesPart: 1
 date:
-weight: 3
+weight: 1
 ---

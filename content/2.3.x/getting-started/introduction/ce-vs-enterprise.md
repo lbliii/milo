@@ -7,5 +7,5 @@ categories:
 series: ["basic introduction"]
 seriesPart: 3
 date:
-weight: 1
+weight: 3
 ---

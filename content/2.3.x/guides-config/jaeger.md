@@ -1,11 +1,11 @@
 ---
-title: Key Resources
+title: Trace with Jaeger
 description: Learn about the most important sections of this documentation to expand your Pachyderm expertise.
 author:
 tags:
 categories:
-series: ["basic introduction"]
-seriesPart: 5
+series: 
+seriesPart: 
 date:
-weight: 5
+weight: 3
 ---

@@ -1,6 +1,6 @@
 ---
 title: Deployment
-description: Learn the basic concepts of Pachyderm in this glossary.
+description: Learn how to deploy Pachyderm using the infrastructure and environments right for you.
 author:
 tags:
 categories:
