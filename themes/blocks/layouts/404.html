@@ -12,9 +12,8 @@
           {{/* Don't show the hero section */}}
         {{end}}
 
-        
-
-        {{ partial "featureChildPages.html" .CurrentSection }}
+        {{/*  TODO: range through the path.Dir from the url to get a list of child pages related to the unfound article; 404 currently takes context from the global site and shows everything at once, including tag pages.  */}}
+        {{ partial "featureChildPages.html" . }}
     </section>
     </main>
 {{ end }}
