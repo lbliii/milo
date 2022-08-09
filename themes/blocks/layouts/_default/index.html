@@ -6,24 +6,23 @@
 {{ define "main" }}
 <section class="columns mx-0 is-align-items-center">
     <div class="column is-half">
-       <h1 class="is-size-1 has-text-weight-bold">ML Lifecycle Management </h1>
-       <h2 >Data Versioning, Data Pipelines, <br>  &  Data Lineage.</h2>
+       <h1 class="is-size-1 has-text-weight-bold">Pachyderm Documentation </h1>
+       <div class="is-size-5"> Learn how to use Pachyderm to automate data transformations.</div>
     </div>
     <div class="column is-half is-hidden-touch">
         {{ .Content }}
     </div>
 </section>
 
-    {{ if .Site.Params.communityDetails}}
-        {{ partial "featureCommunityDetails" . }}
-    {{end}}
+    <h2 class="has-text-weight-bold has-text-centered subtitle">Design, Build, & Deploy Data Transformation Pipelines </h2>
 
     {{with  .Site.GetPage "section" .Site.Params.releaseInfo.latest  }}
-        <section class="mx-0">
+        <section class="mx-6">
     
             {{ partial "featureChildPages.html" . }}
         </section>
     {{end}}
+
     {{ partial "featureVideos.html" . }}
 
 {{end}}

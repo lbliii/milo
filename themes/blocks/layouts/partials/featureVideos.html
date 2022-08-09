@@ -3,7 +3,7 @@
     {{$directory := print (.Site.Params.releaseInfo.latest) "/tutorials/video/" }}
 
     <section class="has-background-info mx-2 my-6 p-6 theme-pattern-alt">
-        <h2 class="pb-4 has-text-weight-bold has-text-centered">Latest Webinars </h2>
+        <h2 class="pb-4 has-text-weight-bold has-text-centered">View Latest Webinars </h2>
         {{ with .Site.GetPage $directory }}
             <section class="columns mx-3">
                 {{range .Pages}}
