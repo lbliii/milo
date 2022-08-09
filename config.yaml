@@ -1,5 +1,5 @@
 baseURL: /
-title: PachDocs # Displayed above the tree navigation.
+title: PachDocs
 
 enableGitInfo: true 
 enableEmoji: true 
