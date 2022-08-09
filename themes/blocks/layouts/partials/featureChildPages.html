@@ -8,7 +8,13 @@
                    <a class="card is-clipped" href="{{ .Permalink }}">
                         <div class="card-content theme-tile">
                             <div class="content">
-                                <h4 class="mr-3"> {{ .Title}}</h4>
+                                <h4 class="mr-3 has-text-weight-bold"> {{ .Title}}</h4>
+                                {{if eq .Params.label "required"}}
+                                    <div class="tag is-black is-pulled-left mr-2">REQUIRED</div>
+                                {{else if eq .Params.label "optional"}}
+                                     <div class="tag is-light is-pulled-left mr-2">OPTIONAL</div>
+                                {{end}}
+                                
                 
                                 <p class="is-size-7 has-text-dark"> {{if .Description}} {{.Description}} {{else}}{{.Summary | truncate 300}} {{end}}</p>
                                 {{if .Pages}} 

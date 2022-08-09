@@ -8,6 +8,7 @@ series: ["pipeline spec"]
 seriesPart: 2
 date:
 weight: 2
+label: "optional" 
 ---
 
 ## Metadata Spec

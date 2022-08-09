@@ -54,7 +54,11 @@
                                 </div>
                                 <div class="column">
                                     <p class="glossary-definition has-text-weight-normal has-text-black is-size-7"> 
-                                        {{.Summary}}
+                                        {{ if .Description}}
+                                            {{.Description}}
+                                        {{else }}
+                                            {{.Summary}}
+                                        {{end}}
                                     </p>
                                 </div>
                             </a>

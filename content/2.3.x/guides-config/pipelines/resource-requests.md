@@ -8,6 +8,7 @@ series: ["pipeline spec"]
 seriesPart: 5
 date:
 weight: 5
+label: "optional" 
 ---
 
 ## Resource Requests Spec

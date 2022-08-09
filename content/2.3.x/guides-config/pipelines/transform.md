@@ -1,6 +1,6 @@
 ---
 title: Transform
-description: Required attribute for building a pipeline spec.
+description: Use the transform attribute to define the image containing your user code and what commands to run to transform data.
 author:
 tags:
 categories:
@@ -8,6 +8,7 @@ series: ["pipeline spec"]
 seriesPart: 3
 date:
 weight: 3
+label: "required" 
 ---
 
 

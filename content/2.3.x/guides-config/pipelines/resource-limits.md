@@ -8,6 +8,7 @@ series:
 seriesPart: 
 date:
 weight: 
+label: "optional" 
 ---
 
 ## Resource Limits Spec 
