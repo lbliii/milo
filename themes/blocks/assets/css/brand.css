@@ -221,3 +221,7 @@ table {
 .theme-video {
     max-width: 400px;
 }
+
+.theme-defer {
+    content-visibility: auto;
+}
