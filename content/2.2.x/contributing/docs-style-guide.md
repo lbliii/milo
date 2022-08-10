@@ -1,13 +1,15 @@
 ---
 title: Documentation Style Guide 
-description:
-author:
+description: Learn the guidelines for contributing to Pachyderm's documentation.
+author: Lawrence Lane
 tags: ["developer","feedback","testing","style guide"]
 series: ["contributors"]
 seriesPart: 4
 weight: 4
-date:
+date: 2022-070-22
+keywords: ["style guide", "documentation","pachyderm", "GitHub"]
 ---
+
 
 Thank you for taking an interest in contributing to Pachyderm's docs! 🐘 📖
 
