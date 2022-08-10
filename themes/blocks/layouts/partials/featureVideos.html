@@ -5,9 +5,9 @@
     <section id="webinars" class="has-background-info mx-2 my-6 p-6 theme-pattern">
         <h2 class="pb-4 has-text-weight-bold has-text-centered">View Latest Webinars </h2>
         {{ with .Site.GetPage $directory }}
-            <section class="columns mx-3">
+            <section class="columns mx-3 theme-defer">
                 {{range .Pages}}
-                    <div class="column is-one-third">
+                    <div class="column is-one-third theme-defer">
                         <div class="p-1 m-1 has-background-white">
                             {{.Content}}
                         </div>
