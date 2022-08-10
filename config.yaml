@@ -42,7 +42,7 @@ params:
 
   ## HomePage Features
    # TODO: add date sort to range on featureDisplayVideos
-  Videos: true # displays first 3 videos from "/tutorials/videos/", sorted by date.
+  Videos: false # displays first 3 videos from "/tutorials/videos/", sorted by date.
   CommunityDetails: true  # displays slack and other community details (WIP)
   
   ## Release Features
