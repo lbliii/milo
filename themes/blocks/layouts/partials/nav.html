@@ -18,7 +18,7 @@
         {{ if .Site.Params.versionDropdown }}
           {{/* Displays current version as dropdown title  */}}
           <div class="navbar-item has-dropdown is-hoverable is-size-7">
-            <a class="navbar-link" href="">
+            <a class="navbar-link" href="" >
               v. {{ .Section }}
             </a>
             <div class="navbar-dropdown is-boxed">
@@ -28,14 +28,14 @@
                   {{$currentVersionOption := print "/" .Section "/"}}
                   {{$alternativeVersionPath := print $currentVersionOption $versionlessLink }}
                 <!--TODO: IF alternative version does not exist, set link to home page of other version-->
-                <a class="navbar-item is-size-7" href="{{$alternativeVersionPath}}">
+                <a class="navbar-item is-size-7" href="{{$alternativeVersionPath}}" >
                   {{.Title}}
                 </a>
                 {{ end }}
               {{ end }}
               <hr class="navbar-divider">
               {{ range .Site.Taxonomies.series}}
-                <a class="navbar-item is-size-7" href="{{.Page.RelPermalink}}">
+                <a class="navbar-item is-size-7" href="{{.Page.RelPermalink}}" >
                   {{.Page.Title}}
                 </a>
               {{end}}
@@ -43,24 +43,7 @@
             </div>
           </div>
         {{end}}
-        {{if .Site.Params.releaseInfo.patch}}
-        <div class="navbar-item has-dropdown is-hoverable is-size-7">
-            <a class="navbar-link" href="">
-              Download CLI {{.Site.Params.releaseInfo.patch}}
-            </a>
-            <div class="navbar-dropdown is-boxed">
-                <a class="navbar-item is-size-7" href="https://github.com/pachyderm/pachyderm/releases/download/v{{.Site.Params.releaseInfo.patch}}/pachctl_{{.Site.Params.releaseInfo.patch}}_amd64.deb">
-                  amd64
-                </a>
-                <a class="navbar-item is-size-7" href="https://github.com/pachyderm/pachyderm/releases/download/v{{.Site.Params.releaseInfo.patch}}/pachctl_{{.Site.Params.releaseInfo.patch}}_darwin_amd64.zip">
-                  darwin
-                </a>
-                <a class="navbar-item is-size-7" href="https://github.com/pachyderm/pachyderm/releases/download/v{{.Site.Params.releaseInfo.patch}}/pachctl_{{.Site.Params.releaseInfo.patch}}_linux_amd64.tar.gz">
-                  linux 
-                </a>
-            </div>
-          </div>
-        {{end}}
+        {{ partial "featureDownloads.html" . }}
         <div class="navbar-item">
           <input class="input " type="text" placeholder="Search docs">
 

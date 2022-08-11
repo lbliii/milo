@@ -1,33 +1,22 @@
 {{if .Site.Params.downloads }}
 
-    <div class="dropdown is-active">
-    <div class="dropdown-trigger">
-        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-        <span>Dropdown button</span>
-        <span class="icon is-small">
-            <i class="fas fa-angle-down" aria-hidden="true"></i>
-        </span>
-        </button>
-    </div>
-    <div class="dropdown-menu" id="dropdown-menu" role="menu">
-        <div class="dropdown-content">
-        <a href="#" class="dropdown-item">
-            amd64
-        </a>
-        <a href="#" class="dropdown-item">
-            darwin 
-        </a>
-        <a href="#" class="dropdown-item">
-            linux 
-        </a>
-
-        
-        <hr class="dropdown-divider">
-        <a href="#" class="dropdown-item">
-            With a divider
-        </a>
+    {{if .Site.Params.releaseInfo.patch}}
+        <div class="navbar-item has-dropdown is-hoverable is-size-7">
+            <a class="navbar-link" href="" >
+                Download CLI {{.Site.Params.releaseInfo.patch}}
+            </a>
+            <div class="navbar-dropdown is-boxed">
+                <a class="navbar-item is-size-7" href="https://github.com/pachyderm/pachyderm/releases/download/v{{.Site.Params.releaseInfo.patch}}/pachctl_{{.Site.Params.releaseInfo.patch}}_amd64.deb" >
+                    amd64
+                </a>
+                <a class="navbar-item is-size-7" href="https://github.com/pachyderm/pachyderm/releases/download/v{{.Site.Params.releaseInfo.patch}}/pachctl_{{.Site.Params.releaseInfo.patch}}_darwin_amd64.zip" >
+                    darwin
+                </a>
+                <a class="navbar-item is-size-7" href="https://github.com/pachyderm/pachyderm/releases/download/v{{.Site.Params.releaseInfo.patch}}/pachctl_{{.Site.Params.releaseInfo.patch}}_linux_amd64.tar.gz" >
+                    linux 
+                </a>
+            </div>
         </div>
-    </div>
-    </div>
+    {{end}}
 
 {{end}}
