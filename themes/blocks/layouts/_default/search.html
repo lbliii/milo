@@ -13,7 +13,7 @@
                 {{ if .Params.Tags}}
                     <div class="column is-one-third is-hidden is-flex-grow-1" data-tags="{{ trim  (print .Params.Tags) "[]" }}"> 
                         <a class="is-size-7" href="{{.Permalink}}">
-                            <div class="card m-1 p-3">
+                            <div class="card m-1 p-3 search-results">
                                 <h3>{{.Title}}</h3>
                                 <p class="has-text-weight-normal">{{if .Description}} {{.Description}} {{else}}{{.Summary | truncate 300}} {{end}} </p>
                             </div>

@@ -219,6 +219,11 @@
     color: var(--is-content-color-inverted) !important;
 }
 
+.theme-dark-mode .search-results {
+    background-color: #000 !important;
+    color: var(--is-content-color-inverted) !important;
+    border : 1px solid #454545 !important;
+}
 
 
 .theme-is-transparent {
