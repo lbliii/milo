@@ -1,7 +1,7 @@
 {{ define "main" }}
     <section class="container is-max-desktop"> 
 
-        <section class="buttons"> 
+        <section class="buttons has-background-info mt-2 p-3 theme-pattern"> 
             {{ range .Site.Taxonomies.tags }}
                 <button class="button" onClick="Filter({{ .Page.Title }}, this)">{{ .Page.Title }}</button> 
             {{ end }}
