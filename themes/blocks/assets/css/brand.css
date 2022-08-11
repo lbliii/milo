@@ -128,7 +128,13 @@
 
 }
 
+ .logo {
+    width: 150px;
+    background-image: url(/images/pachLogo.svg);
+    background-repeat: no-repeat;
+}
 
+/* Dark Mode */
 .theme-dark-mode {
     background-color: #000 !important;
     color: var(--is-content-color-inverted);
@@ -225,6 +231,10 @@
     border : 1px solid #454545 !important;
 }
 
+.theme-dark-mode .github {
+    image-color: #fff !important;
+
+}
 
 .theme-is-transparent {
     background-color: transparent !important;
