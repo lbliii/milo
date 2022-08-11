@@ -21,7 +21,7 @@
              </div>
             {{/* Displays current page's children. */}}
             <section id="directory" class="theme-directory"> 
-                {{ if (eq .Params.layout "glossary")}}
+                {{ if (eq .Params.layout "glossary") }}
                     {{/*  Don't display children if parent has layout:glossary  */}}
                 {{else if .Pages }}
                 {{ if eq .Kind "term"}}
