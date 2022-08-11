@@ -5,29 +5,30 @@
 <!DOCTYPE html>
 <html>
     {{ partial "head.html" . }}
-    <body class="layout-baseof"> 
+    <body class="layout-baseof container is-fluid"> 
                 {{ partial "nav.html" . }}
         <main class="columns theme-fade-in">
-            <div id="guard-left" class="m-6 is-hidden-mobile"></div>
                 {{ partial "directory.html" .}}     
             <article class="column content">
               {{ if .IsHome}}
                 {{/* Don't show Breadcrumbs or EditLink*/}}
               {{else}}
-                <section class="is-flex is-align-items-end	">
-                  {{ partial "featureBreadcrumbs.html" . }} 
-                  {{ partial "featureEditLink.html" . }}
-                </section>
+
+                  <section class="is-flex is-align-items-end	">
+                    {{ partial "featureBreadcrumbs.html" . }} 
+                    {{ partial "featureEditLink.html" . }}
+                  </section>
+
               {{end}}
               {{ if .Params.hidden }}
                 This content is not ready for public viewing.
               {{ else }}
-                {{ block "main" . }}
-                {{end}}
+
+                    {{ block "main" . }}
+                    {{end}}
               {{end}}
               {{ partial "featureTags.html" . }}
             </article>
-            <div id="guard-right" class="m-6 is-hidden-mobile"></div>
         </main>
     </body>
 {{ partial "footer.html" . }}

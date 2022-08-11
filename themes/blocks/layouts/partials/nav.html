@@ -3,8 +3,7 @@
  {{ $removeVersion := print "/" .Section "/"}}
  {{ $versionlessLink := strings.TrimPrefix $removeVersion .RelPermalink }}
 {{/* End for versionDropdown feature */}}
-<nav id="top-nav-container" class="navbar columns pt-4 is-hidden-mobile theme-fade-in">
-  <div class="mx-6"> </div>
+<nav id="top-nav-container" class="navbar columns pt-4 mx-5 is-hidden-mobile theme-fade-in">
     <div id="top-nav" class="navbar-menu is-transparent">
       <a class="navbar-start" href="https://pachyderm.com">
         <div class="logo mr-3 mt-3"></div>
@@ -61,6 +60,5 @@
         </div>
       </div>
     </div>
-     <div class="mx-6"> </div>
   </nav>
 

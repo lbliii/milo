@@ -4,26 +4,28 @@
 */}}
 
 {{ define "main" }}
-<section class="columns mt-6 is-align-items-center is-flex-wrap-wrap">
-    <div class="column">
-       <h1 class="is-size-1 has-text-weight-bold">Pachyderm Docs</h1>
-       <h2 class="is-size-5"> Learn how to automate data transformations using Pachyderm</h2>
+<section class="container is-fluid">
+    <div class="columns mt-6 is-align-items-center is-flex-wrap-wrap">
+        <div class="column">
+            <h1 class="is-size-1 has-text-weight-bold">Pachyderm Docs</h1>
+            <h2 class="is-size-5"> Learn how to automate data transformations using Pachyderm</h2>
+        </div>
+        <div class="column is-one-fifth is-hidden-touch">
+            <img src="{{ .Site.Params.logos.footer }}" alt="Pachyderm Docs" class="is-pulled-right" >
+        </div>
     </div>
-    <div class="column m-0 p-0 is-one-fifth is-hidden-touch">
-        <img src="{{ .Site.Params.logos.footer }}" alt="Pachyderm Docs" class="is-pulled-right" >
-    </div>
-</section>
+
 
     {{ partial "featureCommunityDetails.html" . }}
-    <section class="my-6">
-    <h2 class="has-text-weight-bold has-text-centered subtitle">Design, Build, & Deploy <br>  Data Transformation Pipelines </h2>
-    {{with  .Site.GetPage "section" .Site.Params.releaseInfo.latest  }}
-        <section class="m-6">
-            {{ partial "featureChildPages.html" . }}
-        </section>
-    {{end}}
+    <section class=" py-6">
+        <h2 class="has-text-weight-bold has-text-centered subtitle">Design, Build, & Deploy <br>  Data Transformation Pipelines </h2>
+        {{with  .Site.GetPage "section" .Site.Params.releaseInfo.latest  }}
+            <section class="m-6">
+                {{ partial "featureChildPages.html" . }}
+            </section>
+        {{end}}
     </section>
 
     {{ partial "featureVideos.html" . }}
-
+</section>
 {{end}}

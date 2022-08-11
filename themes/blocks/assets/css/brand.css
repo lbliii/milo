@@ -240,7 +240,9 @@
     background-color: transparent !important;
 }
 
-
+.theme-rounded {
+    border-radius: 30px;
+}
 
 
 /* Link weights */

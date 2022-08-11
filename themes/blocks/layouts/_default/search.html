@@ -1,7 +1,6 @@
 {{ define "main" }}
-    <section class="container is-max-desktop"> 
          {{ if .Site.Params.heroBanner.list }}
-            <section class="layout-list hero is-small is-info theme-pattern-alt">
+            <section class="layout-list hero is-small is-info theme-pattern-alt theme-rounded">
                 <div class="hero-body my-6">
                     <h1><strong>How can we help you?</strong></h1>
                     <p class="has-text-black description"> Select multiple tags to find related articles.</p>
@@ -33,5 +32,4 @@
                 {{end}}
             {{ end }}
             </section>
-    </section> 
 {{ end }}

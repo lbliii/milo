@@ -2,9 +2,8 @@
     layout-section is an empty class for easier location; do not style against it.*/}}
 
 {{ define "main" }}
-    <section class="container is-max-desktop"> 
         {{ if .Site.Params.heroBanner.section}}
-        <section id="section-hero" class="layout-section hero is-medium is-info theme-pattern-alt">
+        <section id="section-hero" class="layout-section hero is-medium is-info theme-pattern-alt theme-rounded">
             <div class="hero-body">
                 <h1><strong>{{.Title}}</strong></h1>
                 <hr>
@@ -28,5 +27,4 @@
             {{ .Content }}
             {{ partial "featureChildPages.html" . }}
         </section>
-    </section>
 {{end}}
