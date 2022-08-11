@@ -29,7 +29,7 @@
             <div class="pagination-list">
                 {{ range .Paginator.Pagers}}
             
-                    <button data-pager="{{.}}" class="mx-1 my-4 button is-black is-outlined is-small" aria-label='Goto page {{trim . "Pager "}}' onclick="revealPage({{.}})">{{trim . "Pager"}}</button>
+                    <button data-pager="{{.}}" class="mx-1 my-4 button is-black is-outlined is-small glossary-buttons" aria-label='Goto page {{trim . "Pager "}}' onclick="revealPage({{.}})">{{trim . "Pager"}}</button>
             
                 {{end}}
             </div>
@@ -43,7 +43,7 @@
                                 {{/* Do not show the hidden child page or its descendants */}}
                         {{else}}
                             <a class="columns card m-4" href="{{.Permalink}}">
-                                <div class="glossary-term column is-two-fifths is-flex has-background-info m-0 is-align-items-center glossary-entry"> 
+                                <div class="glossary-term column is-two-fifths is-flex has-background-info m-0 is-align-items-center"> 
                                     <h4 class="m-0"> 
                                         {{if .Title}}
                                             {{ strings.TrimPrefix "Pachctl" .Title}}
@@ -52,8 +52,8 @@
                                         {{end}}
                                     </h4>
                                 </div>
-                                <div class="column">
-                                    <p class="glossary-definition has-text-weight-normal has-text-black is-size-7"> 
+                                <div class="column glossary-definition">
+                                    <p class=" has-text-weight-normal is-size-7"> 
                                         {{ if .Description}}
                                             {{.Description}}
                                         {{else }}

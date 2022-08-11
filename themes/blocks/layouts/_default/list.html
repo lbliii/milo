@@ -33,10 +33,10 @@
                     {{else}}
                         <div class="column is-half">
                             <a class="card is-clipped	" href="{{ .Permalink }}">
-                                <div class="card-content has-background-info theme-tile ">
+                                <div class="card-content  theme-tile">
                                     <div class="content">
                                         <h4 class="mr-3"> {{ .Title}}</h4>
-                                        {{if .Pages}} <div class="tag is-white"> {{ len (.Pages) }} articles</div> {{end}}
+                                        {{if .Pages}} <div class="tag is-light"> {{ len (.Pages) }} articles</div> {{end}}
                                         <p class="is-size-7 has-text-dark has-text-weight-normal"> {{.Summary | truncate 300 }} </p>
                                     </div>
                                 </div>

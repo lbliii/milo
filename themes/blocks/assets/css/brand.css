@@ -130,7 +130,7 @@
 
 
 .theme-dark-mode {
-    background-color: #000;
+    background-color: #000 !important;
     color: var(--is-content-color-inverted);
 }
 
@@ -153,9 +153,9 @@
 }
 
 .theme-dark-mode pre,
-
 .theme-dark-mode code { 
-    background-color: transparent;
+    background-color: #454545 !important;
+    color: var(--is-content-color-inverted);
 }
 
 
@@ -178,9 +178,53 @@
     background-image: url(/images/pachLogoWhite.svg);
 }
 
+.theme-dark-mode .glossary-term { 
+    background-color: #000 !important;
+    border: 1px solid #454545 !important;
+}
+
+.theme-dark-mode .glossary-definition {
+    background-color: #454545 !important;
+    color: var(--is-content-color-inverted);
+}
+
+.theme-dark-mode .glossary-buttons {
+    background-color: #fff !important;
+}
+
+.theme-dark-mode .glossary-buttons:hover {
+    background-color: #454545 !important;
+}
+
+.theme-dark-mode  .description {
+    background-color: transparent !important;
+    color: var(--is-content-color-inverted) !important;
+}
+
+.theme-dark-mode .community {
+    background-color: #000 !important;
+    color: var(--is-content-color-inverted);
+}
+
+.theme-dark-mode table, .theme-dark-mode thead, .theme-dark-mode tbody, .theme-dark-mode tr, .theme-dark-mode th, .theme-dark-mode td {
+   color: var(--is-content-color-inverted) !important;
+}
+
+.theme-dark-mode li, .theme-dark-mode ul {
+    color: var(--is-content-color-inverted) !important;
+}
+
+.theme-dark-mode blockquote {
+    background-color: #454545 !important;
+    color: var(--is-content-color-inverted) !important;
+}
+
+
+
 .theme-is-transparent {
     background-color: transparent !important;
 }
+
 
 
 

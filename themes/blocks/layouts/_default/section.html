@@ -9,12 +9,12 @@
                 <h1><strong>{{.Title}}</strong></h1>
                 <hr>
                     {{ if .Description}}
-                        <div id="hero-description" class="has-text-black">
+                        <div class="has-text-black description">
                             {{ .Description}}
                         </div>
                     {{end}}
                     {{ if .Date }}
-                        <div class="is-size-7 has-text-black">
+                        <div class="is-size-7 has-text-black description">
                             {{ .Date | time.Format ":date_long" }}
                         </div>
                     {{ end }}

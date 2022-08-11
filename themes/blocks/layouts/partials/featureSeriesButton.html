@@ -2,7 +2,7 @@
     {{if and (.Params.series) (.Site.Params.seriesButton) }}
         {{range .Params.series }}
  
-            <a class="button is-primary is-outlined is-small" href="/series/{{ . | urlize }}"> Read the  {{.}}  series</a> 
+            <a id="series-button" class="button is-primary is-outlined is-small" href="/series/{{ . | urlize }}"> Read the  {{.}}  series</a> 
 
         {{end}}
     {{end}}

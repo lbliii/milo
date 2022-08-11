@@ -1,16 +1,18 @@
 function darkMode() {
 
-   var element = document.body;
-   var directory = document.getElementById('directory');
-   var button = document.getElementById("dark-mode-button");
-   var backButton = document.getElementById("back-arrow-left");
-   var glossary = document.getElementById("glossary");
-   var cards = document.getElementsByClassName("card-buttons");
+    var html = document.getElementsByTagName('html')[0];
 
+    var directory = document.getElementById('directory');
+    var button = document.getElementById("dark-mode-button");
+    var backButton = document.getElementById("back-arrow-left");
+    var cards = document.getElementsByClassName("card-buttons");
+    var seriesButton = document.getElementById("series-button");
+
+    // Toggle dark mode for html element 
+    html.classList.toggle("theme-dark-mode");
 
 
     // Toggle darkmode for each card 
-
     if (cards){
         for (var i = 0; i < cards.length; i++) {
             cards[i].classList.toggle("is-black");
@@ -27,34 +29,18 @@ function darkMode() {
     }
    }
 
-   // Toggle Darkmode for the glossary
-    if (glossary){
-        for (var i = 0; i < glossary.children.length; i++) {
-            
-            for (var j = 0; j < glossary.children[i].children.length; j++) {
-
-                const element = glossary.children[i].children[j];
-
-                if (element.classList.contains("glossary-term")) {
-                    element.classList.toggle("has-background-info");
-                    element.classList.toggle("has-background-black");
-                } else {
-
-                    element.classList.toggle("has-text-white");
-                    element.classList.toggle("has-background-black");
-
-                }
-
-            }
-        }
+   // Toggle Darkmode for the back button on pages that aren't the home page
+    if (backButton){
+        backButton.classList.toggle("is-primary");
+        backButton.classList.toggle("is-white");
     }
 
-   // Toggle Darkmode for the body element 
+    // Toggle Darkmode for the series button on single pages. 
 
-   element.classList.toggle("theme-dark-mode");
-   backButton.classList.toggle("is-primary");
-   backButton.classList.toggle("is-white");
-
+    if (seriesButton){
+        seriesButton.classList.toggle("is-primary");
+        seriesButton.classList.toggle("is-white");
+    }
 
    // Toggle Darkmode for Darkmode Button
    if (button.classList.contains("is-black")) {
@@ -65,14 +51,10 @@ function darkMode() {
     button.innerText = "🌙";
    }
     
+   // Store the current theme in local storage
+    localStorage.setItem("theme-dark-mode", html.classList.contains("theme-dark-mode"));
 
-   // Store the value in local storage
-    if (element.classList.contains("theme-dark-mode")) {
-        localStorage.setItem("theme-dark-mode", "true");
-    }
-    else {
-        localStorage.setItem("theme-dark-mode", "false");
-    }
+
 
 }
 
