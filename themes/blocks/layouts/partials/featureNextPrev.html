@@ -1,15 +1,15 @@
 {{ if .Site.Params.nextPrev }}
-    <section id="next-previous" class="columns is-mobile pt-6">
+    <section id="next-previous" class="columns pt-6">
         {{with .NextInSection }}
-            <section class="column is-half">
-                <a id="previous" href="{{.Permalink}}" class="button is-info">👈 {{.Title | truncate 45}}</a>
+            <section class="column is-half ">
+                <a id="previous" href="{{.Permalink}}" class="button is-info">👈 {{.Title | truncate 35}}</a>
             </section>
             {{else}}
             <div class="column is-half"></div>
         {{end}}
         {{with .PrevInSection}}
-            <section class="column is-half">
-                <a id="next" href="{{.Permalink}}" class="button is-info is-pulled-right">{{.Title | truncate 45}} 👉</a>
+            <section class="column is-half ">
+                <a id="next" href="{{.Permalink}}" class="button is-info is-pulled-right">{{.Title | truncate 35}} 👉</a>
             </section>
         {{end}}
     </section>
