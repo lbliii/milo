@@ -198,7 +198,7 @@
     background-color: #fff !important;
 }
 
-.theme-dark-mode .glossary-buttons:hover {
+.theme-dark-mode .glossary-buttons:hover, .theme-dark-mode .glossary-buttons:focus {
     background-color: #454545 !important;
 }
 
