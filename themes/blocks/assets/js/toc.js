@@ -4,6 +4,7 @@ function styleTOC(){
     var headings = [];
     var toc = []
 
+    if (zzz) {
 
      // Get every header in the document
 
@@ -75,6 +76,8 @@ function styleTOC(){
             }
         }
     });
+    }
+
 }
 
 
