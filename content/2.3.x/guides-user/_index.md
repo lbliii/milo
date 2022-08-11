@@ -2,7 +2,7 @@
 title: User Guides
 description: Learn the basic concepts of Pachyderm in this glossary.
 author:
-tags:
+tags: ["guides-user", ]
 categories:
 series:
 date:

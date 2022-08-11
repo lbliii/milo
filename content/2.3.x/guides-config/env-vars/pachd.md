@@ -2,7 +2,7 @@
 title:  Pachd
 description: 
 author:
-tags:
+tags: ["guides-config", "environment-variables", "pachd"]
 categories:
 series: 
 seriesPart: ["environment variables"]

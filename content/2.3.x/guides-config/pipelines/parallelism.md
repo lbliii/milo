@@ -2,7 +2,7 @@
 title: Parallelism
 description: Learn about pipeline specifications.
 author:
-tags:
+tags:  ["guides-config", "pipelines"]
 categories:
 series: ["pipeline spec"]
 seriesPart: 4

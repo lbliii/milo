@@ -2,7 +2,7 @@
 title:  Workers
 description: 
 author:
-tags:
+tags: ["guides-config", "environment-variables", "settings-workers"]
 categories:
 series: 
 seriesPart: ["environment variables"]

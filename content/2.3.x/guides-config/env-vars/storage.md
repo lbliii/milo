@@ -2,7 +2,7 @@
 title:  Storage
 description: 
 author:
-tags:
+tags: ["guides-config", "environment-variables", "settings-storage"]
 categories:
 series: 
 seriesPart: ["environment variables"]

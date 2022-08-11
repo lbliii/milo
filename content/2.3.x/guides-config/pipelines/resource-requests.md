@@ -2,7 +2,7 @@
 title: Resource Requests
 description: This attribute...
 author:
-tags:
+tags:  ["guides-config", "pipelines"]
 categories:
 series: ["pipeline spec"]
 seriesPart: 5

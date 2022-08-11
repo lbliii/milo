@@ -2,7 +2,7 @@
 title: Enterprise
 description: 
 author:
-tags:
+tags:  ["guides-config", "environment-variables", "edition-enterprise"]
 categories:
 series: 
 seriesPart: ["environment variables"]

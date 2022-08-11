@@ -2,7 +2,7 @@
 title: Spout
 description: Learn about pipeline specifications.
 author:
-tags:
+tags:  ["guides-config", "pipelines"]
 categories:
 series: 
 seriesPart: 

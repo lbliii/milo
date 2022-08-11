@@ -2,7 +2,7 @@
 title:  Global
 description: 
 author:
-tags:
+tags: ["guides-config", "environment-variables",]
 categories:
 series: 
 seriesPart: ["environment variables"]

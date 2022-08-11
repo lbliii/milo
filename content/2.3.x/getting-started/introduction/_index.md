@@ -2,7 +2,7 @@
 title: Introduction
 description: Learn about the basic concepts of data transformation and how Pachyderm helps.
 author:
-tags:
+tags: ["getting-started",]
 categories:
 series: ["basic introduction"]
 seriesPart: 1

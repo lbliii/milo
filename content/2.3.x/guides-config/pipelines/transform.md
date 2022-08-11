@@ -2,7 +2,7 @@
 title: Transform
 description: Use the transform attribute to define the image containing your user code and what commands to run to transform data.
 author:
-tags:
+tags:  ["guides-config", "pipelines"]
 categories:
 series: ["pipeline spec"]
 seriesPart: 3

@@ -2,7 +2,7 @@
 title: Monitor Cluster Metrics with Prometheus
 description: Learn
 author:
-tags:
+tags:  ["guides-config", "prometheus"]
 categories:
 series:  
 seriesPart: 

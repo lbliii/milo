@@ -2,7 +2,7 @@
 title: Troubleshooting
 description: Learn the basic concepts of Pachyderm in this glossary.
 author:
-tags:
+tags: ["guides-user", "troubleshooting" ]
 categories:
 series:
 date:

@@ -2,7 +2,7 @@
 title: Key Resources
 description: Learn about the most important sections of this documentation to expand your Pachyderm expertise.
 author:
-tags:
+tags: ["getting-started", "mlops", ]
 categories:
 series: ["basic introduction"]
 seriesPart: 5

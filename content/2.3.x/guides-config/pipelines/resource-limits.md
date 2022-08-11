@@ -2,7 +2,7 @@
 title: Resource Limits
 description: Learn about pipeline specifications.
 author:
-tags:
+tags:  ["guides-config", "pipelines"]
 categories:
 series: 
 seriesPart: 

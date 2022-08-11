@@ -2,7 +2,7 @@
 title: Create Your First DAG
 description: Learn how to trace images using Pachyderm pipelines and user code in this starter tutorial.
 author:
-tags:
+tags: ["getting-started", "dag",]
 categories:
 series: ["basic introduction"]
 seriesPart: 4

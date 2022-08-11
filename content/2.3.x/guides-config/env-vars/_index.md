@@ -2,7 +2,7 @@
 title: Environment Variables
 description: Learn about all of the available environment variables. 
 author:
-tags:
+tags:  ["guides-config"]
 categories:
 series: 
 seriesPart:
