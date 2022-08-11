@@ -238,6 +238,8 @@
 
 .theme-dark-mode .notification {
     border: 1px solid #454545 !important;
+    background-color: var(--is-content-color) !important;
+    color: var(--is-content-color-inverted) !important;
 }
 
 .theme-is-transparent {
