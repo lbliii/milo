@@ -2,7 +2,7 @@
 title: Install Pachctl 
 description: Learn how to install Pachctl.
 author:
-tags:
+tags: ["getting-started", "install", "pachctl"]
 categories:
 series: ["local install"]
 seriesPart: 3

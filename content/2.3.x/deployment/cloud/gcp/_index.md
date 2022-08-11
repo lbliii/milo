@@ -1,7 +1,7 @@
 ---
 title: GCP Deployment
 description: Learn how to deploy Pachyderm on GCP
-tags:
+tags: ["2.3.x", "deployment", "cloud", "gcp",]
 categories:
 series:
 date:

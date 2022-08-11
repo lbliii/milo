@@ -2,7 +2,7 @@
 title: Before You Start
 description: Learn about the prerequisites needed to use Pachyderm locally.
 author:
-tags:
+tags: ["getting-started", "install"]
 categories:
 series: ["local install"]
 seriesPart: 2

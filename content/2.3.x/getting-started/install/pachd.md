@@ -2,7 +2,7 @@
 title: Install Pachd 
 description: Learn how to install Pachd.
 author:
-tags:
+tags: ["getting-started", "install", "pachd"]
 categories:
 series: ["local install"]
 seriesPart: 4

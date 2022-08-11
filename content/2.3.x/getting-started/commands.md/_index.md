@@ -2,7 +2,7 @@
 title: Basic Commands
 description: Learn the most frequently used commands for Kubectl and Pachctl. 
 author:
-tags:
+tags: ["getting-started", "basic-commands",]
 categories:
 series:
 seriesPart: 

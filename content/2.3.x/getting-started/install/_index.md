@@ -2,7 +2,7 @@
 title: Install Locally 
 description: Learn how to install Pachyderm locally.
 author:
-tags:
+tags: ["getting-started", "install"]
 categories:
 series: ["local install"]
 seriesPart: 1

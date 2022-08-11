@@ -2,7 +2,7 @@
 title: Pachctl Commands
 description: Learn the most useful Pachctl commands for Pachyderm. 
 author:
-tags:
+tags: ["getting-started", "commands", "pachctl"]
 categories:
 series:
 seriesPart: 

@@ -2,7 +2,7 @@
 title: Azure Deployment
 description: Learn how to deploy Pachyderm on Microsoft Azure.
 author:
-tags:
+tags: ["2.3.x", "deployment", "cloud",  "azure",]
 categories:
 series:
 date:
