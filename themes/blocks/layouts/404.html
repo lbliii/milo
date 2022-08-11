@@ -1,9 +1,19 @@
 {{ define "main" }}
     <section class="container is-max-desktop"> 
-        <h1 class="has-text-weight-bold my-3">How can we help you?</h1>
-        <section class="buttons has-background-info mt-2 p-3 theme-pattern"> 
+         {{ if .Site.Params.heroBanner.list }}
+            <section class="layout-list hero is-small is-info theme-pattern-alt">
+                <div class="hero-body my-6">
+                    <h1><strong>How can we help you?</strong></h1>
+                    <p class="has-text-black description"> Select multiple tags to find related articles.</p>
+                </div>
+            </section>
+        {{else}}
+        {{/* Don't show the hero section */}}
+        {{end}}
+
+        <section class="buttons mt-2 p-3"> 
             {{ range .Site.Taxonomies.tags }}
-                <button class="button" onClick="Filter({{ .Page.Title }}, this)">{{ .Page.Title }}</button> 
+                <button class="button is-size-7" onClick="Filter({{ .Page.Title }}, this)">{{ .Page.Title }}</button> 
             {{ end }}
         </section>
 
@@ -13,7 +23,7 @@
                 {{ if .Params.Tags}}
                     <div class="column is-one-third is-hidden is-flex-grow-1" data-tags="{{ trim  (print .Params.Tags) "[]" }}"> 
                         <a class="is-size-7" href="{{.Permalink}}">
-                            <div class="card m-1 p-3 search-results">
+                            <div class="card m-1 p-3 search-results theme-tile">
                                 <h3>{{.Title}}</h3>
                                 <p class="has-text-weight-normal">{{if .Description}} {{.Description}} {{else}}{{.Summary | truncate 300}} {{end}} </p>
                             </div>
