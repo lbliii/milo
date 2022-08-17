@@ -6,6 +6,7 @@
   {{ $notices := resources.Get "js/notices.js"  | resources.Minify  }}
   {{ $pagination := resources.Get "js/pagination.js"  | resources.Minify  }}
   {{ $filterByTags := resources.Get "js/filterByTags.js"  | resources.Minify  }}
+  
 
   {{ $js := slice  $darkMode $toc $clippy $notices  $relatedArticles $pagination $filterByTags| resources.Concat "js/bundle.js"}}
 
@@ -14,7 +15,11 @@
 
 <footer class="footer theme-defer">
     <script src="{{ $js.Permalink }}" ></script>
-     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    {{if .Params.mermaid}}
+      {{ partial "mermaid.html" . }}
+    {{else}}
+    {{end}}
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
     <section class="columns"> 
     {{if .IsHome}}
