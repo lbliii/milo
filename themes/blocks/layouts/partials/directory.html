@@ -8,7 +8,7 @@
             <div id="controls" class="mb-2"> 
                 {{with .Parent}}
                     {{/* Displays current page's parent to return. */}}  
-                    <a id="back-arrow-left" href="{{ .RelPermalink }}" class="button is-primary is-outlined"> < {{ .Title | truncate 20}}</a>
+                    <a id="back-arrow-left" href="{{ .RelPermalink }}" class="button is-primary is-outlined"> < {{ .Title | truncate 18}}</a>
                 {{end}}
                 {{ if eq .BundleType "branch"}}
                     {{/* Do not show the relatedArticle button (id related-articles) on list pages */}}

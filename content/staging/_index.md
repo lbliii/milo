@@ -7,7 +7,7 @@ categories:
 products:
 date:
 weight: 0
-hidden: false
+hidden: true
 mermaid: true
 ---
 
