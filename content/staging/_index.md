@@ -11,7 +11,7 @@ hidden: false
 mermaid: true
 ---
 
-
+```mermaid
 {{< mermaid >}}
 stateDiagram-v2
     [*] --> Still
@@ -21,3 +21,4 @@ stateDiagram-v2
     Moving --> Crash
     Crash --> [*]
 {{< /mermaid >}}
+```
