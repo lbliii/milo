@@ -4,9 +4,9 @@ title: PachDocs
 enableGitInfo: true 
 enableEmoji: true 
 enableRobotsTXT: true 
-theme: blocks 
+theme: pachyderm 
 
-staticDir: "/themes/blocks/static"
+staticDir: "/themes/pachyderm/static"
 
 outputs: 
   home: [ "HTML", "JSON"]
