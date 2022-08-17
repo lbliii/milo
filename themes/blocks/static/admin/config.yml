@@ -1,12 +1,13 @@
 backend:
-  name: git-gateway
-  branch: main # Branch to update (optional; defaults to master)
+  name: gitHub
+  repo: lbliii/milo
+  use_graphql: true
 media_folder: static/img
 public_folder: /img
 collections:
   - name: 'content'
     label: 'Content'
-    folder: 'content/*'
+    folder: 'content/'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     editor:
