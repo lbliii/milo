@@ -8,6 +8,9 @@ collections:
   - name: 'content'
     label: 'Content'
     folder: 'content'
+    nested: 
+      depth: 100
+      summary: '{{title}}'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     editor:
