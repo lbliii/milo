@@ -24,7 +24,7 @@ preBlocks.forEach(function(preBlock) {
         // remove the button from the pre tag
         preBlock.removeChild(preBlock.querySelector('button'));
         // make the pre background transparent
-        preBlock.style.backgroundColor = 'transparent';
+        preBlock.setAttribute('style', 'background: transparent !important;');
     }
 
 });
