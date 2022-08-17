@@ -1,5 +1,5 @@
 backend:
-  name: gitHub
+  name: github
   repo: lbliii/milo # Branch to update (optional; defaults to master)
   branch: main
 media_folder: static/img
@@ -21,3 +21,4 @@ collections:
       - { label: 'Tags', name: 'tags', widget: 'list' }
       - { label: 'Categories', name: 'categories', widget: 'list' }
       - { label: 'Beta', name: 'beta', widget: 'boolean' }
+
