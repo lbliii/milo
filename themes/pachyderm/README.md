@@ -82,47 +82,18 @@ Partials included:
 - **featureTags**
 - **footer** (js is here)
 
-##### **Glossary Template**
 
-A standalone default layout for showing child pages as a scrollable stack. To use this layout, define `layout: glossary` on the parent page of any collection you wish to view as a glossary. Using the glossary layout hides the children from the `directory` file tree (the assumption being way too many entries will show up and distort your directory.)
-
-##### **List Template**
-
-Auto-generated pages like taxonomy pages and the default home  page (`/index.html`) are considered list pages. You can create a unique home page by defining a `index.html` template in your `layouts` folder.
-
-**note**: the child pages displayed on lists are defined directly on this layout and do not use the partial `featureChildPages`.
-
-##### **Section Template**
-
-A default layout for parent pages (`_index.html`).  This layout defines the `main` block placed in the `baseof` template and shows child pages as cards that include a title, a page count, and a summary.
-
-Partials included:
-
-- **featureBetaNotice**
-- **featureChildPages**
-
-##### **Series Template**
-
-A taxonomy-specific layout for the custom taxonomy key `series`. This layout aggregates the tagged pages and displays a single, scrollable view. Use the `seriesPart` front matter field to order your series from `0-999`.
-
-```yaml
-series: "getting started"
-seriesPart: 1
-```
-
-Partials included:
-
-- **featureBetaNotice**
-
-##### **Single Template**
-
-A default layout for standard pages that have no children/descendants. This layout defines the `main` block placed in the `baseof` template. 
- 
-Partials included: 
-
-- **featureSeriesButton**
-- **featureBetaNotice**
-- **featureNextPrev**
+| Layout | Partials Used | Description |
+|---|---|---|
+|Baseof | |TBD |
+|Index | | TBD |
+| Glossary |  | A standalone default layout for showing child pages as a scrollable stack. To use this layout, define layout: glossary on the parent page of any collection you wish to view as a glossary. Using the glossary layout hides the children from the directory file tree (the assumption being way too many entries will show up and distort your directory.) |
+| List |  | Auto-generated pages like taxonomy pages and the default home page (/index.html) are considered list pages. You can create a unique home page by defining a index.html template in your layouts folder. |
+|Search | | TBD |
+| Section | featureBetaNotice,  featureChildPages | A default layout for parent pages (_index.html). This layout defines the main block placed in the baseof template and shows child pages as cards that include a title, a page count, and a summary. |
+| Series | featureBetaNotice | A taxonomy-specific layout for the custom taxonomy key series. This layout aggregates the tagged pages and displays a single, scrollable view. Use the seriesPart front matter field to order your series from 0-999. |
+|Single |featureSeriesButton, featureBetaNotice, featureNextPrev | A default layout for standard pages that have no children/descendants. This layout defines the `main` block placed in the `baseof` template.  |
+|404 | | TBD |
 
 #### **`/partials`**
 
