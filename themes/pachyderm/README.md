@@ -123,26 +123,49 @@ Default feature config:
 ```yaml
 params:
   # Feature Switches #
-  defaultCss: false # displays default bulma css only without branding.
-  breadcrumbs: true # displays a trail of breadcrumbs
-  childPages: true # displays child pages of a section.
-  editLink: 
-    display: true #  displays a link to the corresponding github file for a given page; githubUrl must be set.
-    githubUrl: https://github.com/lbliii/milo/tree/pachyderm-explorations/content/  # should end with content/
-  versionDropdown: true #  displays a top-nav dropdown with top-level sections served as versioned documentation. 
-  navLevel: true  #  displays level-2 directory items in the file tree.
+
+  ## Branding features
   logos:
     nav:  "/../images/pachLogo.svg"
     footer: "/../images/footerLogo.svg"
-  seriesButton: true #  displays a "Read the <series-name> series" button at the bottom of a page with a series listed.
-  nextPrev: true #  displays the next and previous article available on single page.
-  toc: true #  displays a table of contents in a page; can be overridden by individual page settings. (WIP)
+
+  ## Content features
+  childPages: 
+    display: true # displays child pages of a section.
+    grandchildren: true # displays first 7 grandchildren as buttons in the card.
+  editLink: 
+    display: true #  displays a link to the corresponding github file for a given page; githubUrl must be set.
+    githubUrl: https://github.com/lbliii/milo/tree/main/content/  # should end with content/ 
+  giscus: true # displays giscus commenting on single pages.
+  heroBanner:
+    single: true # displays hero section with a background image, title, description, and date on single pages.
+    section: true # displays hero section [...] on section pages.
+    list: true # displays hero section [...] on list pages. 
+    glossary: true # displays hero section [...] on glossary pages (layout:glossary frontmatter). 
   relatedArticles: true # displays related content on page.
-  giscus: true # displays giscus commenting on single pages. 
+  seriesButton: true #  displays a "Read the <> series" button at the bottom of a page with series frontmatter.
+  toc: true #  displays a table of contents in a page; can be overridden by individual page settings. (WIP)
+
+  ## HomePage Features
+   # TODO: add date sort to range on featureDisplayVideos
+  Videos: true # displays first 3 videos from "/tutorials/videos/", sorted by date.
+  CommunityDetails: true  # displays slack and other community details (WIP)
+  
+  ## Release Features
+  versionDropdown: true # displays a top-nav dropdown with top-level sections served as versioned documentation. 
+  downloads: true # Enables displaying the download dropdown (requires release.patch)
   releaseInfo:
-    latest: "2.3.x"
-  download:
-    latest: 
+    latest: "2.3.x" # displays matching directory's sections on home page; if blank, all directories are displayed.
+    patch: "2.2.7" # Used to generate download links
+
+
+  ## Nav features 
+  navLevel: true  #  displays level-2 directory items in the file tree.
+  breadcrumbs: true # displays a trail of breadcrumbs
+  nextPrev: true #  displays the next and previous article available on single page.
+
+  ## Testing Features
+  defaultCss: false # displays default bulma css only without branding.
 ```
 
 ### Shortcodes 
@@ -196,3 +219,43 @@ The static folder should contain only **theme** assets that you do not need or w
 
 ---
 
+## SEO 
+
+### OpenGraph
+
+- Uses default internal Hugo template `{{ template "_internal/opengraph.html" . }}`
+- Found in `/themes/pachyderm/layouts/partials/head.html`
+
+### Robots.txt 
+
+- Enabled by `enableRobotsTXT: true` in config.yaml 
+- Template is found in `/themes/pachyderm/layouts/robots.txt`
+- Disallows following links on older release pages   
+
+#### Default Template
+
+```
+{{range after 2 .Site.Sections.ByTitle.Reverse}}
+
+    {{range .Sections}}
+
+    Disallow: {{ .RelPermalink }}
+
+        {{ if .Pages}}
+
+            {{range .Pages}}
+    
+                Disallow: {{ .RelPermalink }}
+    
+            {{end}}
+        
+        {{end}}
+
+    {{end}}
+
+{{end}}
+```
+### Twitter Cards
+
+- Uses default internal Hugo template `{{ template "_internal/twitter_cards.html" . }}`
+- Found in `/themes/pachyderm/layouts/partials/head.html`
