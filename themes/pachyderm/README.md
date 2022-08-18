@@ -70,22 +70,9 @@ Contains the `render-heading.html` layout which is responsible for looping over 
 
 #### Default Templates
 
-Contains the opening and closing HTML tags; wraps around the `list`, `single`, `section`, and `series` layouts (which are passed in through the `main` block). 
-
-Partials included: 
-
-- **head** (css and fonts are here)
-- **nav**
-- **directory**
-- **featureBreadcrumbs**
-- **featureEditGithub**
-- **featureTags**
-- **footer** (js is here)
-
-
 | Layout | Partials Used | Description |
 |---|---|---|
-|Baseof | |TBD |
+|Baseof |head, nav, directory, footer,  featureBreadcrumbs, feaureEditGithub, featureTags |Contains the opening and closing HTML tags; wraps around the `glossary`, `list`, `search`, `single`, `section`, `series`, and `404` layouts (which are passed in through the `main` block).  |
 |Index | | TBD |
 | Glossary |  | A standalone default layout for showing child pages as a scrollable stack. To use this layout, define layout: glossary on the parent page of any collection you wish to view as a glossary. Using the glossary layout hides the children from the directory file tree (the assumption being way too many entries will show up and distort your directory.) |
 | List |  | Auto-generated pages like taxonomy pages and the default home page (/index.html) are considered list pages. You can create a unique home page by defining a index.html template in your layouts folder. |
