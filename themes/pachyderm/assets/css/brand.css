@@ -147,6 +147,9 @@
 .theme-dark-mode a {
     color: var(--is-notice-danger);
 }
+.theme-dark-mode a:hover {
+    color: var(--is-content-color-inverted);
+}
 
 .theme-dark-mode h1,
 .theme-dark-mode h2,
@@ -239,6 +242,11 @@
 .theme-dark-mode .notification {
     border: 1px solid #454545 !important;
     background-color: var(--is-content-color) !important;
+    color: var(--is-content-color-inverted) !important;
+}
+
+.theme-dark-mode .navbar-dropdown, .theme-dark-mode .navbar-link {
+    background-color: #000 !important;
     color: var(--is-content-color-inverted) !important;
 }
 
