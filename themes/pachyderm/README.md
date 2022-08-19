@@ -17,7 +17,7 @@ The assets directory is for resources that you intend to transform (minify, opti
  You can reference assets in your layouts like so:
 
 ```go 
-{{$toc := resources.Get "js/toc.js"  | resources.Minify  }}
+{{ $toc := resources.Get "js/toc.js"  | resources.Minify  }}
 {{ $clippy := resources.Get "js/clipboard.js"  | resources.Minify }}
 {{ $relatedArticles := resources.Get "js/relatedArticles.js"  | resources.Minify }}
 {{ $darkMode := resources.Get "js/darkMode.js" | resources.Minify   }}
@@ -30,13 +30,47 @@ The assets directory is for resources that you intend to transform (minify, opti
 
 ### `/css` 
 
-The CSS used in this theme is powered by [Bulma](https://bulma.io/). Bulma is an easy and very lightweight framework that makes maintaining a high PageSpeed score a breeze. 
+The CSS assets used in this theme is powered by [Bulma](https://bulma.io/). Bulma is an easy and very lightweight framework that makes maintaining a high PageSpeed score a breeze. 
 
 The `brand.css` file is laid on top of `bulma.css` to flavor the framework with custom colors and add any project-specfic needs. As a best practice, use an obvious naming convention (e.g., `brand-fade-in`; `brand-fixed`) for CSS classes that are not Bulma. This will help you whenever you want to iterate or troubleshoot. 
 
 ### `/js` 
 
-The JS in this theme is hand-rolled; the less dependencies there are, the faster your site will build, load (PageSpeed score), and the easier it will be to collaborate with people who have different machines. If you find this JS is not efficient, *please* say so and optimize it -- but try to avoid adding dependencies. 
+The JS assets in this theme is hand-rolled; the less dependencies there are, the faster your site will build, load (PageSpeed score), and the easier it will be to collaborate with people who have different machines. If you find this JS is not efficient, *please* say so and optimize it -- but try to avoid adding dependencies. 
+
+- **`clipboard.js`**: Powers copy-to-clipboard functionality on `code`/`pre` blocks
+- **`darkMode.js`**: Powers dark/light mode toggle functionality
+- **`filterByTags.js`**: Powers the `search.html` and `404.html` tag-based search functionality
+- **`mermaid.js`**: Enables using standard code blocks for mermaid diagrams (just pass the `mermaid` lang)
+- **`notices.js`**: Enables dismissing notices by clicking the (x)
+- **`pagination.js`**: Powers pagination UI on pages using the  `glossary.html` layout
+- **`relatedArticles.js`**: Powers the related articles toggle on pages using the `single.html` layout
+- **`toc.js`**: Powers the table of contents / scroll highlight on pages using the `single.html` layout
+
+```yaml
+[repoA] // create repoA
+[repoB]
+
+> pipelineA // create pipelineA
+  description: "my first pipeline"
+  metadata:
+  input:
+  pfs:
+    glob: /*
+    repo: images
+  transform:
+    cmd:
+      - python3
+      - /edges.py
+    image: pachyderm/opencv
+
+{ // start a transaction 
+  <  images_dp_2@master // start a commit 
+  >  images_dp_2@master // finish a commit 
+} // finish a transaction
+
+~[repoA](file.csv) // put file.csv into repo A
+```
 
 ---
 
