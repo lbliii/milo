@@ -2,9 +2,9 @@
 {{ if .IsHome}}
 {{else}}
 
-<nav class="column is-one-fifth is-hidden-mobile is-centered">
+<nav class="column is-one-fifth-desktop is-one-quarter-tablet is-hidden-mobile is-centered">
     <section class="columns pt-0 mt-6"> 
-        <div id="directory_container" class="column theme-fixed is-clipped">
+        <div id="directory_container" class="column p-0 m-0 theme-fixed">
             <div id="controls" class="mb-2"> 
                 {{with .Parent}}
                     {{/* Displays current page's parent to return. */}}  
@@ -26,15 +26,13 @@
                 {{else if .Pages }}
                 {{ if eq .Kind "term"}}
                     {{/* Don't display directory on taxonomy (.kind term) pages */}}
-            
                 {{else }}
                     {{ range sort .Pages "Weight" "$order"}}
                         {{ if  .Params.hidden  }}
                             {{/* Do not shot page if frontmatter hidden is TRUE */}}
-                        
                         {{else}}
-                            <div class="directory-lvl-1 p-1"> 
-                                <a href="{{ .RelPermalink }}" class="button is-small"> {{if .Pages}}├ {{else}} {{if .PrevInSection }} │ {{else}} └ {{end}}{{end}}{{if .Title}}{{.Title | truncate 30}}{{else}}{{ path.BaseName . | humanize | truncate 30}}{{end}}</a>
+                            <div class="columns  p-0 m-0"> 
+                                <a href="{{ .RelPermalink }}" class="column is-size-6  p-0 mt-2"> {{if .Pages}}├ {{else}} {{if .PrevInSection }} │ {{else}} └ {{end}}{{end}}{{if .Title}}{{.Title | truncate 30}}{{else}}{{ path.BaseName . | humanize | truncate 30}}{{end}}</a>
                             </div>
                             {{/* Displays current page's grandchildren when navLevel feature is TRUE. */}}
                             {{ if .Site.Params.navLevel }}
@@ -42,19 +40,16 @@
                                     {{/*  Don't display grandchild children if parent has layout:glossary  */}}
                                 {{else if .Pages  }}
                                     {{ range sort .Pages "Weight" "$order"}}
-                                        
-                                            <div class=" directory-lvl-2 p-0"> 
-                                                <a href="{{ .RelPermalink }}" class="button is-small is-white ml-3"> {{if .Pages}}
+                                            <div class="columns p-0 m-0"> 
+                                                <a href="{{ .RelPermalink }}" class="column has-text-weight-light is-size-7 pl-2 py-0"> {{if .Pages}}
                                                 ├{{else}} {{if .PrevInSection }} │ {{else}} └ {{end}} {{end}} {{if .Title}}{{.Title | truncate 30}}{{else}}{{ path.BaseName . | humanize | truncate 30}}{{end}}</a>
                                             </div>
-                                            
                                         {{end}}
                                     {{ end }}
                                 {{ end }}
                             {{ end }}
                         {{end}}
                     {{end}}
-
                 {{end}}
                  {{if ne .Kind "section"}}                      
                     {{partial "featureTOC" . }}

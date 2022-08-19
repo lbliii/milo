@@ -1,17 +1,3 @@
-{{ $bulma := resources.Get "css/bulma.css" | resources.Minify }}
-{{ $brand := resources.Get "css/brand.css" | resources.Minify }}
-{{ $css := slice $bulma $brand | resources.Concat "css/bundle.css"}}
-
-
-{{if .Site.Params.defaultCss}} 
-    {{$defaultBulma := resources.Get "css/defaultBulma.css" | resources.Minify}}
-    {{ $defaultCss := slice $defaultBulma | resources.Concat "css/defaultBundle.css"}}
-    <link rel="stylesheet" href="{{ $defaultCss.Permalink }}" media="screen" />
-{{else}}
-    <link rel="stylesheet" href="{{ $css.Permalink }}" media="screen" />
-{{end}}
-
-
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 <meta name="title" content="{{ .Title }}" />
@@ -20,6 +6,15 @@
 <meta name="author" content="{{ .Params.author }}" />
 
 {{ template "_internal/opengraph.html" . }}
-
 {{ template "_internal/twitter_cards.html" . }}
 
+{{if .Site.Params.defaultCss}} 
+    {{$defaultBulma := resources.Get "css/defaultBulma.css" | resources.Minify}}
+    {{ $defaultCss := slice $defaultBulma | resources.Concat "css/defaultBundle.css"}}
+    <link rel="stylesheet" href="{{ $defaultCss.Permalink }}" media="screen" />
+{{else}}
+    {{ $bulma := resources.Get "css/bulma.css" | resources.Minify }}
+    {{ $brand := resources.Get "css/brand.css" | resources.Minify }}
+    {{ $css := slice $bulma $brand | resources.Concat "css/bundle.css"}}
+    <link rel="stylesheet" href="{{ $css.Permalink }}" media="screen" />
+{{end}}
