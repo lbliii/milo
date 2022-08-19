@@ -64,10 +64,6 @@ params:
 ## Feature Ideas 
 ## 1. Create a layouts/partials/brand.css file that has hugo variables to control some css from the config.yaml file. 
 
-
-
-
-
 sitemap:
   changeFreq: monthly 
   fileName: sitemap.xml 
