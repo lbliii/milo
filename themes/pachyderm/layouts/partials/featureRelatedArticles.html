@@ -8,12 +8,12 @@
 
             {{ $related := site.RegularPages.RelatedIndices . "tags"   }}
             {{ with $related }}
-                <div class="my-2"> Related Articles</div>
-                <ul class="buttons is-flex-direction-column is-align-items-start">
+                <p class="my-2"> Related Articles</p>
+                <div class="columns is-flex-direction-column p-0 m-0">
                     {{ range . }}
-                        <li class="button my-1 is-small"><a href="{{ .RelPermalink }}" class=" has-text-black">{{ .Title | truncate 30 }}</a></li>
+                        <a href="{{ .RelPermalink }}" class="column is-size-6  p-0 mt-2"> {{if .Pages}}├ {{else}} {{if .PrevInSection }} │ {{else}} └ {{end}}{{end}}{{if .Title}}{{.Title | truncate 30}}{{else}}{{ path.BaseName . | humanize | truncate 30}}{{end}}</a>
                     {{ end }}
-                </ul>
+                </div>
                 {{else}}
                 <div class="my-2"> No Related Articles</div>
             {{ end }}
