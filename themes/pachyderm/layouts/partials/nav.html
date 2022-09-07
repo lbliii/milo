@@ -43,9 +43,7 @@
           </div>
         {{end}}
         {{ partial "featureDownloads.html" . }}
-        <div class="navbar-item">
-          <input class="input " type="text" placeholder="Search docs">
-
+        <div id="searchbox">
         </div>
         <div class="navbar-item">
           <div class="buttons">
@@ -61,4 +59,6 @@
       </div>
     </div>
   </nav>
+
+{{ partial "featureAlgoliaHits.html" .}}
 

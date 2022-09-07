@@ -7,7 +7,7 @@
   {{ $pagination := resources.Get "js/pagination.js"  | resources.Minify  }}
   {{ $filterByTags := resources.Get "js/filterByTags.js"  | resources.Minify  }}
   {{ $mermaid := resources.Get "js/mermaid.js"  | resources.Minify  }}
-  
+  {{$algolia := resources.Get "js/algolia.js"  | resources.Minify}}
 
   {{ $js := slice  $darkMode $toc $clippy $notices  $relatedArticles $pagination $filterByTags| resources.Concat "js/bundle.js"}}
 
@@ -15,6 +15,7 @@
 
 
 <footer class="footer theme-defer">
+    <script src="{{ $algolia.Permalink }}" type="module"></script>
     <script src="{{ $js.Permalink }}" ></script>
     {{if .Params.mermaid}}
       {{ partial "mermaid.html" . }}

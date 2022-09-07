@@ -1,28 +1,15 @@
 {
-	"content": {
-		"title": "{{if .Title}}{{ .Title }}{{else}}{{.Name}}{{end}}",
+		{{if eq .Section "tags" "solutions" "staging" "series" "products" "categories" }}{{else}} 
+		"id": "{{ with .File }}{{ .UniqueID }}{{ end }}",
+		"title": "{{if .Title}}{{ .Title }}{{else}}{{ humanize .File.TranslationBaseName}}{{end}}",
 		"version": "{{.Section}}",
-		"description": "{{ .Description }}",
+		"description": "{{with .Description}} {{ . }} {{end}}",
 		"date": "{{ .Date | time.Format ":date_long" }}",
-		"author": "{{ .Params.author }}",
+		"author": "{{ with .Params.author}}{{.}}{{end}}",
 		"uri": "{{ .Permalink }}",
-		"body": {{ .Plain | jsonify }}
-	},
-	"settings": {
-		"beta": "{{ .Params.beta}}",
-		"draft": "{{ .Params.draft}}",
-		"hidden": "{{ .Params.hidden}}",
-		"index": "{{ .Params.index }}",
-		"layout": "{{ .Params.layout }}",
-		"toc": "{{ .Params.toc }}",
-		"weight": "{{ .Params.weight }}"  
-	},
-	"taxonomies": {
-		"categories": [{{ range $cindex, $cat := .Params.categories }}{{ if $cindex }}, {{ end }}"{{ $cat| htmlEscape }}"{{ end }}],
-		"series": {
-			"name": "{{.Params.series}}",
-			"seriesPart" : "{{.Params.seriesPart}}",
-		},
+		"body": {{ .Plain | jsonify }},
+		"beta": "{{ with .Params.beta}} {{.}} {{end}}",
+		"hidden": "{{ with .Params.hidden}} {{.}} {{end}}",
 		"tags": [{{ range $tindex, $tag := .Params.tags }}{{ if $tindex }}, {{ end }}"{{ $tag| htmlEscape }}"{{ end }}]
-	}
+		{{end}}
 }
