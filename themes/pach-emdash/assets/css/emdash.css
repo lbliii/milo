@@ -23,7 +23,7 @@
     --is-text-color-inverted: #ffffff;
     --is-shadow-color: var(--is-dark-gray);
     --is-highlight-color: var(--is-purple);
-    --is-code-color: var(--is-purple);
+    --is-code-color: var(--is-gray);
     --is-red: #ff0000;
     --is-green: #00ff00;
     --is-blue: #0000ff;
