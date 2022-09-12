@@ -6,11 +6,10 @@
 {{ define "main" }}
         {{ if .Site.Params.heroBanner.glossary}}
             <section class="black  py-3 mt-1 c-sp-1">
-                    <h1>{{.Title}}</h1>
-                    {{ if .IsHome}}
-                    {{else}}
-                    <p>glossary</p>
-                    {{end}}
+                <div class="spread-between c-pinned-center">
+                    <h1>{{.Title}} </h1>
+                    <p class="label uppercase outlined xs sp-1">glossary</p>
+                </div>
             </section>
         {{else}}
             {{/* Don't show the hero section */}}

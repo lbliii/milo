@@ -1,4 +1,11 @@
-<div class="notification {{ .Get 0 }}">
-    <button class="delete"></button>
-    {{.Inner}}
+{{$in := .Inner }}
+
+<section class="darken-2 rounded-1 {{ .Get 0 }} sp-1"> 
+<div class="spread-between">
+    <button class="is-fit s">📖</button>
+    <button class="is-fit darken-1 sp-1 rounded-3 uppercase xxs">hide</button>
 </div>
+<div class="stack-left content">
+    {{ $in }}
+</div>
+</section>

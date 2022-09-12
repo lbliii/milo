@@ -6,23 +6,20 @@
 
 {{ define "main" }}
     {{ $order := "asc"}}
-        <section class="layout-series hero is-medium is-info theme-pattern theme-rounded">
-            <div class="hero-body">
-                <h1><strong>{{.Title}} </strong></h1>
-                <div class="tag is-medium">series</div>
+        <section class="black py-3 mt-1 c-sp-1">
+            <div class="spread-between c-pinned-center">
+                <h1>{{.Title}} </h1>
+                <p class="label uppercase outlined xs sp-1"> series</p>
             </div>
         </section>
-        <section class="layout-series container is-max-desktop">
+        <section class="stack">
             {{ range .Pages.ByParam "seriesPart" }}
                 <article class="content"> 
-                    <div class="is-flex is-align-items-center"> 
-                        <div class="tag is-large is-black mr-3">{{.Params.seriesPart}}</div>
-                        <h1>{{.Title}}</h1>
-                    </div>
-                    <br>
+                        <a class="button purple p-1 mt-4 xxl bold" href="{{.Permalink}}">{{.Params.seriesPart}} {{.Title}} </a>
                     {{ partial "featureBetaNotice.html" . }}
+                    <div class="content ml-2"> 
                     {{.Content}}
-                    <hr>
+                    </div>
                 </article>
             {{ end }}
         </section>

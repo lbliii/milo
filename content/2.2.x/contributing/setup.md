@@ -7,6 +7,7 @@ series: ["contributors"]
 seriesPart: 1
 weight: 1
 date:
+beta: true 
 ---
 ## 1. Set Up Go Workspace
 

@@ -8,7 +8,6 @@ seriesPart: 3
 weight: 3
 date:
 ---
-# Repo layout
 
 Following is a layout of the various directories that make up the pachyderm
 repo, and their purpose.

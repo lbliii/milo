@@ -8,6 +8,7 @@ series: ["contributors"]
 seriesPart: 2
 weight: 2
 date: 2022-07-16
+beta: true 
 ---
 {{% notice tip %}}
 Interested in contributing to Pachyderm's code? Learn the conventions here! For setup instructions, see [Setup for Contributors](./setup.md).
