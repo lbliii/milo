@@ -25,7 +25,7 @@
             <div class="pagination-list c-mt-1">
                 {{ range .Paginator.Pagers}}
             
-                    <button data-pager="{{.}}" class="button black p-1  mr-1 rounded-1 xxs" aria-label='Goto page {{trim . "Pager "}}' onclick="revealPage({{.}})">{{trim . "Pager"}}</button>
+                    <button data-pager="{{.}}" class="button black darken-1  p-1  mr-1 rounded-1 xxs" aria-label='Goto page {{trim . "Pager "}}' onclick="revealPage({{.}})">{{trim . "Pager"}}</button>
             
                 {{end}}
             </div>
@@ -48,7 +48,7 @@
                                         {{end}}
                                     </h4>
                                 </div>
-                                <div class="black c-sp-1">
+                                <div class="black darken-1 c-sp-1">
                                     <p class="xs"> 
                                         {{ if .Description}}
                                             {{.Description}}
