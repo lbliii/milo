@@ -6,7 +6,9 @@
             {{ range sort .Pages "Weight" "$order"}}
                 <section class="is-half is-fullsize-mobile c-sp-2">
                         <h3 class="m">{{.Title}}</h3>
-                        <p class="subtitle-1">{{.Description}}</p>
+                        {{if .Description}}
+                            <p class="subtitle-1">{{.Description}}</p>
+                        {{end}}
                         {{if eq .Params.label "required"}}
                                     <div class="label black">REQUIRED</div>
                                 {{else if eq .Params.label "optional"}}
