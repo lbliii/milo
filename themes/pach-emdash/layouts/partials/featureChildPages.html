@@ -20,7 +20,10 @@
                                 <a class="button outlined-black p-1 mt-1 mr-1 xs is-fit rounded-1" href="{{ .Permalink }}"> {{if .Title}}{{.Title | truncate 30}}{{else}}{{ path.BaseName . | humanize | truncate 30}}{{end}}
                                 </a>
                                 {{ end }}
+                                {{if .Pages}}
                                 <a class="button black p-1 mt-1 mr-1 xs is-fit rounded-1" href="{{ .Permalink }}"> View All </a>
+                                {{else}} 
+                                {{end}}
                             </div>
                         {{else}}
                             <div class="label black"> {{ len (.Pages) }} articles</div>  
