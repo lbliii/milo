@@ -4,11 +4,13 @@
     {{if .Pages }}
         <aside class="spread c-pinned-top">
             {{ range sort .Pages "Weight" "$order"}}
-                <section class="is-one-third is-fullsize-mobile c-sp-1 mt-5">
-                        <h3 class="m">{{.Title}}</h3>
+                <section class="is-one-third is-fullsize-mobile c-mt-1 mt-5">
+                        <a href="{{.Permalink}}">
+                            <h3 class="m">{{.Title}}</h3>
                         {{if .Description}}
                             <p class="subtitle-1">{{.Description}}</p>
                         {{end}}
+                        </a>
                         {{if eq .Params.label "required"}}
                                     <div class="label black">REQUIRED</div>
                                 {{else if eq .Params.label "optional"}}
@@ -17,7 +19,7 @@
                         {{ if .Site.Params.childPages.grandchildren}}
                             <div class="spread-left">
                                 {{ range first 7 .Pages }}
-                                <a class="button outlined-black p-1 mt-1 mr-1 xs is-fit rounded-1" href="{{ .Permalink }}"> {{if .Title}}{{.Title | truncate 30}}{{else}}{{ path.BaseName . | humanize | truncate 30}}{{end}}
+                                <a class="button outlined p-1 mt-1 mr-1 xs is-fit rounded-1" href="{{ .Permalink }}"> {{if .Title}}{{.Title | truncate 30}}{{else}}{{ path.BaseName . | humanize | truncate 30}}{{end}}
                                 </a>
                                 {{ end }}
                                 {{if .Pages}}
