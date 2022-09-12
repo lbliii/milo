@@ -12,7 +12,7 @@
     <div class="spread-right mr-2 c-rounded-1 c-sp-1">
       <input class="searchbar is-hidden-mobile">
       {{ if .Site.Params.versionDropdown }}
-        <button class="dropdown black is-fit grayscale"> v. {{ .Section }}
+        <button class="dropdown black is-fit grayscale"> {{if .IsHome}} v. {{.Site.Params.releaseInfo.Latest}}{{else}} v. {{ .Section }}{{end}}
           <div class="dropdown-content">
             <div class="stack black c-mt-1 c-p-1 mt-5 rounded-1">
             {{ range .Site.Sections.ByTitle.Reverse }} 
