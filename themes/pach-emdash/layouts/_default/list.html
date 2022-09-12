@@ -5,45 +5,37 @@
 
 {{ define "main" }}
         {{ if .Site.Params.heroBanner.list }}
-            <section class="layout-list hero is-medium is-info theme-pattern-alt">
-                <div class="hero-body">
-                    <h1><strong>{{.Title}}</strong></h1>
-                    {{ if .IsHome}}
-                        {{/* Don't show tag if homepage */}}
-                    {{else}}
-                        <div class="tag is-medium">tag</div>
-                    {{end}}
-                </div>
-            </section>
+        <section class="black py-3 mt-1 c-sp-1">
+            <div class="spread-between c-pinned-center">
+                <h1>{{.Title}} </h1>
+                <p class="label uppercase outlined xs sp-1"> taxonomy</p>
+            </div>
+        </section>
         {{else}}
         {{/* Don't show the hero section */}}
         {{end}}
         {{if .Content}}
-            <section class="layout-single section mb-0 pb-0"> 
+            <section class="content"> 
                 {{.Content}}
             </section>
         {{end}}
 
-        <section class="layout-list section is-medium pt-0 mt-3"> 
-            <div class="columns is-flex-wrap-wrap">
+        <section class="spread-left mt-3"> 
                 {{ range sort .Pages "Weight" "$order"}}
                     {{ if  .Params.hidden }}
                         {{/* Do not show the hidden child page or its descendants */}}
                     {{else}}
-                        <div class="column is-half">
-                            <a class="card is-clipped	" href="{{ .Permalink }}">
-                                <div class="card-content  theme-tile">
-                                    <div class="content">
-                                        <h4 class="mr-3"> {{ .Title}}</h4>
-                                        {{if .Pages}} <div class="tag is-light"> {{ len (.Pages) }} articles</div> {{end}}
-                                        <p class="is-size-7 has-text-dark has-text-weight-normal"> {{.Summary | truncate 300 }} </p>
+                        <div class="is-one-third">
+                            <a class="" href="{{ .Permalink }}">
+                                    <div class="black darken-1 c-my-2 rounded-1 m-2 p-1">
+                                        <h4 class="m"> {{ .Title}}</h4>
+                                        {{if .Pages}} <div class="outlined p-1 is-fit xs"> {{ len (.Pages) }} articles</div> {{end}}
+                                        <p> {{.Summary | truncate 300 }} </p>
                                     </div>
-                                </div>
                             </a>
                         </div>
                     {{end}}
                 {{ end }}
-            </div>
         </section>
 
 {{end}}

@@ -14,11 +14,13 @@
                         {{ .Description}}
                     </p>
                 {{end}}
-                {{ if .Date }}
-                    <p>
-                        {{ .Date | time.Format ":date_long" }}
-                    </p>
-                {{ end }}
+                <p class="xxs hefty uppercase">
+                    {{ if .Date }}
+                        {{ .Date | time.Format ":date_long" }} 
+                    {{else}} 
+                        {{ now | time.Format ":date_long" }} 
+                    {{end}}
+                </p> 
         </section>
     {{else}}
         {{/* Don't show the hero section */}}

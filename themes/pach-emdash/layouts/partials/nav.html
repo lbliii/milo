@@ -14,7 +14,7 @@
     <div class="spread-right mr-2 c-rounded-1 c-sp-1">
       <input class="searchbar is-hidden-mobile">
       {{ if .Site.Params.versionDropdown }}
-        <button class="dropdown black is-fit grayscale"> {{if .IsHome}} v. {{.Site.Params.releaseInfo.Latest}}{{else}} v. {{ .Section }}{{end}}
+        <button class="dropdown black is-fit grayscale bold"> {{if .IsHome}} v. {{.Site.Params.releaseInfo.Latest}}{{else}} v. {{ .Section }}{{end}}
           <div class="dropdown-content">
             <div class="stack black c-mt-1 c-p-1 mt-5 rounded-1">
             {{ range .Site.Sections.ByTitle.Reverse }} 
@@ -23,7 +23,7 @@
                   {{$currentVersionOption := print "/" .Section "/"}}
                   {{$alternativeVersionPath := print $currentVersionOption $versionlessLink }}
                 <!--TODO: IF alternative version does not exist, set link to home page of other version-->
-                <a class="" href="{{$alternativeVersionPath}}" >
+                <a class="bold" href="{{$alternativeVersionPath}}" >
                   v. {{.Title}}
                 </a>
                 {{ end }}
@@ -33,7 +33,7 @@
         </button>
       {{end}}
       <button class="black is-fit grayscale" onclick="darkMode()">🌙</button>
-      <button class="purple is-fit is-hidden-touch"> Demo</button>
-      <button class="outline-black is-fit is-hidden-touch"> Sandbox</button>
+      <button class="purple is-fit is-hidden-touch bold "> Demo</button>
+      <button class="outline-black is-fit is-hidden-touch bold"> Sandbox</button>
     </div>
   </nav>
