@@ -19,21 +19,20 @@
     --spacing-6: 4;
     --spacing-7: 2;
 
-    --is-text-color: #000000;
+    --is-text-color:  var(--is-black);
     --is-text-color-inverted: #ffffff;
-    --is-header-text-color: #000000;
-    --is-header-text-color-inverted: #ffffff;
     --is-shadow-color: var(--is-dark-gray);
     --is-highlight-color: var(--is-purple);
+    --is-code-color: var(--is-purple);
     --is-red: #ff0000;
     --is-green: #00ff00;
     --is-blue: #0000ff;
     --is-yellow: #ffff00;
     --is-orange: #ff8000;
-    --is-purple: #8000ff;
+    --is-purple: #582f6b;
     --is-pink: #ff0080;
     --is-white: #ffffff;
-    --is-black: #000000;
+    --is-black: #212529;
     --is-gray: #808080;
     --is-dark-gray: #404040;
     --is-graident-warm-pt-1: #ff0000;
@@ -68,7 +67,11 @@
     --ghoul-5: 50px;
     --ghoul-6: 100px;
     --ghoul-7: 200px;
-}html, body { font-family: var(--is-font-family) }
+}
+html, body { 
+  font-family: var(--is-font-family); 
+  color: var(--is-text-color); 
+}
 
 body, div, section, button, h1, h2, h3, h4, h5, h6  {
     margin: 0;
@@ -87,16 +90,7 @@ b {
     -webkit-text-fill-color: transparent;
 }
 
-/* Code */ 
 
-code, pre > * { white-space: pre-wrap;
-}
-
-pre, pre > code {
-    padding: .7em;
-    margin: .7em;
-    letter-spacing: -.07rem;
-}
 
 
 /* Headers */
@@ -157,7 +151,7 @@ table > tbody > tr {
 
 ul, ol { padding-inline-start: 1vw; }
 
-ol > li { list-style: decimal inside; }/* Flexbox Layout System */
+.content :is(ol,ul) > li { margin-left: 5vw; } /* Flexbox Layout System */
 
 /* Layer things horizontally */
 
@@ -332,7 +326,31 @@ ol > li { list-style: decimal inside; }/* Flexbox Layout System */
 
 /* Content */
 
+ol li::marker {
+    color: var(--is-purple);
+    font-weight: 700;
+    display: inline-block;
+}
+
 :is(.content) > :is(h1, h2, h3, h4, h5, h6) { margin-top: var(--xxxlarge-text); }
+
+.content  code, pre { 
+  max-width: 70%;
+  white-space: pre-wrap;
+  padding: 1ch;
+  margin: 1ch;
+  overflow-x: scroll;
+  font-weight: 100;
+  color: var(--is-code-color);
+ }
+
+ .content {
+  overflow-x: hidden;
+ }
+
+ .content  img {
+  max-width: 100%;
+ }
 
 /* breadcrumb */
 
@@ -385,6 +403,7 @@ button, .button {
     max-width: 100%;
     height: auto;
 }
+
 
 .image-1x1 {
     aspect-ratio: 1 / 1;

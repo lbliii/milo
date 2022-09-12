@@ -4,8 +4,8 @@ const showRelated = document.getElementById('see-related')
 
 if (relatedArticlesContainer && showRelated) {
     showRelated.addEventListener('click', function() {
-        document.getElementById('zzz').classList.toggle('is-hidden');
-        document.getElementById('related-articles').classList.toggle('is-hidden');
+        document.getElementById('zzz').classList.toggle('is-invisible');
+        document.getElementById('related-articles').classList.toggle('is-invisible');
 
     } , false); 
 }

@@ -18,36 +18,34 @@ function styleTOC(){
         }
     }
 
-    // If there are headers, add a "Contents" header for the TOC
-    if (headings && headings.length > 0) {
-            var contents = document.createElement('div');
-            contents.classList.add('py-2');
-            contents.innerText = "Contents";
-            zzz.appendChild(contents)
-        }
-
+ 
     // Create a TOC from the headings, build links, and apprend to the TOC div found in featureTOC.html 
    
     for (var i = 0; i < headings.length; i++) {
         var heading = headings[i].nodeName
         var headingText = headings[i].innerText;
 
+        // remove the ' # ' from the heading text
+        var headingText = headingText.replace(/#/g, '');
+        console.log(headingText);
+
         var li = document.createElement('li');
         var link = document.createElement('a');
 
-        li.classList.add('p-0');
+        li.classList.add('spread-left','xs');
 
-        link.href = '#' + headings[i].id;
+        link.href = '#' + headings[i].id
         link.role = headings[i].id;
+
 
         if (headingText.length > 25) {
             link.innerText =  headingText.substring(0, 25) + '...';
         } else {
              link.innerText = headingText;
         }
-        link.classList.add('tag', 'mt-1');
+        link.classList.add( );
         if (heading == 'H3') {
-            link.classList.add('theme-is-transparent','ml-1');
+            link.classList.add('ml-1', 'is-fit','thin');
         }
 
         li.appendChild(link);

@@ -3,10 +3,10 @@
 
 {{ define "main" }}
         {{ if .Site.Params.heroBanner.section}}
-        <section class="black">
-                <h1 class="sp-1">{{.Title}}</h1>
+        <section class="stack-left black py-3 mt-1 c-sp-1">
+                <h1>{{.Title}}</h1>
                     {{ if .Description}}
-                        <p class="sp-1">
+                        <p>
                             {{ .Description}}
                         </p>
                     {{end}}

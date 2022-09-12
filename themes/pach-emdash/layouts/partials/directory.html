@@ -14,7 +14,7 @@
                 {{else}}
                     {{ with site.RegularPages.RelatedIndices . "tags" }}
                         {{/* Only show relatedArticle button if related articles exist. See https://gohugo.io/content-management/related/#readout */}}
-                        <button id="see-related"class="button purple">📌 </button> 
+                        <button id="see-related"class="button darken-1 grayscale xs sp-1 rounded-1">📌</button> 
                     {{end}}
                 {{end}}
              </div>
@@ -39,7 +39,7 @@
                                     {{/*  Don't display grandchild children if parent has layout:glossary  */}}
                                 {{else if .Pages  }}
                                     {{ range sort .Pages "Weight" "$order"}}
-                                            <div> 
+                                            <div class="thin"> 
                                                 <a href="{{ .RelPermalink }}" class="pl-2"> {{if .Pages}}
                                                 ├{{else}} {{if .PrevInSection }} │ {{else}} └ {{end}} {{end}} {{if .Title}}{{.Title | truncate 30}}{{else}}{{ path.BaseName . | humanize | truncate 30}}{{end}}</a>
                                             </div>

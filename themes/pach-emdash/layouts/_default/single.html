@@ -4,28 +4,26 @@
 */}}
 
 {{ define "main" }}
+<div class="is-four-fifths is-fullsize-mobile">
     {{ if .Site.Params.heroBanner.single}}
-        <section id="single-hero" class="layout-single hero is-medium is-info theme-pattern theme-rounded">
-            <div class="hero-body">
+        <section class="black py-3 mt-1 c-sp-1">
                 {{ partial "featureSeriesButton.html" . }}
-                <h1><strong>{{.Title}} </strong></h1>
-                <hr>
+                <h1>{{.Title}}</h1>
                 {{ if .Description}}
-                    <div id="hero-description" class="has-text-black description">
+                    <p>
                         {{ .Description}}
-                    </div>
+                    </p>
                 {{end}}
                 {{ if .Date }}
-                    <div class="is-size-7 has-text-black description">
+                    <p>
                         {{ .Date | time.Format ":date_long" }}
-                    </div>
+                    </p>
                 {{ end }}
-            </div>
         </section>
     {{else}}
         {{/* Don't show the hero section */}}
     {{end}}
-    <section class="layout-single container is-max-desktop my-6">
+    <section class="content p-4">
         {{ partial "featureBetaNotice.html" . }}
         {{ .Content }}
         {{ partial "featureNextPrev.html" . }}
@@ -36,6 +34,6 @@
     <section>
          {{ partial "featureGiscus.html" . }}
     </section>
+
+</div>
 {{end}}
-
-
