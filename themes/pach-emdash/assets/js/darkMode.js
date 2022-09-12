@@ -1,9 +1,10 @@
 function darkMode() {
-
     var body = document.getElementsByTagName('body')[0];
+    var button = document.getElementById('darkModeButton');
 
     // Toggle dark mode for html element 
     body.classList.toggle("black");
+    button.classList.toggle("grayscale");
 
    // Store the current theme in local storage
     localStorage.setItem("theme-dark-mode", body.classList.contains("black"));

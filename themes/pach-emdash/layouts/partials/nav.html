@@ -4,7 +4,7 @@
  {{ $versionlessLink := strings.TrimPrefix $removeVersion .RelPermalink }}
 {{/* End for versionDropdown feature */}}
 
-  <nav class="spread sticky brighten-2">
+  <nav class="spread sticky brighten-2 shadow-d-1">
     <div class="spread-left is-two-fifths ml-2">
       <div class="mt-1" style="max-width:150px;">
         <img src="/images/pachLogo.svg" alt="logo">
@@ -12,7 +12,7 @@
       <div class="button is-fit hefty xs rounded-1"> <b>docs</b></div>
     </div>
     <div class="spread-right mr-2 c-rounded-1 c-sp-1">
-      <input class="searchbar is-hidden-mobile">
+      <input class="black searchbar is-hidden-mobile" placeholder="Search...">
       {{ if .Site.Params.versionDropdown }}
         <button class="dropdown black is-fit grayscale bold"> {{if .IsHome}} v. {{.Site.Params.releaseInfo.Latest}}{{else}} v. {{ .Section }}{{end}}
           <div class="dropdown-content">
@@ -32,7 +32,7 @@
           </div>
         </button>
       {{end}}
-      <button class="black is-fit grayscale" onclick="darkMode()">🌙</button>
+      <button id="darkModeButton" class="black is-fit grayscale " onclick="darkMode()">🌙</button>
       <button class="purple is-fit is-hidden-touch bold "> Demo</button>
       <button class="outline-black is-fit is-hidden-touch bold"> Sandbox</button>
     </div>
