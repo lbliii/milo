@@ -1,0 +1,18 @@
+
+{{/* Used for versionDropdown feature  */}}
+ {{ $removeVersion := print "/" .Section "/"}}
+ {{ $versionlessLink := strings.TrimPrefix $removeVersion .RelPermalink }}
+{{/* End for versionDropdown feature */}}
+
+  <nav class="spread sticky white">
+    <div class="spread-left is-two-fifths ml-2">
+      <div class="black sp-1" style="max-width:150px;"></div>
+      <div class="label purple sp-1 xxs rounded-1"> DOCS</div>
+    </div>
+    <div class="spread-right mr-2 c-rounded-1 c-sp-1">
+      <input class="searchbar is-half is-hidden-mobile">
+      <button class="black is-fit">🌙</button>
+      <button class="purple is-fit"> Demo</button>
+      <button class="outline-black is-fit"> Sandbox</button>
+    </div>
+  </nav>

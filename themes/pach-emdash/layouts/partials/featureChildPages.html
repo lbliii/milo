@@ -1,0 +1,30 @@
+{{/* Displays cards with child page titles, their total count, a description or summary, and optionally quick buttons to the first 3 children. */}}
+
+{{ if .Site.Params.childPages.display}}
+    {{if .Pages }}
+        <aside class="spread">
+            {{ range sort .Pages "Weight" "$order"}}
+                <section class="is-half is-fullsize-mobile c-sp-2">
+                        <h3 class="m">{{.Title}}</h3>
+                        <p class="subtitle-1">{{.Description}}</p>
+                        {{if eq .Params.label "required"}}
+                                    <div class="label black">REQUIRED</div>
+                                {{else if eq .Params.label "optional"}}
+                                     <div class="label white">OPTIONAL</div>
+                                {{end}}
+                        {{ if .Site.Params.childPages.grandchildren}}
+                            <div class="spread-left">
+                                {{ range first 7 .Pages }}
+                                <a class="button outlined-black sp-1 xs is-fit" href="{{ .Permalink }}"> {{if .Title}}{{.Title | truncate 30}}{{else}}{{ path.BaseName . | humanize | truncate 30}}{{end}}
+                                </a>
+                                {{ end }}
+                                <a class="button black sp-1 xs is-fit" href="{{ .Permalink }}"> View All </a>
+                            </div>
+                        {{else}}
+                            <div class="label black"> {{ len (.Pages) }} articles</div>  
+                        {{end}}
+                </section>
+            {{end}}
+        </aside>
+    {{end}}
+{{end}}

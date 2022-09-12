@@ -1,0 +1,7 @@
+{{ if .Params.tags }}
+    <aside class="spread-left c-fit c-rounded-1">
+        {{range .Params.tags }}
+            <a class="button black sp-1 xs" href="/tags/{{ . | urlize }}"> {{.}} </a>
+        {{end}}
+    </aside>
+{{end}}
