@@ -20,10 +20,20 @@
     --spacing-7: 2;
 
     --is-text-color:  var(--is-black);
-    --is-text-color-inverted: #ffffff;
+    --is-text-color-inverted: var(--is-white);
     --is-shadow-color: var(--is-dark-gray);
     --is-highlight-color: var(--is-purple);
     --is-code-color: var(--is-gray);
+
+    --is-info-color: var(--is-blue);
+    --is-info-text: var(--is-white);; 
+    --is-success-color: var(--is-green);
+    --is-success-text: var(--is-white);
+    --is-warning-color: var(--is-yellow);
+    --is-warning-text: var(--is-black);
+    --is-danger-color: var(--is-red);
+    --is-danger-text: var(--is-white);
+    
     --is-red: #ff0000;
     --is-green: #00ff00;
     --is-blue: #0000ff;
@@ -1537,3 +1547,25 @@ box-shadow: inset 0 9000px 0px rgba(255, 255, 255, 0.1);
 .pinned-start {
   float: left;
 }
+
+.info, .tip {
+  background-color: var(--is-info-color);
+  color: var(--is-info-text);
+}
+
+.success {
+  background-color: var(--is-success-color);
+  color: var(--is-success-text);
+}
+
+.warning, .attention {
+  background-color: var(--is-warning-color);
+  color: var(--is-warning-text);
+}
+
+.danger {
+  background-color: var(--is-danger-color);
+  color: var(--is-danger-text);
+}
+
+
