@@ -10,7 +10,26 @@
       <div class="label purple sp-1 xxs rounded-1"> DOCS</div>
     </div>
     <div class="spread-right mr-2 c-rounded-1 c-sp-1">
-      <input class="searchbar is-half is-hidden-mobile">
+      <input class="searchbar is-hidden-mobile">
+      {{ if .Site.Params.versionDropdown }}
+        <button class="dropdown black is-fit grayscale"> v. {{ .Section }}
+          <div class="dropdown-content">
+            <div class="stack black c-mt-1 c-p-1 mt-5 rounded-1">
+            {{ range .Site.Sections.ByTitle.Reverse }} 
+                {{ if not .Params.hidden }}
+                {{/* Sort Options: https://gohugo.io/templates/lists/#order-content */}}
+                  {{$currentVersionOption := print "/" .Section "/"}}
+                  {{$alternativeVersionPath := print $currentVersionOption $versionlessLink }}
+                <!--TODO: IF alternative version does not exist, set link to home page of other version-->
+                <a class="" href="{{$alternativeVersionPath}}" >
+                  v. {{.Title}}
+                </a>
+                {{ end }}
+            {{ end }}
+            </div>
+          </div>
+        </button>
+      {{end}}
       <button class="black is-fit grayscale">🌙</button>
       <button class="purple is-fit"> Demo</button>
       <button class="outline-black is-fit"> Sandbox</button>
