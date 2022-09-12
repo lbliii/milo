@@ -1,30 +1,28 @@
 {{ define "main" }}
          {{ if .Site.Params.heroBanner.list }}
-            <section class="layout-list hero is-small is-info theme-pattern-alt theme-rounded">
-                <div class="hero-body my-6">
-                    <h1><strong>How can we help you?</strong></h1>
-                    <p class="has-text-black description"> Select multiple tags to find related articles.</p>
-                </div>
+            <section class="black py-3 mt-1 c-sp-1">
+                    <h1>How can we help you?</h1>
+                    <p> Select multiple tags to find related articles.</p>
             </section>
         {{else}}
         {{/* Don't show the hero section */}}
         {{end}}
 
-        <section class="buttons mt-2 p-3"> 
+        <section class="p-1"> 
             {{ range .Site.Taxonomies.tags }}
-                <button class="button is-size-7" onClick="Filter({{ .Page.Title }}, this)">{{ .Page.Title }}</button> 
+                <button class="button purple xs p-1 mr-1 mt-1 " onClick="Filter({{ .Page.Title }}, this)">{{ .Page.Title }}</button> 
             {{ end }}
         </section>
 
-        <section id="potentialResults" class="columns is-flex-wrap-wrap	"> 
+        <section id="potentialResults" class="spread-left mt-4"> 
 
             {{ range .Site.Pages }}
                 {{ if .Params.Tags}}
-                    <div class="column is-one-third is-hidden is-flex-grow-1" data-tags="{{ trim  (print .Params.Tags) "[]" }}"> 
+                    <div class="is-one-third is-hidden" data-tags="{{ trim  (print .Params.Tags) "[]" }}"> 
                         <a class="is-size-7" href="{{.Permalink}}">
-                            <div class="card m-1 p-3 search-results theme-tile">
-                                <h3>{{.Title}}</h3>
-                                <p class="has-text-weight-normal">{{if .Description}} {{.Description}} {{else}}{{.Summary | truncate 300}} {{end}} </p>
+                            <div class="black sp-1 rounded-1">
+                                <h3 class="m">{{.Title}}</h3>
+                                <p>{{if .Description}} {{.Description}} {{else}}{{.Summary | truncate 300}} {{end}} </p>
                             </div>
                         </a>
                     </div>
