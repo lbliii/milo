@@ -821,7 +821,7 @@ button, .button {
 }
 
 .is-invisible, .is-invisible:hover {
-    opacity: 0;
+    visibility: hidden;
 }
 
 .is-hidden {
