@@ -5,30 +5,28 @@
 
 {{ define "main" }}
         {{ if .Site.Params.heroBanner.glossary}}
-            <section class="layout-list hero is-medium is-info theme-pattern-alt">
-                <div class="hero-body">
-                    <h1><strong>{{.Title}}</strong></h1>
+            <section class="black  py-3 mt-1 c-sp-1">
+                    <h1>{{.Title}}</h1>
                     {{ if .IsHome}}
                     {{else}}
-                    <div class="tag is-medium">glossary</div>
+                    <p>glossary</p>
                     {{end}}
-                </div>
             </section>
         {{else}}
             {{/* Don't show the hero section */}}
         {{end}}
 
         {{if .Content}}
-            <section class="layout-single section mb-0 pb-0"> 
+            <section class="content"> 
                 {{.Content}}
             </section>
         {{end}}
         {{/* Paginator Navigation Starts Here */}}
-        <nav class="pagination is-centered mt-4" role="navigation" aria-label="pagination">
-            <div class="pagination-list">
+        <nav class="spread-center" role="navigation" aria-label="pagination">
+            <div class="pagination-list c-mt-1">
                 {{ range .Paginator.Pagers}}
             
-                    <button data-pager="{{.}}" class="mx-1 my-4 button is-black is-outlined is-small glossary-buttons" aria-label='Goto page {{trim . "Pager "}}' onclick="revealPage({{.}})">{{trim . "Pager"}}</button>
+                    <button data-pager="{{.}}" class="button black p-1  mr-1 rounded-1 xxs" aria-label='Goto page {{trim . "Pager "}}' onclick="revealPage({{.}})">{{trim . "Pager"}}</button>
             
                 {{end}}
             </div>
@@ -41,9 +39,9 @@
                         {{ if  .Params.hidden }}
                                 {{/* Do not show the hidden child page or its descendants */}}
                         {{else}}
-                            <a class="columns card m-4" href="{{.Permalink}}">
-                                <div class="glossary-term column is-two-fifths is-flex has-background-info m-0 is-align-items-center"> 
-                                    <h4 class="m-0"> 
+                            <a class="spread-left m-4" href="{{.Permalink}}">
+                                <div class="is-two-fifths"> 
+                                    <h4> 
                                         {{if .Title}}
                                             {{ strings.TrimPrefix "Pachctl" .Title}}
                                         {{else}}
@@ -51,8 +49,8 @@
                                         {{end}}
                                     </h4>
                                 </div>
-                                <div class="column glossary-definition">
-                                    <p class=" has-text-weight-normal is-size-7"> 
+                                <div class="black c-sp-1">
+                                    <p class="xs"> 
                                         {{ if .Description}}
                                             {{.Description}}
                                         {{else }}

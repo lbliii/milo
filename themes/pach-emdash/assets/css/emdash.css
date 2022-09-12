@@ -824,6 +824,10 @@ button, .button {
     opacity: 0;
 }
 
+.is-hidden {
+    display: none;
+}
+
 .fill-h {
     height: max-content;
 }/* Spacing */
